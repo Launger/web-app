@@ -1,0 +1,8 @@
+.CookiesPage {
+  color: var(--primary-text-color);
+}
+
+.CookiesPage .cookies-section a {
+  color: black;
+}
+/*# sourceMappingURL=CookiesPage.css.map */

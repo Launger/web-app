@@ -1,0 +1,103 @@
+.LoginSignUp form {
+  background-color: white;
+  padding: 20px 40px 40px 40px;
+  height: 100%;
+}
+
+.LoginSignUp form h1 {
+  font-size: 1.8em;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.LoginSignUp form input {
+  background-color: white;
+  border: solid grey 1px;
+  border-radius: 200px;
+  height: 50px;
+  width: 100%;
+  padding-left: 15px;
+  margin: 10px 0;
+}
+
+.LoginSignUp form .password-inputs {
+  position: relative;
+}
+
+.LoginSignUp form .password-inputs .show-hide {
+  text-transform: capitalize;
+  font-size: 0.9em;
+  font-weight: 100;
+  position: absolute;
+  right: 10px;
+  top: calc(50% - 0.7em);
+  cursor: pointer;
+}
+
+.LoginSignUp form .error {
+  color: red;
+  font-size: 0.9em;
+}
+
+.LoginSignUp form #submit {
+  font-size: 1.2em;
+  padding-left: 0px;
+  border: none;
+  background-color: orange;
+  color: white;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.LoginSignUp form #submit:hover {
+  background-color: white;
+  border: solid orange 1px;
+  cursor: pointer;
+  color: orange;
+}
+
+.LoginSignUp form .agreement {
+  font-size: 0.75em;
+  font-weight: 100;
+}
+
+.LoginSignUp form #seperator {
+  margin-top: 7px;
+  border-bottom: solid lightgrey 1px;
+  margin-bottom: 7px;
+}
+
+.LoginSignUp form #google-login {
+  background-color: white;
+  border: solid grey 1px;
+  border-radius: 200px;
+  height: 50px;
+  width: 100%;
+  padding-left: 15px;
+  margin: 10px 0;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.LoginSignUp form #google-login img {
+  height: 50%;
+  -webkit-transform: translateX(-10px);
+          transform: translateX(-10px);
+}
+
+.LoginSignUp form #google-login:hover {
+  background-color: rgba(255, 166, 0, 0.11);
+}
+
+.LoginSignUp form .footer {
+  font-size: 0.95em;
+  font-weight: 100;
+}
+
+.LoginSignUp form .footer .underline {
+  color: blue;
+  text-decoration: underline;
+}
+/*# sourceMappingURL=LoginSignUp.css.map */

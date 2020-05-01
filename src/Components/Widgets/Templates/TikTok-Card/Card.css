@@ -1,0 +1,91 @@
+.tiktok-card-template .tiktok-card-bg {
+  background: linear-gradient(119.38deg, #77EAE7 0%, #B93547 100%);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.tiktok-card-template .tiktok-card-bg .text {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: white;
+}
+
+.tiktok-card-template .tiktok-card-bg .text .name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 2.5em;
+  font-weight: 800;
+  line-height: 1.2em;
+}
+
+.tiktok-card-template .tiktok-card-bg .text .subname {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 1.3em;
+  font-weight: 800;
+  -webkit-transform: translate(10px, -7px);
+          transform: translate(10px, -7px);
+}
+
+.tiktok-card-template .tiktok-card-bg:hover {
+  background: black;
+  -webkit-animation: animate 0.5s linear infinite;
+          animation: animate 0.5s linear infinite;
+}
+
+.tiktok-card-template .tiktok-card-fg {
+  position: absolute;
+}
+
+.tiktok-card-template .tiktok-card-fg .overlay {
+  position: absolute;
+  background: none;
+  height: 100%;
+  width: 100%;
+}
+
+@-webkit-keyframes animate {
+  0%, 100% {
+    text-shadow: -1.5px -1.5px 0 #0ff, 1.5px 1.5px 0 #f00;
+  }
+  25% {
+    text-shadow: 1.5px 1.5px 0 #0ff, -1.5px -1.5px 0 #f00;
+  }
+  50% {
+    text-shadow: 1.5px -1.5px 0 #0ff, -1.5px 1.5px 0 #f00;
+  }
+  75% {
+    text-shadow: -1.5px 1.5px 0 #0ff, 1.5px -1.5px 0 #f00;
+  }
+  33% {
+    text-shadow: 4px 1.5px 0 #0ff, -1.5px -4px 0 #f00;
+  }
+}
+
+@keyframes animate {
+  0%, 100% {
+    text-shadow: -1.5px -1.5px 0 #0ff, 1.5px 1.5px 0 #f00;
+  }
+  25% {
+    text-shadow: 1.5px 1.5px 0 #0ff, -1.5px -1.5px 0 #f00;
+  }
+  50% {
+    text-shadow: 1.5px -1.5px 0 #0ff, -1.5px 1.5px 0 #f00;
+  }
+  75% {
+    text-shadow: -1.5px 1.5px 0 #0ff, 1.5px -1.5px 0 #f00;
+  }
+  33% {
+    text-shadow: 4px 1.5px 0 #0ff, -1.5px -4px 0 #f00;
+  }
+}
+/*# sourceMappingURL=Card.css.map */

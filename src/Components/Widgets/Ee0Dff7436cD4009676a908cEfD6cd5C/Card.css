@@ -1,0 +1,36 @@
+.Card-Ee0Dff7436cD4009676a908cEfD6cd5C .youtube-card-bg {
+  background: linear-gradient(119.46deg, #FF3434 0%, #890000 100%);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.Card-Ee0Dff7436cD4009676a908cEfD6cd5C .youtube-card-bg .text {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: white;
+}
+
+.Card-Ee0Dff7436cD4009676a908cEfD6cd5C .youtube-card-bg .text .name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 2.5em;
+  font-weight: 800;
+  line-height: 1.2em;
+}
+
+.Card-Ee0Dff7436cD4009676a908cEfD6cd5C .youtube-card-bg #most-popular {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+/*# sourceMappingURL=Card.css.map */

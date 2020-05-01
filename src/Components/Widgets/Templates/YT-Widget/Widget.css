@@ -1,0 +1,22 @@
+.yt-template-widget .player-wrapper {
+  min-height: 200px;
+  min-width: 200px;
+}
+
+.yt-template-widget .player-wrapper .Tooltip {
+  position: absolute;
+  z-index: 2000;
+  right: -150px;
+  top: -5px;
+}
+
+.yt-template-widget .player-wrapper .Tooltip .bubble {
+  background: blue;
+}
+
+.yt-template-widget .player-wrapper .react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/*# sourceMappingURL=Widget.css.map */

@@ -1,0 +1,8 @@
+.TermsPage {
+  color: var(--primary-text-color);
+}
+
+.TermsPage .terms a {
+  color: black;
+}
+/*# sourceMappingURL=TermsPage.css.map */

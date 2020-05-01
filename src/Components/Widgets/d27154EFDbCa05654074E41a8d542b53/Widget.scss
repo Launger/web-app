@@ -1,0 +1,30 @@
+.Widget {
+  height: 100%;
+  // h1 {
+  //   position: absolute;
+    color: var(--secondary-text-color);
+  //   text-align: center;
+  // }
+  .container {
+    position: relative;
+    min-height: 50vh;
+    h1 {
+      color: var(--secondary-text-color);
+      position: absolute;
+      text-align: center;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+    .Timer {
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 6em;
+      line-height: 1em;
+      font-weight: 800;
+      user-select: none;
+    }
+  }
+}

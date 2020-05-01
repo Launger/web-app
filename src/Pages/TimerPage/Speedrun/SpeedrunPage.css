@@ -1,0 +1,95 @@
+.SpeedrunPage .NavBar .Timer {
+  position: initial;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  font-size: initial;
+}
+
+.SpeedrunPage .page-content {
+  height: calc(100vh - 73px);
+}
+
+.SpeedrunPage .Timer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  margin-right: -50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  font-size: 6em;
+  font-weight: 800;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.SpeedrunPage .Todos {
+  width: 50%;
+  position: relative;
+  left: 50%;
+  top: 10%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.SpeedrunPage .take-a-break {
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  position: absolute;
+  top: calc(50% + 70px);
+  left: 50%;
+  z-index: -10;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 1;
+  font-weight: 550;
+  color: var(--primary-text-color, black);
+  background: transparent;
+  border: solid var(--primary-text-color, black) 1px;
+  padding: 10px 25px;
+  border-radius: 200px;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.SpeedrunPage .take-a-break:hover {
+  background: linear-gradient(100deg, #ffae34 0%, #f95584 100%);
+  color: white;
+  border: solid transparent 1px;
+}
+
+.SpeedrunPage .take-a-breakh1 {
+  font-size: 1.3em;
+  color: var(--secondary-text-color, black);
+  position: absolute;
+  top: calc(50% + 70px);
+  left: 50%;
+  z-index: -10;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.SpeedrunPage .notification {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+}
+
+.SpeedrunPage .refresh {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .Todos {
+    min-width: 90%;
+  }
+}
+/*# sourceMappingURL=SpeedrunPage.css.map */

@@ -1,0 +1,196 @@
+.BufferPage {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  color: var(--primary-text-color);
+}
+
+.BufferPage .Go-to-widgets {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  z-index: 10;
+  padding: 15px 25px;
+  border-radius: 200px;
+  background: #FFD186;
+  border: none;
+  color: black;
+  font-weight: 700;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.BufferPage .Go-to-widgets:hover {
+  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.BufferPage section.signup-share-banner {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  min-height: 400px;
+  background: #FFD186;
+  color: black;
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  overflow: hidden;
+}
+
+.BufferPage section.signup-share-banner .left {
+  padding: 0 20px;
+  margin: auto auto;
+}
+
+.BufferPage section.signup-share-banner .left .react-share__ShareButton {
+  margin-right: 15px;
+  margin-bottom: 20px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.BufferPage section.signup-share-banner .left .react-share__ShareButton:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.BufferPage section.signup-share-banner .left h1 {
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.BufferPage section.signup-share-banner .left h2 {
+  font-size: 1.2em;
+}
+
+.BufferPage section.signup-share-banner .left h3 {
+  font-size: 0.9em;
+  font-weight: 100;
+}
+
+.BufferPage section.signup-share-banner .left ul {
+  margin-bottom: 10px;
+}
+
+.BufferPage section.signup-share-banner .left .signup {
+  margin-left: 10px;
+  font-weight: 550;
+  color: white;
+  background: linear-gradient(100deg, #ffae34 0%, #f95584 100%);
+  border: solid none 1px;
+  width: 120px;
+  padding: 10px 25px;
+  border-radius: 200px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.BufferPage section.signup-share-banner .left .signup:hover {
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.BufferPage section.signup-share-banner .left .signup a {
+  color: white;
+}
+
+.BufferPage section.signup-share-banner .left .signup a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.BufferPage section.signup-share-banner .left .have-an-account {
+  margin-top: 10px;
+}
+
+.BufferPage section.signup-share-banner .left .have-an-account a {
+  color: inherit;
+  font-weight: 700;
+}
+
+.BufferPage section.signup-share-banner .right {
+  margin: auto 0;
+}
+
+.BufferPage section.signup-share-banner .right .CardTemplate .content-illustration {
+  z-index: 2;
+}
+
+.BufferPage section.signup-share-banner .right .CardTemplate .stats {
+  z-index: 1;
+}
+
+.BufferPage section.signup-share-banner .right .feedbackIllustration img {
+  height: 250px;
+  -webkit-transform: translate(150px, -150px);
+          transform: translate(150px, -150px);
+  margin-bottom: -150px;
+}
+
+.BufferPage section.Features h1 {
+  text-align: center;
+  font-weight: 900;
+  margin: 50px 0;
+}
+
+.BufferPage section.Coming-soon h1 {
+  text-align: center;
+  font-weight: 900;
+  margin: 0 0 100px 0;
+}
+
+.BufferPage section.Coming-soon .Feature img {
+  width: 100%;
+}
+
+.BufferPage section.Coming-soon h2 {
+  margin: 0 auto 100px;
+  max-width: 85%;
+  font-weight: 700;
+}
+
+.BufferPage footer {
+  background-color: orange;
+  padding: 25px;
+}
+
+.BufferPage footer #logo {
+  position: relative;
+  top: 25%;
+  height: 50px;
+}
+
+.BufferPage footer .columns {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.BufferPage footer ul {
+  list-style-type: none;
+}
+
+.BufferPage footer ul a {
+  color: black;
+}
+
+@media only screen and (max-width: 800px) {
+  .Go-to-widgets {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  section.signup-share-banner {
+    padding-top: 100px;
+  }
+  section.signup-share-banner .right {
+    padding: 0 20px;
+    margin: auto;
+    -webkit-transform: translateX(10%);
+            transform: translateX(10%);
+  }
+}
+/*# sourceMappingURL=BufferPage.css.map */

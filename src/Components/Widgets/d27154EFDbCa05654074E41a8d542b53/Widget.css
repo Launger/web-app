@@ -1,0 +1,35 @@
+.Widget {
+  height: 100%;
+  color: var(--secondary-text-color);
+}
+
+.Widget .container {
+  position: relative;
+  min-height: 50vh;
+}
+
+.Widget .container h1 {
+  color: var(--secondary-text-color);
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.Widget .container .Timer {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 6em;
+  line-height: 1em;
+  font-weight: 800;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+/*# sourceMappingURL=Widget.css.map */

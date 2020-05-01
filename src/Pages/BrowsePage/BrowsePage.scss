@@ -1,0 +1,38 @@
+.BrowsePage {
+  section.your-widgets {
+    background: var(--secondary-bg, lightgrey);
+    padding-top: calc((60vh - 220px) / 2 - 1em);
+    padding-bottom: calc((60vh - 220px) / 2);
+    margin-bottom: 50px;
+    .container{
+      position: relative;
+      select {
+        position: absolute;
+        right: calc(5% + 20px);
+        top: calc(3.3em / 2);
+        background: none;
+        border: none;
+        outline: none;
+        color: var(--primary-text-color, black);
+      }
+      h1 {
+        position: relative;
+        left: 5%;
+        display: inline-block;
+        // padding-left: 50px;
+        color: var(--secondary-text-color);
+        font-size: 3.3em;
+        font-weight: 900;
+        letter-spacing: -1.9px;
+      }
+    }
+  }
+  .cards {
+    letter-spacing: -1.5px;
+    display: grid;
+    grid-column-gap: 40px;
+    grid-row-gap: 60px;
+    grid-template-columns: repeat(auto-fit, 302px);
+    justify-content: center;
+  }
+}

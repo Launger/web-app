@@ -1,0 +1,140 @@
+.BreakPage {
+  .toast {
+    color: white;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 10;
+    // background-color: #546FFF;
+    background: linear-gradient(100deg, #ffae34 0%, #f95584 100%);
+    padding: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    // border: solid orange 1px;
+    min-width: 300px;
+    .header {
+      border-bottom: solid white 1px;
+      padding-bottom: 5px;
+    }
+    .playnow {
+      color: white;
+      cursor: pointer;
+    }
+    .playnow:hover {
+      
+      color: black; 
+      text-decoration: underline;
+    }
+  }
+  .page-content {
+    height: calc(100vh - 73px);
+    overflow: hidden;
+    margin: 0 30px;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      "frame sidebar"
+      "tips sidebar";
+    grid-template-rows: 1fr 150px;
+    grid-template-columns: minmax(600px, auto) calc(306px);
+    grid-gap: 15px;
+    .imported-widget {
+      position: relative;
+      padding-top: 13px;
+      grid-area: frame;
+      min-height: calc(100vh - 70px - 150px - 20px);
+    }
+    .tips-n-tricks {
+      grid-area: tips;
+      // background-color: blue;
+    }
+    .sidebar {
+      // background: #222222;
+      padding-top: 10px;
+      grid-area: sidebar;
+      height: calc(100vh - 69px);
+      overflow-y: scroll;
+      .NEXT {
+        display: flex;
+        justify-content: space-between;
+        color: var(--secondary-text-color, grey);
+        font-size: 0.9em;
+        margin-bottom: -5px;
+      }
+      .next-card {
+        margin: 20px;
+      }
+      .next-card::after {
+        content: '';
+        border-bottom: solid 1px var(--secondary-bg);
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: 302px;
+        grid-gap: 10px;
+        // margin: 10px 30px 10px 20px;
+        margin: 10px 2px;
+        letter-spacing: -1.5px;
+      } 
+      .importedCard:hover {
+        margin-bottom: 50px;
+        // transform: translateX(-18px);
+      }
+    }
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .BreakPage {
+    .page-content {
+      overflow: visible;
+    }
+    .grid-container {
+      grid-template-areas: 
+        "frame frame"
+        "tips sidebar";
+      grid-template-rows: 1fr 300px;
+      grid-template-columns: minmax(302px, auto) 306px;
+      .tips-n-tricks {
+        height: 100%;
+        overflow: visible;
+      }
+      .sidebar {
+        padding: 0;
+        height: 100%;
+        overflow: visible;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .BreakPage {
+    .page-content {
+      overflow: visible;
+    }
+    .grid-container {
+      grid-template-areas: 
+        "frame"
+        "sidebar"
+        "tips";
+      grid-template-rows: calc(100vh - 300px) auto auto;
+      .imported-widget {
+        height: calc(100vh - 300px);
+      }
+      .tips-n-tricks {
+        height: 100%;
+        overflow: visible;
+      }
+      .sidebar {
+        padding: 0;
+        height: 100%;
+        overflow: visible;
+      }
+    }
+  }
+}

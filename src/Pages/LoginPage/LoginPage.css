@@ -1,0 +1,113 @@
+.LoginPage .background {
+  position: absolute;
+  background-color: #546FFF;
+  height: 100vh;
+}
+
+.LoginPage .NavBar {
+  margin-bottom: 170px;
+}
+
+.LoginPage .NavBar .nav-link {
+  color: white;
+}
+
+.LoginPage .NavBar #login-btn {
+  display: none;
+}
+
+.LoginPage .page-content {
+  padding-top: 80px;
+}
+
+.LoginPage form {
+  background-color: white;
+  border-radius: 0 50px 50px 50px;
+  margin: 50px;
+  padding: 40px 60px 60px 60px;
+  height: 100%;
+}
+
+.LoginPage form h1 {
+  font-size: 1.8em;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.LoginPage form input {
+  background-color: white;
+  border: solid grey 1px;
+  border-radius: 200px;
+  height: 50px;
+  width: 100%;
+  padding-left: 15px;
+  margin: 10px 0;
+}
+
+.LoginPage form .password-inputs {
+  position: relative;
+}
+
+.LoginPage form .password-inputs .show-hide {
+  text-transform: capitalize;
+  font-size: 0.9em;
+  font-weight: 100;
+  position: absolute;
+  right: 10px;
+  top: calc(50% - 0.7em);
+  cursor: pointer;
+}
+
+.LoginPage form #submit {
+  font-size: 1.2em;
+  padding-left: 0px;
+  border: none;
+  background: -webkit-gradient(linear, left top, right top, from(#F9A826), to(#FF4E8D));
+  background: linear-gradient(90deg, #F9A826 0%, #FF4E8D 100%);
+  color: white;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.LoginPage form #submit:hover {
+  background: white;
+  border: solid orange 1px;
+  cursor: pointer;
+  color: orange;
+}
+
+.LoginPage form #seperator {
+  margin-top: 7px;
+  border-bottom: solid lightgrey 1px;
+  margin-bottom: 7px;
+}
+
+.LoginPage form #google-login {
+  background-color: white;
+  border: solid grey 1px;
+  border-radius: 200px;
+  height: 50px;
+  width: 100%;
+  padding-left: 15px;
+  margin: 10px 0;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.LoginPage form #google-login img {
+  height: 50%;
+  -webkit-transform: translateX(-10px);
+          transform: translateX(-10px);
+}
+
+.LoginPage form #google-login:hover {
+  background-color: rgba(255, 166, 0, 0.11);
+}
+
+.LoginPage form .footer {
+  font-size: 0.95em;
+  font-weight: 100;
+}
+/*# sourceMappingURL=LoginPage.css.map */

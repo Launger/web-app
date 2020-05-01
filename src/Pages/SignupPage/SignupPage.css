@@ -1,0 +1,121 @@
+.SignupPage .background {
+  position: absolute;
+  background-color: orange;
+  height: 100vh;
+}
+
+.SignupPage .NavBar {
+  margin-bottom: 80px;
+}
+
+.SignupPage .NavBar .nav-link {
+  color: white;
+}
+
+.SignupPage .NavBar #signup-btn {
+  display: none;
+}
+
+.SignupPage .page-content {
+  padding-top: 100px;
+}
+
+.SignupPage form {
+  background-color: white;
+  border-radius: 0 50px 50px 50px;
+  padding: 40px 50px 60px 50px;
+  height: 100%;
+}
+
+.SignupPage form h1 {
+  font-size: 1.8em;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.SignupPage form input {
+  background-color: white;
+  border: solid grey 1px;
+  border-radius: 200px;
+  height: 50px;
+  width: 100%;
+  padding-left: 15px;
+  margin: 10px 0;
+}
+
+.SignupPage form .password-inputs {
+  position: relative;
+}
+
+.SignupPage form .password-inputs .show-hide {
+  text-transform: capitalize;
+  font-size: 0.9em;
+  font-weight: 100;
+  position: absolute;
+  right: 10px;
+  top: calc(50% - 0.7em);
+  cursor: pointer;
+}
+
+.SignupPage form .error {
+  color: red;
+}
+
+.SignupPage form #submit {
+  font-size: 1.2em;
+  padding-left: 0px;
+  border: none;
+  background: -webkit-gradient(linear, left top, right top, from(#F9A826), to(#FF4E8D));
+  background: linear-gradient(90deg, #F9A826 0%, #FF4E8D 100%);
+  color: white;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.SignupPage form #submit:hover {
+  background: white;
+  border: solid orange 1px;
+  cursor: pointer;
+  color: orange;
+}
+
+.SignupPage form .agreement {
+  font-size: 0.75em;
+  font-weight: 100;
+}
+
+.SignupPage form #seperator {
+  margin-top: 7px;
+  border-bottom: solid lightgrey 1px;
+  margin-bottom: 7px;
+}
+
+.SignupPage form #google-login {
+  background-color: white;
+  border: solid grey 1px;
+  border-radius: 200px;
+  height: 50px;
+  width: 100%;
+  padding-left: 15px;
+  margin: 10px 0;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.SignupPage form #google-login img {
+  height: 50%;
+  -webkit-transform: translateX(-10px);
+          transform: translateX(-10px);
+}
+
+.SignupPage form #google-login:hover {
+  background-color: rgba(255, 166, 0, 0.11);
+}
+
+.SignupPage form .footer {
+  font-size: 0.95em;
+  font-weight: 100;
+}
+/*# sourceMappingURL=SignupPage.css.map */

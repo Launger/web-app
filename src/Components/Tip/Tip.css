@@ -1,0 +1,13 @@
+.Tip {
+  min-width: 300px;
+  border-radius: 0 20px 20px 20px;
+  height: 90%;
+  padding: 15px 20px;
+  background-color: var(--secondary-bg);
+  color: var(--primary-text-color);
+}
+
+.Tip img {
+  margin-right: 5px;
+}
+/*# sourceMappingURL=Tip.css.map */

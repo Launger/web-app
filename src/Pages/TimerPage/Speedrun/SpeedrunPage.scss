@@ -1,0 +1,81 @@
+.SpeedrunPage {
+  .NavBar {
+    .Timer {
+      position: initial;
+      transform: translate(0, 0);
+      font-size: initial;
+    }
+  }
+  .page-content {
+    height: calc(100vh - 73px);
+  }
+  .Timer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-family: "Nunito", Arial, Helvetica, sans-serif;
+    font-size: 6em;
+    font-weight: 800;
+    user-select: none;
+  }
+  .Todos {
+    width: 50%;
+    position: relative;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%, 0);
+  }
+  .take-a-break {
+    opacity: 0;
+    transition: all 0.3s;
+    position: absolute;
+    top: calc(50% + 70px);
+    left: 50%;
+    z-index: -10;
+    transform: translate(-50%, -50%);
+    border: 1;
+    font-weight: 550;
+    color: var(--primary-text-color, black);
+    background: transparent;
+    border: solid var(--primary-text-color, black) 1px;
+    padding: 10px 25px;
+    border-radius: 200px;
+    transition: all 0.3s;
+    text-align: center;
+    &:hover {
+      background: linear-gradient(100deg, #ffae34 0%, #f95584 100%);
+      color: white;
+      border: solid transparent 1px;
+    }
+  }
+  .take-a-breakh1 {
+    font-size: 1.3em;
+    color: var(--secondary-text-color, black);
+    position: absolute;
+    top: calc(50% + 70px);
+    left: 50%;
+    z-index: -10;
+    transform: translate(-50%, -50%);
+  }
+  .notification {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+  }
+  .refresh {
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .Todos {
+    min-width: 90%;
+  }
+}

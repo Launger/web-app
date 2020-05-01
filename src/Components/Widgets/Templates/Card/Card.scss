@@ -1,0 +1,106 @@
+.try-login-modals {
+  size: 400px 400px;
+}
+
+.CardTemplate {
+  width: 302px;
+  .content-illustration {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 20px 20px 20px;
+    position: relative;
+    z-index: 1;
+    height: 170px;
+    overflow: hidden;
+    .default-card-bg {
+      position: absolute;
+      background: linear-gradient(119.38deg, #FFAE34 0%, #F95584 100%);
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      .text {
+        align-self: center;
+        color: white;
+        .name {
+          font-size: 3.5em;
+          font-weight: 600;
+          line-height: 0.7em;
+        }
+      }
+    }
+    .card-fg {
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+  }
+  .stats {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--pns-mix-bg, #ffffff);
+    padding-top: 25px;
+    padding-bottom: -100px;
+    transform: translateY(-100px);
+    margin-bottom: -60px;
+    border-radius: 0px 0px 20px 20px;
+    position: relative;
+    z-index: 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    transition: all 0.3s;
+    text-align: center;
+    * {
+      margin: 0;
+    }
+    h3 {
+      font-weight: 600;
+      font-size: 1.3em;
+      color: var(--primary-text-color, black);
+    }
+    h4 {
+      letter-spacing: -0.5px;
+      font-weight: 600;
+      font-size: 0.9em;
+      color: var(--secondary-text-color, lightgrey);
+    }
+    .stat {
+      width: 33.3%;
+    }
+    .TRY {
+      margin-bottom: -20px;
+      .try-btn {
+        display: flex;
+        opacity: 0;
+        height: 100%;
+        transform: translate( 0px, -60px);
+        border-radius: 0 0 0 20px;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(255, 184, 51);
+        transition: all 0.3s;
+        h3 {
+          color: white;
+        }
+      }
+    }
+    .COST {
+      margin-bottom: -20px;
+      // padding-top: 30px;
+      // margin-top: -30px;
+      // overflow: hidden;
+      .get-btn {
+        display: flex;
+        opacity: 0;
+        height: 100%;
+        transform: translate( 0px, -60px);
+        border-radius: 0 0 20px 0;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(78, 201, 78);
+        transition: all 0.3s;
+        h3 {
+          color: white;
+        }
+      }
+    }
+  }
+}

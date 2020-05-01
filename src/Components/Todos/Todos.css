@@ -1,0 +1,185 @@
+.Todos {
+  color: var(--primary-text-color, blue);
+}
+
+.Todos .main-tooltip {
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.Todos .main-tooltip .Tooltip {
+  position: absolute;
+  top: calc(-15px - 30px);
+  left: 20%;
+  z-index: 10;
+}
+
+.Todos .main-tooltip .Tooltip .bubble {
+  font-size: 13px;
+  background: blue;
+}
+
+.Todos input {
+  border: none;
+  outline: none;
+  margin-right: 10px;
+}
+
+.Todos .TodoForm {
+  position: relative;
+  z-index: 1;
+  background: var(--pns-mix-bg, red);
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 7px 20px;
+  border-radius: 200px;
+  font-size: 20px;
+  width: calc(100% - 10px);
+  margin: 0 auto;
+}
+
+.Todos .TodoForm label {
+  margin: 0;
+}
+
+.Todos .TodoForm .AddTodo input[type=text] {
+  color: var(--primary-text-color, blue);
+  width: calc(100% - (25px * 3 / 2 + 35px + 5px) - 38px);
+  background: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Todos .TodoForm .AddTodo label input[type=text] {
+  width: calc(25px * 3 / 2);
+  margin-right: 5px;
+  background: none;
+  text-align: right;
+}
+
+.Todos .TodoForm .AddTodo svg {
+  float: right;
+  margin-left: 10px;
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+}
+
+.Todos .TodoForm .FocusedTodo input[type=checkbox] {
+  -webkit-transform: translate(0, -20%);
+          transform: translate(0, -20%);
+}
+
+.Todos .TodoForm .FocusedTodo input[type=text] {
+  color: var(--primary-text-color, blue);
+  width: calc(100% - (1em * 4 / 2 + 40px) - 100px);
+  background: none;
+}
+
+.Todos .TodoForm .FocusedTodo label input[type=text] {
+  width: calc(25px * 2 / 2);
+  margin-right: 0;
+  background: none;
+  text-align: right;
+}
+
+.Todos .TodoForm .FocusedTodo svg {
+  float: right;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+  margin-left: 10px;
+}
+
+.Todos .transitionWrapper {
+  position: relative;
+  z-index: 0;
+  overflow-y: hidden;
+  top: -20px;
+}
+
+.Todos .TodoDropdown {
+  background: var(--pns-mix-bg, red);
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 0 20px;
+  padding-top: 20px;
+  border-radius: 0 0 20px 20px;
+  font-size: 18px;
+  opacity: 1;
+  height: 100%;
+  margin: 0 5px 10px 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  color: var(--primary-text-color, blue);
+}
+
+.Todos .TodoDropdown input {
+  color: var(--primary-text-color, blue);
+  background: none;
+}
+
+.Todos .TodoDropdown input[type=button] {
+  -webkit-transform: translate(0, -3px);
+          transform: translate(0, -3px);
+}
+
+.Todos .TodoDropdown input[type=checkbox] {
+  -webkit-transform: translate(0, -20%);
+          transform: translate(0, -20%);
+  position: relative;
+  z-index: 9;
+}
+
+.Todos .TodoDropdown input[type=text] {
+  width: calc(100% - 200px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Todos .TodoDropdown label input[type=text] {
+  width: calc(25px * 2 / 2);
+  margin-right: 0;
+  background: none;
+  text-align: right;
+}
+
+.Todos .TodoDropdown label svg {
+  height: initial;
+  margin-right: 15px;
+}
+
+.Todos .TodoDropdown label svg:hover + .focus-tooltip {
+  opacity: 1;
+}
+
+.Todos .TodoDropdown label .focus-tooltip {
+  display: none;
+  opacity: 0;
+}
+
+.Todos .TodoDropdown label .focus-tooltip .Tooltip {
+  position: absolute;
+  z-index: 10;
+  -webkit-transform: translate(10px, -10px);
+          transform: translate(10px, -10px);
+}
+
+.Todos .TodoDropdown label .focus-tooltip .Tooltip .bubble {
+  font-size: 12px;
+  background: blue;
+  padding: 6px 10px;
+}
+
+.Todos .TodoDropdown svg {
+  float: right;
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+  height: 17px;
+}
+
+.Todos ::-webkit-scrollbar {
+  display: none;
+}
+/*# sourceMappingURL=Todos.css.map */

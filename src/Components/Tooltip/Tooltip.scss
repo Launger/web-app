@@ -1,0 +1,39 @@
+.Tooltip {
+  .bubble {
+    display: inline-block;
+    padding: 5px 10px;
+    background: black;
+    color: white;
+    border-radius: 200px;
+    position: relative;
+    margin: 10px 12px;
+    .bottom {
+      position: absolute;
+      z-index: -1;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -10px;
+    }
+    .top {
+      position: absolute;
+      z-index: -1;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -10px;
+    }
+    .left {
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -8px;
+    }
+    .right {
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      transform: translateY(-50%);
+      right: -8px;
+    }
+  }
+}

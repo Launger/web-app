@@ -1,0 +1,160 @@
+.BufferPage {
+  transition: all 0.3s;
+  color: var(--primary-text-color);
+  .Go-to-widgets {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    z-index: 10;
+    padding: 15px 25px;
+    border-radius: 200px;
+    background: #FFD186;
+    border: none;
+    color: black;
+    font-weight: 700;
+    transition: all 0.3s;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    &:hover {
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+  section.signup-share-banner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    min-height: 400px;
+    background: #FFD186;
+    color: black;
+    transform: translateY(-3px);
+    overflow: hidden;
+    .left {
+      padding: 0 20px;
+      margin: auto auto;
+      .react-share__ShareButton {
+        margin-right: 15px;
+        margin-bottom: 20px;
+        transition: all 0.3s;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+      h1 {
+        font-size: 2em;
+        font-weight: 600;
+      }
+      h2 {
+        font-size: 1.2em;
+      }
+      h3 {
+        font-size: 0.9em;
+        font-weight: 100;
+      }
+      ul {
+        margin-bottom: 10px;
+      }
+      .signup {
+        margin-left: 10px;
+        font-weight: 550;
+        color: white;
+        background: linear-gradient(100deg, #ffae34 0%, #f95584 100%);
+        border: solid none 1px;
+        width: 120px;
+        padding: 10px 25px;
+        border-radius: 200px;
+        transition: all 0.3s;
+        text-align: center;
+        &:hover {
+          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+        }
+        a {
+          color: white;
+          &:hover {
+            color: white;
+            text-decoration: none;
+          }
+        }
+      }
+      .have-an-account {
+        margin-top: 10px;
+        a {
+          color: inherit;
+          font-weight: 700;
+        }
+      }
+    } 
+    .right {
+      margin: auto 0;
+      .CardTemplate {
+        .content-illustration {
+          z-index: 2;
+        }
+        .stats {
+          z-index: 1;
+        }
+      }
+      .feedbackIllustration {
+        img {
+          height: 250px;
+          transform: translate(150px, -150px);
+          margin-bottom: -150px;
+        }
+      }
+    }
+  }
+  section.Features {
+    h1 {
+      text-align: center;
+      font-weight: 900;
+      margin: 50px 0;
+    }
+  }
+  section.Coming-soon {
+    h1 {
+      text-align: center;
+      font-weight: 900;
+      margin: 0 0 100px 0;
+    }
+    .Feature {
+      img {
+        width: 100%;
+      }
+    }
+    h2 {
+      margin: 0 auto 100px;
+      max-width: 85%; //For testing purposes only
+      font-weight: 700;
+    }
+  }
+  footer {
+    background-color: orange;
+    padding: 25px;
+    #logo {
+      position: relative;
+      top: 25%;
+      height: 50px;
+    }
+    .columns {
+      align-items: center;
+    }
+    ul {
+      list-style-type: none;
+      a {
+        color: black;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .Go-to-widgets {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  section.signup-share-banner {
+    padding-top: 100px;
+    .right {
+      padding: 0 20px;
+      margin: auto;
+      transform: translateX(10%);
+    }
+  }
+}

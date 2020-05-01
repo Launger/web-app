@@ -1,0 +1,44 @@
+.BrowsePage section.your-widgets {
+  background: var(--secondary-bg, lightgrey);
+  padding-top: calc((60vh - 220px) / 2 - 1em);
+  padding-bottom: calc((60vh - 220px) / 2);
+  margin-bottom: 50px;
+}
+
+.BrowsePage section.your-widgets .container {
+  position: relative;
+}
+
+.BrowsePage section.your-widgets .container select {
+  position: absolute;
+  right: calc(5% + 20px);
+  top: calc(3.3em / 2);
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--primary-text-color, black);
+}
+
+.BrowsePage section.your-widgets .container h1 {
+  position: relative;
+  left: 5%;
+  display: inline-block;
+  color: var(--secondary-text-color);
+  font-size: 3.3em;
+  font-weight: 900;
+  letter-spacing: -1.9px;
+}
+
+.BrowsePage .cards {
+  letter-spacing: -1.5px;
+  display: -ms-grid;
+  display: grid;
+  grid-column-gap: 40px;
+  grid-row-gap: 60px;
+  -ms-grid-columns: (302px)[auto-fit];
+      grid-template-columns: repeat(auto-fit, 302px);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/*# sourceMappingURL=BrowsePage.css.map */

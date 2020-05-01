@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "time-25",
+    "production": "launger"
+  }
+}

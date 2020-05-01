@@ -1,0 +1,88 @@
+.NavBar {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  background-color: var(--primary-bg, white);
+  nav {
+    font-size: 1em;
+    margin-bottom: -10px;
+    a {
+      margin: 0 20px;
+    }
+    #logo {
+      margin-top: -10px;
+      margin-bottom: -10px;
+      height: 40px;
+    }
+    #signup-btn {
+      margin-left: 10px;
+      font-weight: 550;
+      color: white;
+      background: linear-gradient(100deg, #ffae34 0%, #f95584 100%);
+      border: solid #ffae34 1px;
+      padding: 10px 25px;
+      border-radius: 200px;
+      transition: all 0.3s;
+      text-align: center;
+      &:hover {
+        background: var(--primary-bg, none);
+        color: #ffae34;
+        border: solid #ffae34 1px;
+      }
+    }
+    .moon-icon {
+      margin: 0;
+      margin-top: -5px;
+      height: 40px;
+      &>circle {
+        fill: none;
+      }
+      &>path {
+          fill: url(#moon0_linear);
+      }
+      &:hover {
+        &>circle{
+          fill: black;
+        }
+        &>path {
+          fill: url(#moon0_linear);
+        }
+      }
+    }
+    .sun-icon {
+      margin: 0;
+      margin-top: -5px;
+      height: 40px;
+      &:hover {
+        &>circle {
+          fill: url(#sunbg_linear);
+        }
+        &>path {
+          fill: white;
+        }
+      }
+    }
+  }
+  .color-accent {
+    .gradient-accent {
+      background: linear-gradient(90deg, #F7E673 0%, #F94E83 100%);
+      height: 9px;
+      width: calc(100% - 66px);
+    }
+    #corner-piece {
+      position: absolute;
+      right: 0;
+      bottom: 9px;
+      margin-bottom: -69px;
+    }
+  }
+
+
+
+}
+
+@media only screen and (max-width: 768px) {
+  .color-accent {
+    margin-top: 15px;
+  }
+}
