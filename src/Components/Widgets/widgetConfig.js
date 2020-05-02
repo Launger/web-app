@@ -248,7 +248,7 @@ remoteConfig.defaultConfig = ({
       tryCost: defaultTry,
       ppm: defaultPPM,
       getCost: defaultGet,
-      name: null, 
+      name: "Memes", 
     },
     "2870eC15aF3227b9eF2eC593Ddc6D885": {
       tryCost: defaultTry,
