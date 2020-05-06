@@ -78,18 +78,6 @@ function App() {
     // eslint-disable-next-line
   }, []);
 
-  const helloWorld = firebase.functions().httpsCallable("helloWorld");
-
-  useEffect(() => {
-
-    helloWorld()
-      .then((res) => {
-        const {data} = res;
-        console.log(data);
-      })
-      .catch(err => console.log(err));
-  }, [])
-
   useEffect(() => {
     if (theme === "light") {
       setThemeStyle("");
