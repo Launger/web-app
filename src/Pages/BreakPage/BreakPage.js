@@ -195,11 +195,8 @@ const BreakPage = ({ history }) => {
       <NavBar Timer={Timer} Points={Points} />
       <div className="page-content">
         <div className="grid-container">
-          <div className="imported-widget">
+          <div className="main-content">
             {importedWidget}
-          </div>
-          <div className="tips-n-tricks">
-            {renderTips}
           </div>
           <aside className="sidebar">
             <div className="NEXT">

@@ -34,20 +34,16 @@
   .grid-container {
     display: grid;
     grid-template-areas:
-      "frame sidebar"
-      "tips sidebar";
+      "main sidebar"
+      "main sidebar";
     grid-template-rows: 1fr 150px;
     grid-template-columns: minmax(600px, auto) calc(306px);
     grid-gap: 15px;
-    .imported-widget {
-      position: relative;
+    .main-content {
       padding-top: 13px;
-      grid-area: frame;
-      min-height: calc(100vh - 70px - 150px - 20px);
-    }
-    .tips-n-tricks {
-      grid-area: tips;
-      // background-color: blue;
+      grid-area: main;
+      height: calc(100vh - 69px);
+      overflow-y: scroll;
     }
     .sidebar {
       // background: #222222;
@@ -95,8 +91,8 @@
     }
     .grid-container {
       grid-template-areas: 
-        "frame frame"
-        "tips sidebar";
+        "main main"
+        "sidebar sidebar";
       grid-template-rows: 1fr 300px;
       grid-template-columns: minmax(302px, auto) 306px;
       .tips-n-tricks {
@@ -119,9 +115,9 @@
     }
     .grid-container {
       grid-template-areas: 
-        "frame"
-        "sidebar"
-        "tips";
+        "main"
+        "main"
+        "sidebar";
       grid-template-rows: calc(100vh - 300px) auto auto;
       .imported-widget {
         height: calc(100vh - 300px);

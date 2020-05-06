@@ -36,7 +36,7 @@
 .BreakPage .grid-container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "frame sidebar" "tips sidebar";
+      grid-template-areas: "main sidebar" "main sidebar";
   -ms-grid-rows: 1fr 150px;
       grid-template-rows: 1fr 150px;
   -ms-grid-columns: minmax(600px, auto) calc(306px);
@@ -44,19 +44,14 @@
   grid-gap: 15px;
 }
 
-.BreakPage .grid-container .imported-widget {
-  position: relative;
+.BreakPage .grid-container .main-content {
   padding-top: 13px;
   -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
   -ms-grid-column: 1;
-  grid-area: frame;
-  min-height: calc(100vh - 70px - 150px - 20px);
-}
-
-.BreakPage .grid-container .tips-n-tricks {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: tips;
+  grid-area: main;
+  height: calc(100vh - 69px);
+  overflow-y: scroll;
 }
 
 .BreakPage .grid-container .sidebar {
@@ -113,7 +108,7 @@
     overflow: visible;
   }
   .BreakPage .grid-container {
-        grid-template-areas: "frame frame" "tips sidebar";
+        grid-template-areas: "main main" "sidebar sidebar";
     -ms-grid-rows: 1fr 300px;
         grid-template-rows: 1fr 300px;
     -ms-grid-columns: minmax(302px, auto) 306px;
@@ -135,7 +130,7 @@
     overflow: visible;
   }
   .BreakPage .grid-container {
-        grid-template-areas: "frame" "sidebar" "tips";
+        grid-template-areas: "main" "main" "sidebar";
     -ms-grid-rows: calc(100vh - 300px) auto auto;
         grid-template-rows: calc(100vh - 300px) auto auto;
   }
