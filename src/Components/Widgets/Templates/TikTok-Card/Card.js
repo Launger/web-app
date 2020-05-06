@@ -2,6 +2,7 @@ import React from "react";
 
 import Template from "../Card/Card";
 
+import TikTokLogo from "./TikTok-logo.svg";
 import config from "../../widgetConfig";
 import "./Card.css";
 
@@ -14,7 +15,7 @@ const TikTokCardTemplate = ({ id, thumbnails, alreadyGot }) => {
         <div className="tiktok-card-bg">
           <div className="text">
             <div className="name" style={(name.length > 15)?{fontSize: "2.1em"}:{}}>{name}</div>
-            <div className="subname">TikTok</div>
+            <div className="subname"><img src={TikTokLogo} alt="TikTok logo" className="tiktok-logo"/></div>
           </div>
         </div>
       ),
