@@ -45,13 +45,14 @@
 }
 
 .BreakPage .grid-container .main-content {
-  padding-top: 13px;
+  position: relative;
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   -ms-grid-column: 1;
   grid-area: main;
   height: calc(100vh - 69px);
   overflow-y: scroll;
+  overflow-x: visible;
 }
 
 .BreakPage .grid-container .sidebar {

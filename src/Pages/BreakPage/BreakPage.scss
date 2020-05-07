@@ -40,10 +40,11 @@
     grid-template-columns: minmax(600px, auto) calc(306px);
     grid-gap: 15px;
     .main-content {
-      padding-top: 13px;
+      position: relative;
       grid-area: main;
       height: calc(100vh - 69px);
       overflow-y: scroll;
+      overflow-x: visible;
     }
     .sidebar {
       // background: #222222;

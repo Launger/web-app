@@ -21,8 +21,6 @@ const Widget = ({ src }) => {
         {showMore && <Tooltip text="More videos here!" pointing="left"/>}
         <iframe
           className="react-player"
-          width="100%"
-          height="100%"
           src={`${src}&autoplay=1&showinfo=0&controls=1`}
           frameBorder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
