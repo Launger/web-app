@@ -66,8 +66,9 @@ const Widget = () => {
 const Meme = ({title = "ERROR", imgSrc, src}) => {
   return (
     <div className="Meme">
-      <h1 style={{color: 'var(--primary-text-color)'}}>{title}</h1>
+      <a href={src} target="_blank"><h1 style={{color: 'var(--primary-text-color)'}}>{title}</h1></a>
       <img src={imgSrc} alt={`meme of ${title}`} style={{width: "100%", maxWidth: "500px"}}/>
+      <a href={src} target="_blank">Open in Reddit</a>
     </div>
   )
 }
