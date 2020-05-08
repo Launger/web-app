@@ -21,7 +21,7 @@ const Widget = () => {
   }, []);
 
   return (
-    <div className="Widget">
+    <div className="Meme-Widget">
       {memes.map((meme, i) => {
         return (
           <span key={i}><Meme title={meme.title} imgSrc={meme.url} src={meme.postLink} /></span>
