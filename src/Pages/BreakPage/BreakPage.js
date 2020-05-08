@@ -191,23 +191,21 @@ const BreakPage = ({ history }) => {
       </Toast>}
       
       <NavBar Timer={Timer} Points={Points} />
+      <aside className="sidebar">
+        <div className="NEXT">
+          NEXT: 
+          {(nextWidget.id === widget.id) || <div onClick={handlePlayNow} className="playnow actionable"><strong>Play now</strong> ({pointsToTake} Points)</div>}
+          <span onClick={handleFinish} className="backtowork actionable"><strong>Back to work</strong></span>
+        </div>
+        <div className="next-card cards">
+          {importedNextCard}
+        </div>
+        <div className="alreadyGot-card cards">{importedAlreadyGotCards}</div>
+        <div className="rest-card cards">{importedRestCards}</div>
+      </aside>
       <div className="page-content">
-        <div className="grid-container">
-          <div className="main-content">
-            {importedWidget}
-          </div>
-          <aside className="sidebar">
-            <div className="NEXT">
-              NEXT: 
-              {(nextWidget.id === widget.id) || <div onClick={handlePlayNow} className="playnow actionable"><strong>Play now</strong> ({pointsToTake} Points)</div>}
-              <span onClick={handleFinish} className="backtowork actionable"><strong>Back to work</strong></span>
-            </div>
-            <div className="next-card cards">
-              {importedNextCard}
-            </div>
-            <div className="alreadyGot-card cards">{importedAlreadyGotCards}</div>
-            <div className="rest-card cards">{importedRestCards}</div>
-          </aside>
+        <div className="main-content">
+          {importedWidget}
         </div>
       </div>
     </div>

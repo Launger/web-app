@@ -26,112 +26,57 @@
       text-decoration: underline;
     }
   }
-  .page-content {
-    height: calc(100vh - 73px);
-    overflow: hidden;
-    margin: 0 30px;
-  }
-  .grid-container {
-    display: grid;
-    grid-template-areas:
-      "main sidebar"
-      "main sidebar";
-    grid-template-rows: 1fr 150px;
-    grid-template-columns: minmax(600px, auto) calc(306px);
-    grid-gap: 15px;
-    .main-content {
-      position: relative;
-      grid-area: main;
-      height: calc(100vh - 69px);
-      overflow-y: scroll;
-      overflow-x: visible;
+
+  --page-margin: 30px;
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    
+    padding-top: 10px;
+    margin-top: 70px;
+    margin-right: var(--page-margin);
+    
+    height: calc(100vh - 70px);
+    overflow: auto;
+
+    .NEXT {
+      display: flex;
+      justify-content: space-between;
+      
+      color: var(--secondary-text-color, grey);
+      font-size: 0.9em;
+      margin-bottom: -5px;
     }
-    .sidebar {
-      // background: #222222;
-      padding-top: 10px;
-      grid-area: sidebar;
-      height: calc(100vh - 69px);
-      overflow-y: scroll;
-      .NEXT {
-        display: flex;
-        justify-content: space-between;
-        color: var(--secondary-text-color, grey);
-        font-size: 0.9em;
-        margin-bottom: -5px;
-      }
-      .next-card {
-        margin: 20px;
-      }
-      .next-card::after {
+    .next-card {
+      margin: 20px;
+
+      &::after {
         content: '';
         border-bottom: solid 1px var(--secondary-bg);
       }
-      .cards {
-        display: grid;
-        grid-template-columns: 302px;
-        grid-gap: 10px;
-        // margin: 10px 30px 10px 20px;
-        margin: 10px 2px;
-        letter-spacing: -1.5px;
-      } 
-      .importedCard:hover {
-        margin-bottom: 50px;
-        // transform: translateX(-18px);
-      }
     }
-  }
-  ::-webkit-scrollbar {
-    display: none;
-  }
-}
+    .cards {
+      display: grid;
+      grid-template-columns: 302px;
+      grid-gap: 10px;
 
-@media only screen and (max-width: 1200px) {
-  .BreakPage {
-    .page-content {
-      overflow: visible;
+      margin: 10px 2px;
+      letter-spacing: -1.5px;
     }
-    .grid-container {
-      grid-template-areas: 
-        "main main"
-        "sidebar sidebar";
-      grid-template-rows: 1fr 300px;
-      grid-template-columns: minmax(302px, auto) 306px;
-      .tips-n-tricks {
-        height: 100%;
-        overflow: visible;
-      }
-      .sidebar {
-        padding: 0;
-        height: 100%;
-        overflow: visible;
-      }
+    .importedCard:hover {
+      margin-bottom: 50px;
     }
   }
-}
 
-@media only screen and (max-width: 500px) {
-  .BreakPage {
-    .page-content {
-      overflow: visible;
+  .page-content {
+    margin: 0 var(--page-margin);
+    
+    .main-content {
+      margin-right: 306px + 10px;
     }
-    .grid-container {
-      grid-template-areas: 
-        "main"
-        "main"
-        "sidebar";
-      grid-template-rows: calc(100vh - 300px) auto auto;
-      .imported-widget {
-        height: calc(100vh - 300px);
-      }
-      .tips-n-tricks {
-        height: 100%;
-        overflow: visible;
-      }
-      .sidebar {
-        padding: 0;
-        height: 100%;
-        overflow: visible;
-      }
-    }
+
   }
 }
