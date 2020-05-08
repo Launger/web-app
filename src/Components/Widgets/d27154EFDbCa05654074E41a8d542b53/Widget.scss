@@ -1,8 +1,12 @@
-.Widget {
-  .container {
+.Classic-Widget {
+  width: 100%;
+  .classic-widget-content {
+    display: flex;
     position: relative;
     min-height: 50vh;
     height: calc(100vh - 70px - 150px);
+    margin-bottom: 10px;
+
     h1 {
       color: var(--secondary-text-color);
       position: absolute;
@@ -10,6 +14,7 @@
       left: 50%;
       transform: translate(-50%, 0);
     }
+
     .Timer {
       position: absolute;
       text-align: center;
