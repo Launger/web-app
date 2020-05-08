@@ -1,11 +1,7 @@
-.Widget {
-  height: 100%;
-  color: var(--secondary-text-color);
-}
-
 .Widget .container {
   position: relative;
   min-height: 50vh;
+  height: calc(100vh - 70px - 150px);
 }
 
 .Widget .container h1 {

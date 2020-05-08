@@ -1,13 +1,8 @@
 .Widget {
-  height: 100%;
-  // h1 {
-  //   position: absolute;
-    color: var(--secondary-text-color);
-  //   text-align: center;
-  // }
   .container {
     position: relative;
     min-height: 50vh;
+    height: calc(100vh - 70px - 150px);
     h1 {
       color: var(--secondary-text-color);
       position: absolute;
