@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-// import "./Widget.css";
+import Tips from "../../../Pages/BreakPage/Tips";
+import Meme from "./Meme";
+
+import "./Widget.css";
 
 const Widget = () => {
   const [memes, setMemes] = useState([]);
@@ -22,23 +25,14 @@ const Widget = () => {
 
   return (
     <div className="Meme-Widget">
-      {memes.map((meme, i) => {
-        return (
-          <span key={i}><Meme title={meme.title} imgSrc={meme.url} src={meme.postLink} /></span>
-        )
-      })}
+      <aside className="side-content">
+        <Tips />
+      </aside>
+      <div className="memes">
+        {memes.map((meme, i) => <span key={i}><Meme title={meme.title} imgSrc={meme.url} src={meme.postLink} /></span>)}
+      </div>
     </div>
   );
 };
-
-const Meme = ({title = "ERROR", imgSrc, src}) => {
-  return (
-    <div className="Meme">
-      <a href={src} target="_blank" rel="noopener noreferrer"><h1 style={{color: 'var(--primary-text-color)'}}>{title}</h1></a>
-      <img src={imgSrc} alt={`meme of ${title}`} style={{width: "100%", maxWidth: "500px"}}/>
-      <a href={src} target="_blank" rel="noopener noreferrer">Open in Reddit</a>
-    </div>
-  )
-}
 
 export default Widget;

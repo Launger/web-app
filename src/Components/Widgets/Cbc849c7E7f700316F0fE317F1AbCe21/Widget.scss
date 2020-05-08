@@ -1,0 +1,13 @@
+.Meme-Widget {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 20px;
+  .side-content {
+    padding-top: 10px;
+    max-width: 300px;
+  }
+  .memes {
+    margin: 0 50px;
+    min-width: 200px;
+  }
+}
