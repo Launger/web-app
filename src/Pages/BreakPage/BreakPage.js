@@ -170,7 +170,6 @@ const BreakPage = ({ history }) => {
   const importedAlreadyGotCards = useMemo(() => importCards(filterIDs([nextWidget.id], alreadyGotIDs), true), [alreadyGotIDs, nextWidget.id]);
   // eslint-disable-next-line
   const importedRestCards = useMemo(() => importCards(filterIDs([nextWidget.id], filterIDs(alreadyGotIDs, restIDs)), false), [alreadyGotIDs, nextWidget.id]);
-  const renderTips = useMemo(() => <Tips />, []);
 
   return (
     <div className="BreakPage">
