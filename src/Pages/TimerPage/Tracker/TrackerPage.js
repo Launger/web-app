@@ -83,6 +83,22 @@ const TrackerPage = ({ history }) => {
       <NavBar Points={() => <Points ppm={ppm} />} />
       <div className="page-content">
         <Timer />
+        <svg className="progress-ring" viewBox="0 0 628 628" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="314" cy="314" r="300" stroke="url(#paint0_linear)" stroke-width="28" opacity="0.4"/>
+          <circle cx="314" cy="314" r="300" stroke="url(#paint0_linear)" stroke-width="28" style={{strokeDashoffset: `${1884 + (-1884 * timer.time / (5*60))}px`}}/>
+          <circle cx="314" cy="314" r="265" stroke="url(#paint1_linear)" stroke-width="35" opacity="0.4"/>
+          <circle cx="314" cy="314" r="265" stroke="url(#paint1_linear)" stroke-width="35" style={{strokeDashoffset: `${1695 + (-1695 * (timer.time % 60 - 7) / 60)}px`}}/>
+            <defs>
+              <linearGradient id="paint0_linear" x1="281" y1="0" x2="281" y2="562" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FF0000"/>
+                <stop offset="1" stop-color="#F94E83"/>
+              </linearGradient>
+              <linearGradient id="paint1_linear" x1="281" y1="0" x2="281" y2="562" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FF0000"/>
+                <stop offset="1" stop-color="orange"/>
+              </linearGradient>
+            </defs>
+        </svg>
         <Todos />
         {timer.time >= 5 * 60 - 1 ? (
           <input
