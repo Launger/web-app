@@ -26,7 +26,7 @@ const BreakPage = ({ history }) => {
   
   const [showWarningModal, setShowWarningModal] = useState(false);
   const [showUpNext, setShowUpNext] = useState(false);
-  const [breakTime] = useState(Number(sessionStorage.getItem("breakTime") || 100*60));
+  const [breakTime] = useState(Number(sessionStorage.getItem("breakTime") || 5*60));
 
   const startTime = useRef(null);
 
