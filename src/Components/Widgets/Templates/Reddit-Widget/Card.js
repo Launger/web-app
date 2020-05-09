@@ -15,7 +15,7 @@ const RedditCardTemplate = ({ id, thumbnails, alreadyGot }) => {
         <div className="reddit-card-bg">
           <div className="text">
             <div className="name" style={(name.length > 15)?{fontSize: "2.1em"}:{}}>{name}</div>
-            <div className="subname"><img src={RedditLogo} /></div>
+            <div className="subname"><img src={RedditLogo} alt="reddit logo"/></div>
           </div>
         </div>
       ),
