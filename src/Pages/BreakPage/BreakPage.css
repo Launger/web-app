@@ -85,4 +85,16 @@
 .BreakPage .page-content .main-content {
   margin-right: 316px;
 }
+
+@media only screen and (max-width: 712px) {
+  .BreakPage .sidebar {
+    display: none;
+  }
+  .BreakPage .page-content {
+    margin: 0 10px;
+  }
+  .BreakPage .page-content .main-content {
+    margin-right: 0;
+  }
+}
 /*# sourceMappingURL=BreakPage.css.map */
