@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import Tooltip from "../../../Tooltip/Tooltip";
+import Tips from "../../../../Pages/BreakPage/Tips";
 
 import "./Widget.css";
 
@@ -17,18 +18,22 @@ const Widget = ({ src }) => {
 
   return (
     <div className="yt-template-widget">
-      <div className='player-wrapper'>
+      <div className='wrapper'>
         {showMore && <Tooltip text="More videos here!" pointing="left"/>}
         <iframe
-          className="react-player"
-          width="100%"
-          height="100%"
+          className="content"
           src={`${src}&autoplay=1&showinfo=0&controls=1`}
           frameBorder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           title="video"
         />
+      </div>
+      {/* <div className="wrapper">
+        <div className="content">Test content</div>
+      </div> */}
+      <div className="tips">
+        <Tips />
       </div>
     </div>
   );

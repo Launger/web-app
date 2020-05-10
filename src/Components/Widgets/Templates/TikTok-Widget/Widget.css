@@ -1,24 +1,26 @@
 .WidgetTemplate {
-  min-height: 50vh;
   width: 100%;
   position: relative;
 }
 
-.WidgetTemplate h4 {
-  color: var(--secondary-text-color, black);
-  font-size: 1em;
-  position: absolute;
-  top: 0;
-  left: 0;
+.WidgetTemplate .container {
+  min-height: 50vh;
+  height: calc(100vh - 70px - 150px);
 }
 
-.WidgetTemplate h1 {
+.WidgetTemplate .container h4 {
+  color: var(--secondary-text-color, black);
+  font-size: 1em;
+}
+
+.WidgetTemplate .container h1 {
   color: var(--primary-text-color, black);
-  font-weight: 500;
+  font-weight: 400;
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 2em;
+  text-align: center;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -26,7 +28,7 @@
   transition: all 0.3s;
 }
 
-.WidgetTemplate h1:hover {
+.WidgetTemplate .container h1:hover {
   color: var(--primary-text-color, black);
   -webkit-transform: translate(-50%, -50%) scale(1.03);
           transform: translate(-50%, -50%) scale(1.03);

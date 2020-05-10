@@ -1,0 +1,18 @@
+.Meme-Widget {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  grid-gap: 20px;
+}
+
+.Meme-Widget .side-content {
+  padding-top: 10px;
+  max-width: 300px;
+}
+
+.Meme-Widget .memes {
+  margin: 0 50px;
+  min-width: 200px;
+}
+/*# sourceMappingURL=Widget.css.map */

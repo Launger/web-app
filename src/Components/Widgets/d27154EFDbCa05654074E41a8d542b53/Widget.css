@@ -1,14 +1,18 @@
-.Widget {
-  height: 100%;
-  color: var(--secondary-text-color);
+.Classic-Widget {
+  width: 100%;
 }
 
-.Widget .container {
+.Classic-Widget .classic-widget-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
   min-height: 50vh;
+  height: calc(100vh - 70px - 150px);
+  margin-bottom: 10px;
 }
 
-.Widget .container h1 {
+.Classic-Widget .classic-widget-content h1 {
   color: var(--secondary-text-color);
   position: absolute;
   text-align: center;
@@ -17,7 +21,7 @@
           transform: translate(-50%, 0);
 }
 
-.Widget .container .Timer {
+.Classic-Widget .classic-widget-content .Timer {
   position: absolute;
   text-align: center;
   top: 50%;

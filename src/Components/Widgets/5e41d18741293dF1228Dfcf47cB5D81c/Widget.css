@@ -1,9 +1,14 @@
+.Widget {
+  height: 100%;
+}
+
 .Widget h2 {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 1.5em;
   color: grey;
   position: absolute;
-  left: 50%;
+  top: calc(40% + 1.5em + 10px);
+  left: 38%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
