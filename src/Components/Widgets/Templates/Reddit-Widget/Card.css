@@ -18,6 +18,8 @@
       -ms-grid-row-align: center;
       align-self: center;
   color: white;
+  -webkit-transform: translateY(-25%);
+          transform: translateY(-25%);
 }
 
 .RedditCardTemplate .reddit-card-bg .text .name {
@@ -29,10 +31,10 @@
 }
 
 .RedditCardTemplate .reddit-card-bg .text .subname {
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
-  font-size: 1.3em;
-  font-weight: 800;
-  -webkit-transform: translate(10px, -7px);
-          transform: translate(10px, -7px);
+  position: absolute;
+  top: calc(50% + 1.2em + 15px);
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 /*# sourceMappingURL=Card.css.map */
