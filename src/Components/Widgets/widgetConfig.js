@@ -278,7 +278,7 @@ remoteConfig.defaultConfig = ({
       tryCost: defaultTry,
       ppm: defaultPPM,
       getCost: defaultGet,
-      name: null, 
+      name: "r/dankmemes", 
     },
     "2e974F8BDBfa97dDcF12E7525b174C99": {
       tryCost: defaultTry,

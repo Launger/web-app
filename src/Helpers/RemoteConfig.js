@@ -22,6 +22,7 @@ const restIDs = [
   "E51c2C6cCfC8276Ec9dFb9fA664c8E92", //Hot New Trailers
   "3D3513ab7E817905b335e80860fB91f2", // r/funny
   "05a8abdb4300A426E3BfF7e1667c3EA7", //Top Stories
+  "a0Ec11DE3517514ff7eb7126518783BD", // r/dankmemes
   "957ac555dAC74B637B07b792A081C769", //Charitable
   "7167D1eb5A5e7a94bf48246A27ea7fe8", //Learn New Things
   "4048Ef5e661E3B5248c1658E08540A0d", //Talk Shows
