@@ -79,18 +79,18 @@ const SpeedrunPage = ({ history }) => {
       <div className="page-content">
         <Timer speedrun={true} />
         <svg className="progress-ring" viewBox="0 0 628 628" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="314" cy="314" r="300" stroke="url(#paint0_linear)" stroke-width="28" opacity="0.4"/>
-          <circle cx="314" cy="314" r="300" stroke="url(#paint0_linear)" stroke-width="28" style={{strokeDashoffset: `${1884 + (-1884 * timer.time / ((totalTime !== 0)? totalTime*60 : 5*60))}px`}}/>
-          <circle cx="314" cy="314" r="265" stroke="url(#paint1_linear)" stroke-width="35" opacity="0.4"/>
-          <circle cx="314" cy="314" r="265" stroke="url(#paint1_linear)" stroke-width="35" style={{strokeDashoffset: `${1695 + (-1695 * (timer.time % 60 - 7) / 60)}px`}}/>
+          <circle cx="314" cy="314" r="300" stroke="url(#paint0_linear)" strokeWidth="28" opacity="0.4"/>
+          <circle cx="314" cy="314" r="300" stroke="url(#paint0_linear)" strokeWidth="28" style={{strokeDashoffset: `${1884 + (-1884 * timer.time / ((totalTime !== 0)? totalTime*60 : 5*60))}px`, strokeDasharray: "1884px"}}/>
+          <circle cx="314" cy="314" r="265" stroke="url(#paint1_linear)" strokeWidth="35" opacity="0.4"/>
+          <circle cx="314" cy="314" r="265" stroke="url(#paint1_linear)" strokeWidth="35" style={{strokeDashoffset: `${1665 + (-1665 * (timer.time) / 60)}px`, strokeDasharray: "1665px"}}/>
           <defs>
             <linearGradient id="paint0_linear" x1="281" y1="0" x2="281" y2="562" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#FF0000"/>
-              <stop offset="1" stop-color="#F94E83"/>
+              <stop stopColor="#FF0000"/>
+              <stop offset="1" stopColor="#F94E83"/>
             </linearGradient>
             <linearGradient id="paint1_linear" x1="281" y1="0" x2="281" y2="562" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#FF0000"/>
-              <stop offset="1" stop-color="orange"/>
+              <stop stopColor="#FF0000"/>
+              <stop offset="1" stopColor="orange"/>
             </linearGradient>
           </defs>
         </svg>
