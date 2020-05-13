@@ -18,7 +18,9 @@ const restIDs = [
   "BFfb93102323A036Fc337Bf729403bA2", //Top Stories
   "F8929a4a2d38df15B25f68272cA0945D", // r/AdviceAnimals
   "73bC525b1A46B05B6203457F995d728E", //Hotlist
+  "225fdea134E228C90Ee112b4A1CFEda6", // r/terriblefacebookmemes
   "E51c2C6cCfC8276Ec9dFb9fA664c8E92", //Hot New Trailers
+  "3D3513ab7E817905b335e80860fB91f2", // r/funny
   "05a8abdb4300A426E3BfF7e1667c3EA7", //Top Stories
   "957ac555dAC74B637B07b792A081C769", //Charitable
   "7167D1eb5A5e7a94bf48246A27ea7fe8", //Learn New Things
