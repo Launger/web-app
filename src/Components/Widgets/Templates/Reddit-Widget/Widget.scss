@@ -1,3 +1,67 @@
 .RedditWidgetTemplate {
-  
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 20px;
+  .side-content {
+    padding-top: 10px;
+    max-width: 300px;
+    .Tips {
+      position: sticky;
+      top: 10px;
+    }
+  }
+  .posts {
+    margin: 10px 20px;
+    min-width: 300px;
+    color: var(--primary-text-color);
+    .post {
+      .header {
+        display: flex;
+        justify-content: space-between;
+        .title {
+          display: inline;
+          font-size: 1.3em;
+          text-align: left;
+        }
+        .author {
+          display: inline;
+        }
+      }
+      .body {
+        .image {
+          display: block;
+          width: 100%;
+        }
+      }
+      .footer {
+        display: flex;
+        justify-content: flex-end; //change this later
+        .openInReddit {
+          color: var(--secondary-text-color);
+          &:hover {
+            color: var(--primary-text-color);
+            text-decoration: none;
+          }
+        }
+        padding: 5px 0;
+      }
+
+      border-bottom: solid 1px var(--secondary-bg);
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px + 400px) {
+  .RedditWidgetTemplate {
+    grid-template-columns: none;
+    grid-template-rows: auto auto;
+    .side-content {
+      max-width: none;
+      // width: 100%;
+    }
+    .posts {
+      margin: 0;
+    }
+  }
 }
