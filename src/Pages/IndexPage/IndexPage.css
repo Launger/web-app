@@ -12,7 +12,7 @@
       -ms-grid-row-align: center;
       align-self: center;
   position: relative;
-  top: -50px;
+  top: -30px;
   z-index: 2;
 }
 
@@ -177,6 +177,7 @@
 
 .IndexPage #try-now .superman {
   height: 80%;
+  max-width: 100%;
   position: absolute;
   left: 0;
   bottom: 0;
