@@ -1,6 +1,5 @@
 import React from "react";
 
-// import config from "../widgetConfig";
 import Template from "../Templates/Reddit-Widget/Card";
 import config from "../widgetConfig";
 // import "./Card.css";
