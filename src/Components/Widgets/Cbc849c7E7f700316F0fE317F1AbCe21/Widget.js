@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import Template from "../Templates/Reddit-Widget/Widget";
 
-import "./Widget.css";
+// import "./Widget.css";
 
 const Widget = () => {
   const [memes, setMemes] = useState([]);
@@ -34,7 +34,7 @@ const Widget = () => {
   }, []);
 
   return (
-    <div className="Meme-Widget">
+    <div className="Widget-Cbc849c7E7f700316F0fE317F1AbCe21">
       <Template listing={memes} />
     </div>
   );
