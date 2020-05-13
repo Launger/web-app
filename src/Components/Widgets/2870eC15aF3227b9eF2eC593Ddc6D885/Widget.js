@@ -8,13 +8,13 @@ const Widget = () => {
   const [memes, setMemes] = useState([]);
 
   const fetchMeme = () => {
-    fetch("https://meme-api.herokuapp.com/gimme/30")
+    fetch("https://meme-api.herokuapp.com/gimme/15")
       .then(res => res.json())
       .then(res => {
         console.log(res);
 
         //format output to comply with Reddit widget template
-        let formatedMemes = [];
+        let formatedMemes = [...memes];
         res.memes.forEach(meme => {
           formatedMemes.push({
             title: meme.title,
@@ -35,7 +35,7 @@ const Widget = () => {
 
   return (
     <div className="Widget-2870eC15aF3227b9eF2eC593Ddc6D885">
-      <Template listing={memes} />
+      <Template listing={memes} loadMore={fetchMeme}/>
     </div>
   );
 };

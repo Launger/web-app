@@ -17,18 +17,19 @@
   top: 10px;
 }
 
-.RedditWidgetTemplate .posts {
+.RedditWidgetTemplate .right {
   margin: 10px 20px;
   min-width: 300px;
   color: var(--primary-text-color);
+  position: relative;
 }
 
-.RedditWidgetTemplate .posts .post {
+.RedditWidgetTemplate .right .posts .post {
   border-bottom: solid 1px var(--secondary-bg);
   margin-bottom: 10px;
 }
 
-.RedditWidgetTemplate .posts .post .header {
+.RedditWidgetTemplate .right .posts .post .header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,22 +38,22 @@
           justify-content: space-between;
 }
 
-.RedditWidgetTemplate .posts .post .header .title {
+.RedditWidgetTemplate .right .posts .post .header .title {
   display: inline;
   font-size: 1.3em;
   text-align: left;
 }
 
-.RedditWidgetTemplate .posts .post .header .author {
+.RedditWidgetTemplate .right .posts .post .header .author {
   display: inline;
 }
 
-.RedditWidgetTemplate .posts .post .body .image {
+.RedditWidgetTemplate .right .posts .post .body .image {
   display: block;
   width: 100%;
 }
 
-.RedditWidgetTemplate .posts .post .footer {
+.RedditWidgetTemplate .right .posts .post .footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -62,13 +63,36 @@
   padding: 5px 0;
 }
 
-.RedditWidgetTemplate .posts .post .footer .openInReddit {
+.RedditWidgetTemplate .right .posts .post .footer .openInReddit {
   color: var(--secondary-text-color);
 }
 
-.RedditWidgetTemplate .posts .post .footer .openInReddit:hover {
+.RedditWidgetTemplate .right .posts .post .footer .openInReddit:hover {
   color: var(--primary-text-color);
   text-decoration: none;
+}
+
+.RedditWidgetTemplate .right .loadMore {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: 10px 20px;
+  border-radius: 200px;
+  background: linear-gradient(100deg, #ffae34 0%, #f95584 100%);
+  border: none;
+  color: white;
+  font-weight: 700;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 100px;
+}
+
+.RedditWidgetTemplate .right .loadMore:hover {
+  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 @media only screen and (max-width: 1000px) {
@@ -81,7 +105,7 @@
   .RedditWidgetTemplate .side-content {
     max-width: none;
   }
-  .RedditWidgetTemplate .posts {
+  .RedditWidgetTemplate .right {
     margin: 0;
   }
 }

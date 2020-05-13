@@ -5,7 +5,7 @@ import Tips from "../../../../Pages/BreakPage/Tips";
 
 import "./Widget.css";
 
-const RedditWidgetTemplate = ({listing}) => {
+const RedditWidgetTemplate = ({listing, loadMore}) => {
   /*
   post {
     title          
@@ -23,26 +23,29 @@ const RedditWidgetTemplate = ({listing}) => {
       <aside className="side-content">
         <Tips />
       </aside>
-      <div className="posts">
-        {listing.map(({title, permalink, url, created_utc, author, score, num_comments}, i) => {
-          return (
-            <div key={i} className="post">
-              <div className="header">
-                <h1 className="title">{title}</h1>
-                {author && <h4 className="author">{author}</h4>}
+      <div className="right">
+        <div className="posts">
+          {listing.map(({title, permalink, url, created_utc, author, score, num_comments}, i) => {
+            return (
+              <div key={i} className="post">
+                <div className="header">
+                  <h1 className="title">{title}</h1>
+                  {author && <h4 className="author">{author}</h4>}
+                </div>
+                <div className="body">
+                  {url && <img className="image" src={url} alt={`${title}`} />}
+                </div>
+                <div className="footer">
+                  {score && <span className="score">{score}</span>}
+                  {num_comments && <span className="comments">{num_comments}</span>}
+                  {created_utc && <span className="date">{created_utc}</span>}
+                  <a className="openInReddit" href={permalink} target="_blank" rel="noopener noreferrer">Open in Reddit</a>
+                </div>
               </div>
-              <div className="body">
-                {url && <img className="image" src={url} alt={`${title}`} />}
-              </div>
-              <div className="footer">
-                {score && <span className="score">{score}</span>}
-                {num_comments && <span className="comments">{num_comments}</span>}
-                {created_utc && <span className="date">{created_utc}</span>}
-                <a className="openInReddit" href={permalink} target="_blank" rel="noopener noreferrer">Open in Reddit</a>
-              </div>
-            </div>
-          )
-        })}
+            )
+          })}
+        </div>
+        <input type="button" value="Load More" className="loadMore actionable" onClick={loadMore}/>
       </div>
     </div>
   );
