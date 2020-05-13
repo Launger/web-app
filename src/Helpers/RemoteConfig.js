@@ -26,6 +26,7 @@ const restIDs = [
   "957ac555dAC74B637B07b792A081C769", //Charitable
   "2e974F8BDBfa97dDcF12E7525b174C99", // r/PewdiepieSubmissions
   "7167D1eb5A5e7a94bf48246A27ea7fe8", //Learn New Things
+  "4e503848bCbb08237C852eE6eaE53B1C", // r/ComedyCemetery
   "4048Ef5e661E3B5248c1658E08540A0d", //Talk Shows
   "6eE0F88ef7bDc873991E47EeD84Af01a", //Liked & Shared
   "b5492f1C4aCFCBeE0856275d291736ec", //New tech

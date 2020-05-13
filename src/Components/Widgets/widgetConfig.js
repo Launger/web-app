@@ -290,7 +290,7 @@ remoteConfig.defaultConfig = ({
       tryCost: defaultTry,
       ppm: defaultPPM,
       getCost: defaultGet,
-      name: null, 
+      name: "r/ComedyCemetery", 
     },
     "5CB04D98beB91e67596DDA266E6e71CF": {
       tryCost: defaultTry,
