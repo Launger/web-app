@@ -41,4 +41,13 @@
       -ms-flex-pack: center;
           justify-content: center;
 }
+
+@media only screen and (max-width: 768px) {
+  .BrowsePage section.your-widgets .container select {
+    left: 50%;
+    top: -40px;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
 /*# sourceMappingURL=BrowsePage.css.map */
