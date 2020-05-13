@@ -24,6 +24,7 @@ const restIDs = [
   "05a8abdb4300A426E3BfF7e1667c3EA7", //Top Stories
   "a0Ec11DE3517514ff7eb7126518783BD", // r/dankmemes
   "957ac555dAC74B637B07b792A081C769", //Charitable
+  "2e974F8BDBfa97dDcF12E7525b174C99", // r/PewdiepieSubmissions
   "7167D1eb5A5e7a94bf48246A27ea7fe8", //Learn New Things
   "4048Ef5e661E3B5248c1658E08540A0d", //Talk Shows
   "6eE0F88ef7bDc873991E47EeD84Af01a", //Liked & Shared

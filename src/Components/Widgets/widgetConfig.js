@@ -284,7 +284,7 @@ remoteConfig.defaultConfig = ({
       tryCost: defaultTry,
       ppm: defaultPPM,
       getCost: defaultGet,
-      name: null, 
+      name: "r/PewdiepieSubmissions", 
     },
     "4e503848bCbb08237C852eE6eaE53B1C": {
       tryCost: defaultTry,
