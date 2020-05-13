@@ -16,6 +16,7 @@ const restIDs = [
   "2870eC15aF3227b9eF2eC593Ddc6D885", //Random Memes
   "5e41d18741293dF1228Dfcf47cB5D81c", // TikTok Random
   "BFfb93102323A036Fc337Bf729403bA2", //Top Stories
+  "F8929a4a2d38df15B25f68272cA0945D", // r/AdviceAnimals
   "73bC525b1A46B05B6203457F995d728E", //Hotlist
   "E51c2C6cCfC8276Ec9dFb9fA664c8E92", //Hot New Trailers
   "05a8abdb4300A426E3BfF7e1667c3EA7", //Top Stories

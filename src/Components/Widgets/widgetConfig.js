@@ -260,7 +260,7 @@ remoteConfig.defaultConfig = ({
       tryCost: defaultTry,
       ppm: defaultPPM,
       getCost: defaultGet,
-      name: null, 
+      name: "r/AdviceAnimals", 
     },
     "225fdea134E228C90Ee112b4A1CFEda6": {
       tryCost: defaultTry,
