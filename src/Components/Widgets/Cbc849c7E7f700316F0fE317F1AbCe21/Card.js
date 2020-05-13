@@ -1,48 +1,30 @@
 import React from "react";
 
+import Template from "../Templates/Reddit-Widget/Card";
 import config from "../widgetConfig";
-import Template from "../Templates/Card/Card";
 // import "./Card.css";
-
-const MemeCardTemplate = ({ id, thumbnails, alreadyGot }) => {
-  const
-    name = config[id].name,
-    TemplateThumbnails = {
-      bg: thumbnails.bg || (
-        <div className="meme-card-bg">
-          <div className="text">
-            <div className="name" style={(name.length > 15)?{fontSize: "2.1em"}:{}}>{name}</div>
-            <div className="subname">Memes</div>
-          </div>
-        </div>
-      ),
-      fg: thumbnails.fg || (
-        <></>
-      )
-    }
-
-  return (
-    <div className="meme-card-template">
-      <Template
-        id={id}
-        thumbnails={TemplateThumbnails}
-        alreadyGot={alreadyGot}
-      />
-    </div>
-  );
-};
 
 const Card = ({ alreadyGot }) => {
   const 
     id = "Cbc849c7E7f700316F0fE317F1AbCe21",
+    name = config[id].name,
     thumbnails = {
       bg: null,
-      fg: null,
+      fg: (
+        <>
+          <img
+            style={{position: "relative"}}
+            src="https://styles.redditmedia.com/t5_2qjpg/styles/bannerBackgroundImage_b0ojh4ocr2241.png"
+            alt="Meme illustration"
+          />
+          <h1 style={{color: "white", fontWeight: "700", position: "absolute", textAlign: "center", top: "50%", left: "50%", transform: "translate(-50%, -50%)"}}>{name}</h1>
+        </>
+      ),
     }
 
   return (
-    <div className={`Card-id`}>
-      <MemeCardTemplate
+    <div className={`Card-${id}`}>
+      <Template
         id={id}
         thumbnails={thumbnails}
         alreadyGot={alreadyGot}
