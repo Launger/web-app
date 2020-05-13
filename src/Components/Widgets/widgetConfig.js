@@ -248,13 +248,13 @@ remoteConfig.defaultConfig = ({
       tryCost: defaultTry,
       ppm: defaultPPM,
       getCost: defaultGet,
-      name: "Memes", 
+      name: "r/Memes", 
     },
     "2870eC15aF3227b9eF2eC593Ddc6D885": {
       tryCost: defaultTry,
       ppm: defaultPPM,
       getCost: defaultGet,
-      name: null, 
+      name: "Random Memes", 
     },
     "F8929a4a2d38df15B25f68272cA0945D": {
       tryCost: defaultTry,

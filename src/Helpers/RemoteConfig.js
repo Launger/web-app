@@ -7,13 +7,15 @@ remoteConfig.settings = {
 }
 
 const restIDs = [
+  "Cbc849c7E7f700316F0fE317F1AbCe21", //r/Memes
   "Aa1B87eb3d0Ccd6c77A4D82b93958e39", //Today's Funniest
   "156A10374Ee14720c416DB5D9c38D91e", // TikTok Trending
   "123F49562D1e7dC10b3B255F0969D29d", //Gaming
   "39C1FFF780a0a1097D8548aBCb4Ddb02", // TikTok Discover
+  "9005d84E32Ffb03b188EaDe0B772B132", //Give Feedback
+  "2870eC15aF3227b9eF2eC593Ddc6D885", //Random Memes
   "5e41d18741293dF1228Dfcf47cB5D81c", // TikTok Random
   "BFfb93102323A036Fc337Bf729403bA2", //Top Stories
-  "9005d84E32Ffb03b188EaDe0B772B132", //Give Feedback
   "73bC525b1A46B05B6203457F995d728E", //Hotlist
   "E51c2C6cCfC8276Ec9dFb9fA664c8E92", //Hot New Trailers
   "05a8abdb4300A426E3BfF7e1667c3EA7", //Top Stories
