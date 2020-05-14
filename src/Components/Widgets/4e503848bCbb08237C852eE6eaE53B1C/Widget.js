@@ -8,7 +8,7 @@ const Widget = () => {
   const [memes, setMemes] = useState([]);
 
   const fetchMeme = () => {
-    fetch("https://meme-api.herokuapp.com/gimme/memes/30")
+    fetch("https://meme-api.herokuapp.com/gimme/comedycemetery/30")
       .then(res => res.json())
       .then(res => {
         console.log(res);
@@ -34,7 +34,7 @@ const Widget = () => {
   }, []);
 
   return (
-    <div className="Widget-Cbc849c7E7f700316F0fE317F1AbCe21">
+    <div className="Widget-F8929a4a2d38df15B25f68272cA0945D">
       <Template listing={memes} loadMore={fetchMeme}/>
     </div>
   );

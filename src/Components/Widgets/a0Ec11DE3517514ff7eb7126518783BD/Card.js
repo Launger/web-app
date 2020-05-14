@@ -6,7 +6,7 @@ import config from "../widgetConfig";
 
 const Card = ({ alreadyGot }) => {
   const 
-    id = "Cbc849c7E7f700316F0fE317F1AbCe21",
+    id = "a0Ec11DE3517514ff7eb7126518783BD",
     name = config[id].name,
     thumbnails = {
       bg: null,
@@ -14,7 +14,7 @@ const Card = ({ alreadyGot }) => {
         <>
           <img
             style={{position: "relative", width: "100%"}}
-            src="https://styles.redditmedia.com/t5_2qjpg/styles/bannerBackgroundImage_b0ojh4ocr2241.png"
+            src="https://wallpapercave.com/wp/wp5260046.jpg"
             alt="Meme illustration"
           />
           <h1 style={{color: "white", fontWeight: "700", position: "absolute", textAlign: "center", top: "50%", left: "50%", transform: "translate(-50%, -50%)"}}>{name}</h1>
