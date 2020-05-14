@@ -18,7 +18,7 @@ const restIDs = [
   "BFfb93102323A036Fc337Bf729403bA2", //Top Stories
   "F8929a4a2d38df15B25f68272cA0945D", // r/AdviceAnimals
   "73bC525b1A46B05B6203457F995d728E", //Hotlist
-  "225fdea134E228C90Ee112b4A1CFEda6", // r/terriblefacebookmemes
+  "4e503848bCbb08237C852eE6eaE53B1C", // r/ComedyCemetery
   "E51c2C6cCfC8276Ec9dFb9fA664c8E92", //Hot New Trailers
   "3D3513ab7E817905b335e80860fB91f2", // r/funny
   "05a8abdb4300A426E3BfF7e1667c3EA7", //Top Stories
@@ -26,7 +26,7 @@ const restIDs = [
   "957ac555dAC74B637B07b792A081C769", //Charitable
   "2e974F8BDBfa97dDcF12E7525b174C99", // r/PewdiepieSubmissions
   "7167D1eb5A5e7a94bf48246A27ea7fe8", //Learn New Things
-  "4e503848bCbb08237C852eE6eaE53B1C", // r/ComedyCemetery
+  "225fdea134E228C90Ee112b4A1CFEda6", // r/terriblefacebookmemes
   "4048Ef5e661E3B5248c1658E08540A0d", //Talk Shows
   "6eE0F88ef7bDc873991E47EeD84Af01a", //Liked & Shared
   "b5492f1C4aCFCBeE0856275d291736ec", //New tech
