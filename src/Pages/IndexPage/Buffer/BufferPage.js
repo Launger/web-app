@@ -106,7 +106,7 @@ const IndexPage = ({ history }) => {
             }
             illustration={
               <img
-                src="https://i.imgur.com/utDqY2D.gif"
+                src="https://i.imgur.com/7vBBa3o.gif"
                 alt="illustration of timer modes"
                 width="100%"
               />
