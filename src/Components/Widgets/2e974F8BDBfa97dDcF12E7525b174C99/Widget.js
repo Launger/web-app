@@ -14,16 +14,16 @@ const Widget = () => {
         console.log(res);
 
         //format output to comply with Reddit widget template
-        let formatedMemes = [...memes];
+        let formattedMemes = [...memes];
         res.memes.forEach(meme => {
-          formatedMemes.push({
+          formattedMemes.push({
             title: meme.title,
             permalink: meme.postLink,
             url: meme.url,
           })
         })
 
-        setMemes(formatedMemes);
+        setMemes(formattedMemes);
       })
       .catch(err => console.log(err));
   }
