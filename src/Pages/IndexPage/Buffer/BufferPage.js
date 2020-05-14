@@ -82,7 +82,38 @@ const IndexPage = ({ history }) => {
           }
         </section>
         <section className="Features">
-          <h1>Features</h1>
+          <h1>Discover New Features</h1>
+          <Feature
+            title="Reddit Widgets"
+            description={
+              <>
+                <ul>
+                  <li>
+                    <>r/memes</>
+                  </li>
+                  <li>
+                    <>r/funny</>
+                  </li>
+                  <li>
+                    <>r/AdviceAnimals</>
+                  </li>
+                  <li>
+                    <>And more...</>
+                  </li>
+                </ul>
+                <a href="/browse" style={{color: "var(--primary-text-color)"}}><h5>Try Reddit Widgets now.</h5></a>
+              </>
+            }
+            illustration={
+              <img
+                src="https://i.imgur.com/7vBBa3o.gif"
+                alt="illustration of timer modes"
+                width="100%"
+              />
+            }
+            right
+            newLabel
+          />
           <Feature
             title="Timer Modes"
             description={
