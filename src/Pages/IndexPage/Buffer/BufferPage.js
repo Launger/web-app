@@ -101,7 +101,7 @@ const IndexPage = ({ history }) => {
                     <>And more...</>
                   </li>
                 </ul>
-                <h5>Try Reddit Widgets now. (No account needed)</h5>
+                <a href="/browse" style={{color: "var(--primary-text-color)"}}><h5>Try Reddit Widgets now.</h5></a>
               </>
             }
             illustration={
