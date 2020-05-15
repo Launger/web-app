@@ -1,3 +1,7 @@
+.BreakPage {
+  --page-margin: 30px;
+}
+
 .BreakPage .toast {
   color: white;
   position: fixed;
@@ -27,49 +31,19 @@
   text-decoration: underline;
 }
 
-.BreakPage .page-content {
-  height: calc(100vh - 73px);
-  overflow: hidden;
-  margin: 0 30px;
-}
-
-.BreakPage .grid-container {
-  display: -ms-grid;
-  display: grid;
-      grid-template-areas: "frame sidebar" "tips sidebar";
-  -ms-grid-rows: 1fr 150px;
-      grid-template-rows: 1fr 150px;
-  -ms-grid-columns: minmax(600px, auto) calc(306px);
-      grid-template-columns: minmax(600px, auto) calc(306px);
-  grid-gap: 15px;
-}
-
-.BreakPage .grid-container .imported-widget {
-  position: relative;
-  padding-top: 13px;
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: frame;
-  min-height: calc(100vh - 70px - 150px - 20px);
-}
-
-.BreakPage .grid-container .tips-n-tricks {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: tips;
-}
-
-.BreakPage .grid-container .sidebar {
+.BreakPage .sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
   padding-top: 10px;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 2;
-  grid-area: sidebar;
-  height: calc(100vh - 69px);
-  overflow-y: scroll;
+  margin-top: 70px;
+  margin-right: var(--page-margin);
+  height: calc(100vh - 70px);
+  overflow: auto;
 }
 
-.BreakPage .grid-container .sidebar .NEXT {
+.BreakPage .sidebar .NEXT {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -81,16 +55,16 @@
   margin-bottom: -5px;
 }
 
-.BreakPage .grid-container .sidebar .next-card {
+.BreakPage .sidebar .next-card {
   margin: 20px;
 }
 
-.BreakPage .grid-container .sidebar .next-card::after {
+.BreakPage .sidebar .next-card::after {
   content: '';
   border-bottom: solid 1px var(--secondary-bg);
 }
 
-.BreakPage .grid-container .sidebar .cards {
+.BreakPage .sidebar .cards {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 302px;
@@ -100,56 +74,27 @@
   letter-spacing: -1.5px;
 }
 
-.BreakPage .grid-container .sidebar .importedCard:hover {
+.BreakPage .sidebar .importedCard:hover {
   margin-bottom: 50px;
 }
 
-.BreakPage ::-webkit-scrollbar {
-  display: none;
+.BreakPage .page-content {
+  margin: 0 var(--page-margin);
 }
 
-@media only screen and (max-width: 1200px) {
-  .BreakPage .page-content {
-    overflow: visible;
-  }
-  .BreakPage .grid-container {
-        grid-template-areas: "frame frame" "tips sidebar";
-    -ms-grid-rows: 1fr 300px;
-        grid-template-rows: 1fr 300px;
-    -ms-grid-columns: minmax(302px, auto) 306px;
-        grid-template-columns: minmax(302px, auto) 306px;
-  }
-  .BreakPage .grid-container .tips-n-tricks {
-    height: 100%;
-    overflow: visible;
-  }
-  .BreakPage .grid-container .sidebar {
-    padding: 0;
-    height: 100%;
-    overflow: visible;
-  }
+.BreakPage .page-content .main-content {
+  margin-right: 316px;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 712px) {
+  .BreakPage .sidebar {
+    display: none;
+  }
   .BreakPage .page-content {
-    overflow: visible;
+    margin: 0 10px;
   }
-  .BreakPage .grid-container {
-        grid-template-areas: "frame" "sidebar" "tips";
-    -ms-grid-rows: calc(100vh - 300px) auto auto;
-        grid-template-rows: calc(100vh - 300px) auto auto;
-  }
-  .BreakPage .grid-container .imported-widget {
-    height: calc(100vh - 300px);
-  }
-  .BreakPage .grid-container .tips-n-tricks {
-    height: 100%;
-    overflow: visible;
-  }
-  .BreakPage .grid-container .sidebar {
-    padding: 0;
-    height: 100%;
-    overflow: visible;
+  .BreakPage .page-content .main-content {
+    margin-right: 0;
   }
 }
 /*# sourceMappingURL=BreakPage.css.map */

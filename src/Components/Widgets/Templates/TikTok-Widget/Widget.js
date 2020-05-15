@@ -1,5 +1,7 @@
 import React from "react";
 
+import Tips from "../../../../Pages/BreakPage/Tips";
+
 import config from "../../widgetConfig";
 import "./Widget.css";
 
@@ -14,8 +16,11 @@ const Widget = ({id, text, onClick}) => {
 
   return (
     <div className="WidgetTemplate">
-      <h4>*Better version of TikTok widgets will come out soon!</h4>
-      <h1 className="actionable go-to-link" onClick={handleClick}>{text}</h1>
+      <div className="container">
+        <h4>*Better version of TikTok widgets will come out soon!</h4>
+        <h1 className="actionable go-to-link" onClick={handleClick}>{text}</h1>
+      </div>
+      <Tips />
     </div>
   );
 };
