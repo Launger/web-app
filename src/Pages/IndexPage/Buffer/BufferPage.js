@@ -28,7 +28,7 @@ const IndexPage = ({ history }) => {
                 <h1>Enjoying Launger?</h1>
                 <h2>Share it with your friends:</h2>
                 <div className="share-buttons">
-                  <FacebookShareButton url={shareUrl} quote="Don't feel like wokring and scrolling facebook? Try Launger and be more productive.">
+                  <FacebookShareButton url={shareUrl} quote="Don't feel like working, and scrolling Facebook? Try Launger and be more productive.">
                     <FacebookIcon size={40} round />
                   </FacebookShareButton>
                   <WhatsappShareButton url={shareUrl} title="Hey, I found this cool app that makes you more productive using social media. Check it out at">
