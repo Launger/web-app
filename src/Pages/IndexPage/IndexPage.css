@@ -94,6 +94,7 @@
 }
 
 .IndexPage #how-it-works .logos .more {
+  color: white;
   font-size: 2.3em;
   font-weight: 900;
   -ms-flex-item-align: center;
