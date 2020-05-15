@@ -23,6 +23,8 @@ const TimePage = ({ history }) => {
   const [workTimeLeft, setWorkTimeLeft] = useState(
     Number(sessionStorage.getItem("workTimeLeft") || TIME)
   );
+    //FIXME : Temporary
+  const progressRing = useRef({});
 
   const widgetId =
     widget.id ||
@@ -39,6 +41,10 @@ const TimePage = ({ history }) => {
     if (("Notification" in window) && Notification.permission !== "denied") {
       Notification.requestPermission();
     }
+    //FIXME : Temporary
+    setTimeout(() => {
+      progressRing.current = {transition: "all 1s linear"}
+    }, 100)
     // eslint-disable-next-line
   }, []);
 
@@ -104,9 +110,9 @@ const TimePage = ({ history }) => {
         <Timer />
         <svg className="progress-ring" viewBox="0 0 628 628" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="314" cy="314" r="300" stroke="url(#paint0_linear)" strokeWidth="28" opacity="0.4"/>
-          <circle cx="314" cy="314" r="300" stroke="url(#paint0_linear)" strokeWidth="28" style={{strokeDashoffset: `${-1884 + (1884 * timer.time / TIME)}px`, strokeDasharray: "1884px"}}/>
+          <circle cx="314" cy="314" r="300" stroke="url(#paint0_linear)" strokeWidth="28" style={{strokeDashoffset: `${-1884 + (1884 * timer.time / TIME)}px`, strokeDasharray: "1884px", ...progressRing.current}}/>
           <circle cx="314" cy="314" r="265" stroke="url(#paint1_linear)" strokeWidth="35" opacity="0.4"/>
-          <circle cx="314" cy="314" r="265" stroke="url(#paint1_linear)" strokeWidth="35" style={{strokeDashoffset: `${1665 + (-1665 * ((TIME - timer.time) / 60))}px`, strokeDasharray: "1665px"}}/>
+          <circle cx="314" cy="314" r="265" stroke="url(#paint1_linear)" strokeWidth="35" style={{strokeDashoffset: `${1665 + (-1665 * ((TIME - timer.time) / 60))}px`, strokeDasharray: "1665px", ...progressRing.current}}/>
             <defs>
               <linearGradient id="paint0_linear" x1="281" y1="0" x2="281" y2="562" gradientUnits="userSpaceOnUse">
                 <stop stopColor="#F94E83"/>
