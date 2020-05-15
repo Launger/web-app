@@ -49,6 +49,29 @@
     position: relative;
     top: -100px;
     z-index: -1;
+    .logos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+      justify-items: center;
+      grid-column-gap: 100px;
+      margin: 0 auto -150px auto;
+      .YouTube {
+        width: 90%;
+        align-self: center;
+      }
+      .TikTok {
+        width: 120%;
+      }
+      .Reddit {
+        width: 90%;
+        align-self: center;
+      }
+      .more {
+        font-size: 2.3em;
+        font-weight: 900;
+        align-self: center;
+      }
+    }
     .content {
       padding-top: 200px;
       position: relative;
@@ -181,6 +204,14 @@
       a {
         color: black;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .IndexPage {
+    .logos {
+      padding-top: 80px;
     }
   }
 }

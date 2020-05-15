@@ -14,6 +14,9 @@ import step2 from "./step-2-image.svg";
 import step3 from "./step-3-image.svg";
 import welcomeScreen from "./welcome-screen.svg";
 import launch from "./Launch.png";
+import YouTube from "./YouTube.png";
+import TikTok from "./TikTok.svg";
+import Reddit from "./Reddit.svg";
 import config from "../../Helpers/RemoteConfig";
 import "./IndexPage.css";
 
@@ -48,6 +51,12 @@ const IndexPage = () => {
         </div>
         <section id="how-it-works">
           <div className="container">
+            <div className="logos">
+              <img className="YouTube" src={YouTube} alt="YouTube Logo" />
+              <img className="TikTok" src={TikTok} alt="TikTok Logo" />
+              <img className="Reddit" src={Reddit} alt="Reddit Logo" />
+              <span className="more">MORE...</span>
+            </div>
             <div className="content">
               <h1>How it works</h1>
               <p>
