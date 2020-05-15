@@ -8,11 +8,11 @@ remoteConfig.settings = {
 
 const restIDs = [
   "d27154EFDbCa05654074E41a8d542b53", // Classic
+  "Cbc849c7E7f700316F0fE317F1AbCe21", // r/Memes
   "Ee0Dff7436cD4009676a908cEfD6cd5C", // Trending
   "1d9fE1cfbEE45b15edba3fBd5b528F7B", // Random
-  "Cbc849c7E7f700316F0fE317F1AbCe21", // r/Memes
-  "Aa1B87eb3d0Ccd6c77A4D82b93958e39", // Today's Funniest
   "156A10374Ee14720c416DB5D9c38D91e", // TikTok Trending
+  "Aa1B87eb3d0Ccd6c77A4D82b93958e39", // Today's Funniest
   "123F49562D1e7dC10b3B255F0969D29d", // Gaming
   "39C1FFF780a0a1097D8548aBCb4Ddb02", // TikTok Discover
   "9005d84E32Ffb03b188EaDe0B772B132", // Give Feedback
