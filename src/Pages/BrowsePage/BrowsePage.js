@@ -67,7 +67,7 @@ const BrowsePage = ({onBreak = false}) => {
       <NavBar Points={Points}/>
       <div className="page-content">
         <section className="your-widgets">
-          <div className="container">
+          <div className="selectionBar">
             <h1>Your Widgets</h1>
             <select onChange={handleSelect} defaultValue={timerMode}>
               <option value="pomodoro">Pomodoro</option>
