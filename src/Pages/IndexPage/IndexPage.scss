@@ -2,7 +2,7 @@
   color: var(--primary-text-color);
   #welcome {
     padding-top: 30px;
-    height: 80vh;
+    height: 70vh;
     #welcome-box {
       align-self: center;
       position: relative;
@@ -124,6 +124,8 @@
     }
   }
   .logo-seperator {
+    position: relative;
+    top: -100px;
     background-color: #6892ff;
     padding: 25px 20%;
     margin-bottom: 10px;

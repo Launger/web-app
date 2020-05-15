@@ -4,7 +4,7 @@
 
 .IndexPage #welcome {
   padding-top: 30px;
-  height: 80vh;
+  height: 70vh;
 }
 
 .IndexPage #welcome #welcome-box {
@@ -162,6 +162,8 @@
 }
 
 .IndexPage .logo-seperator {
+  position: relative;
+  top: -100px;
   background-color: #6892ff;
   padding: 25px 20%;
   margin-bottom: 10px;
