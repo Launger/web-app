@@ -14,6 +14,7 @@ import "./BufferPage.css";
 
 const IndexPage = ({ history }) => {
   const [loggedIn] = useStore("loggedIn");
+  const shareUrl = "https://launger.com";
 
   return (
     <div className="BufferPage">
@@ -27,22 +28,22 @@ const IndexPage = ({ history }) => {
                 <h1>Enjoying Launger?</h1>
                 <h2>Share it with your friends:</h2>
                 <div className="share-buttons">
-                  <FacebookShareButton url="https://launger.com">
+                  <FacebookShareButton url={shareUrl} quote="Don't feel like working, and scrolling Facebook? Try Launger and be more productive.">
                     <FacebookIcon size={40} round />
                   </FacebookShareButton>
-                  <WhatsappShareButton url="https://launger.com">
+                  <WhatsappShareButton url={shareUrl} title="Hey, I found this cool app that makes you more productive using social media. Check it out at">
                     <WhatsappIcon size={40} round />
                   </WhatsappShareButton>
-                  {/* <FacebookMessengerShareButton url="https://launger.com">
+                  {/* <FacebookMessengerShareButton url={shareUrl}>
                     <FacebookMessengerIcon size={40} round />
                   </FacebookMessengerShareButton> */}
-                  <RedditShareButton url="https://launger.com">
+                  <RedditShareButton url={shareUrl} title="Don't feel like working and scrolling Reddit? Keep scrolling on Launger and still be productive.">
                     <RedditIcon size={40} round bgStyle={{fill: "red"}}/>
                   </RedditShareButton>
-                  <TwitterShareButton url="https://launger.com">
+                  <TwitterShareButton url={shareUrl} title="Hey, I found this cool app that makes you more productive using social media. Check it out at">
                     <TwitterIcon size={40} round />
                   </TwitterShareButton>
-                  <EmailShareButton url="https://launger.com">
+                  <EmailShareButton url={shareUrl} subject="Launger: cool app that makes you productive using social media" body="Hey, I found this cool app that makes you more productive using social media. Check it out at">
                     <EmailIcon size={40} round bgStyle={{fill: "orange"}}/>
                   </EmailShareButton>
                 </div> 

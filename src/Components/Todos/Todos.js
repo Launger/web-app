@@ -190,7 +190,7 @@ const Todos = ({speedrun = false}) => {
         {(isComponentInFocus || todos.length === 0)
           ? (
             <form className="AddTodo" onSubmit={handleSubmit}>
-              <input type="text" onChange={(e) => setTitle(e.target.value)} value={title} placeholder={(todos.length === 0)?"What are you working on?":"Add another task"} onFocus={() => setIsComponentInFocus(true)} autoFocus/>
+              <input type="text" onChange={(e) => setTitle(e.target.value)} value={title} placeholder={(todos.length === 0)?"Add a To-do":"Add another"} onFocus={() => setIsComponentInFocus(true)} autoFocus/>
               {speedrun &&
                 <label>
                   <input type="text" onChange={(e) => setExpectedTime(e.target.value)} value={expectedTime} placeholder="5"/>
