@@ -15,9 +15,9 @@ remoteConfig.defaultConfig = ({
       name: "Classic",
     },
     "Ee0Dff7436cD4009676a908cEfD6cd5C": {
-      tryCost: 0,
+      tryCost: defaultTry,
       ppm: defaultPPM,
-      getCost: 0,
+      getCost: defaultGet,
       name: "Trending",
       youtubeURL: "https://www.youtube.com/embed/videoseries?list=PLrEnWoR732-BHrPp_Pm8_VleD68f9s14-",
     },

@@ -42,6 +42,8 @@
   display: inline;
   font-size: 1.3em;
   text-align: left;
+  overflow: hidden;
+  word-wrap: break-word;
 }
 
 .RedditWidgetTemplate .right .posts .post .header .author {

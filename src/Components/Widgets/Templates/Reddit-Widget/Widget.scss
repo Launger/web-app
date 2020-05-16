@@ -25,6 +25,8 @@
             display: inline;
             font-size: 1.3em;
             text-align: left;
+            overflow: hidden;
+            word-wrap: break-word;
           }
           .author {
             display: inline;
