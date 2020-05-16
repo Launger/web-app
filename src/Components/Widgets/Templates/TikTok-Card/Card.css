@@ -18,6 +18,8 @@
       -ms-grid-row-align: center;
       align-self: center;
   color: white;
+  -webkit-transform: translateY(-25%);
+          transform: translateY(-25%);
 }
 
 .tiktok-card-template .tiktok-card-bg .text .name {
@@ -29,17 +31,26 @@
 }
 
 .tiktok-card-template .tiktok-card-bg .text .subname {
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
-  font-size: 1.3em;
-  font-weight: 800;
-  -webkit-transform: translate(10px, -7px);
-          transform: translate(10px, -7px);
+  position: absolute;
+  top: calc(50% + 1.2em + 15px);
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.tiktok-card-template .tiktok-card-bg .text .subname .tiktok-logo {
+  height: 30px;
 }
 
 .tiktok-card-template .tiktok-card-bg:hover {
   background: black;
   -webkit-animation: animate 0.5s linear infinite;
           animation: animate 0.5s linear infinite;
+}
+
+.tiktok-card-template .tiktok-card-bg:hover .subname .tiktok-logo {
+  -webkit-animation: animateLogo 0.5s linear infinite;
+          animation: animateLogo 0.5s linear infinite;
 }
 
 .tiktok-card-template .tiktok-card-fg {
@@ -86,6 +97,52 @@
   }
   33% {
     text-shadow: 4px 1.5px 0 #0ff, -1.5px -4px 0 #f00;
+  }
+}
+
+@-webkit-keyframes animateLogo {
+  0%, 100% {
+    -webkit-filter: drop-shadow(-1.5px -1.5px 0 #0ff);
+            filter: drop-shadow(-1.5px -1.5px 0 #0ff);
+  }
+  25% {
+    -webkit-filter: drop-shadow(1.5px 1.5px 0 #f00);
+            filter: drop-shadow(1.5px 1.5px 0 #f00);
+  }
+  50% {
+    -webkit-filter: drop-shadow(1.5px -1.5px 0 #0ff);
+            filter: drop-shadow(1.5px -1.5px 0 #0ff);
+  }
+  75% {
+    -webkit-filter: drop-shadow(-1.5px 1.5px 0 #f00);
+            filter: drop-shadow(-1.5px 1.5px 0 #f00);
+  }
+  33% {
+    -webkit-filter: drop-shadow(4px 1.5px 0 #0ff);
+            filter: drop-shadow(4px 1.5px 0 #0ff);
+  }
+}
+
+@keyframes animateLogo {
+  0%, 100% {
+    -webkit-filter: drop-shadow(-1.5px -1.5px 0 #0ff);
+            filter: drop-shadow(-1.5px -1.5px 0 #0ff);
+  }
+  25% {
+    -webkit-filter: drop-shadow(1.5px 1.5px 0 #f00);
+            filter: drop-shadow(1.5px 1.5px 0 #f00);
+  }
+  50% {
+    -webkit-filter: drop-shadow(1.5px -1.5px 0 #0ff);
+            filter: drop-shadow(1.5px -1.5px 0 #0ff);
+  }
+  75% {
+    -webkit-filter: drop-shadow(-1.5px 1.5px 0 #f00);
+            filter: drop-shadow(-1.5px 1.5px 0 #f00);
+  }
+  33% {
+    -webkit-filter: drop-shadow(4px 1.5px 0 #0ff);
+            filter: drop-shadow(4px 1.5px 0 #0ff);
   }
 }
 /*# sourceMappingURL=Card.css.map */

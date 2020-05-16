@@ -9,6 +9,25 @@
   height: calc(100vh - 73px);
 }
 
+.TrackerPage .progress-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -10;
+  max-width: 450px;
+  min-width: 300px;
+  -webkit-transform: translate(-50%, -50%) rotate(-0.25turn);
+          transform: translate(-50%, -50%) rotate(-0.25turn);
+}
+
+.TrackerPage .progress-ring circle {
+  stroke-linecap: round;
+  stroke-dashoffset: 0px;
+  stroke-dasharray: 1884px;
+  -webkit-box-shadow: -4px 0px 10px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: -4px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
 .TrackerPage .Timer {
   position: absolute;
   top: 50%;

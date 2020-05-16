@@ -6,7 +6,6 @@ import NavBar from "../../Components/NavBar/NavBar";
 import Timer from "../../Components/Timer/Timer";
 import Points from "../../Components/Points/Points";
 import ClockSpinner from "../../Components/ClockSpinner/ClockSpinner";
-import Tips from "./Tips";
 
 import { importWidget, importCards, filterIDs, formatTime, updatePoints, updateFireStorePoints } from "../../Helpers";
 import config from "../../Helpers/RemoteConfig";
@@ -137,9 +136,10 @@ const BreakPage = ({ history }) => {
   }
 
   const classicIDs = [
-    "d27154EFDbCa05654074E41a8d542b53", //Classic
-    "Ee0Dff7436cD4009676a908cEfD6cd5C", //Trending
-    "1d9fE1cfbEE45b15edba3fBd5b528F7B", //Random
+    "d27154EFDbCa05654074E41a8d542b53", // Classic
+    "2870eC15aF3227b9eF2eC593Ddc6D885", // Random Memes
+    "1d9fE1cfbEE45b15edba3fBd5b528F7B", // YouTube Random
+    "5e41d18741293dF1228Dfcf47cB5D81c", // TikTok Random
   ];
 
   const [alreadyGotIDs, setAlreadyGotIDs] = useState([
@@ -169,7 +169,6 @@ const BreakPage = ({ history }) => {
   const importedAlreadyGotCards = useMemo(() => importCards(filterIDs([nextWidget.id], alreadyGotIDs), true), [alreadyGotIDs, nextWidget.id]);
   // eslint-disable-next-line
   const importedRestCards = useMemo(() => importCards(filterIDs([nextWidget.id], filterIDs(alreadyGotIDs, restIDs)), false), [alreadyGotIDs, nextWidget.id]);
-  const renderTips = useMemo(() => <Tips />, []);
 
   return (
     <div className="BreakPage">
@@ -192,26 +191,21 @@ const BreakPage = ({ history }) => {
       </Toast>}
       
       <NavBar Timer={Timer} Points={Points} />
+      <aside className="sidebar">
+        <div className="NEXT">
+          NEXT: 
+          {(nextWidget.id === widget.id) || <div onClick={handlePlayNow} className="playnow actionable"><strong>Play now</strong> ({pointsToTake} Points)</div>}
+          <span onClick={handleFinish} className="backtowork actionable"><strong>Back to work</strong></span>
+        </div>
+        <div className="next-card cards">
+          {importedNextCard}
+        </div>
+        <div className="alreadyGot-card cards">{importedAlreadyGotCards}</div>
+        <div className="rest-card cards">{importedRestCards}</div>
+      </aside>
       <div className="page-content">
-        <div className="grid-container">
-          <div className="imported-widget">
-            {importedWidget}
-          </div>
-          <div className="tips-n-tricks">
-            {renderTips}
-          </div>
-          <aside className="sidebar">
-            <div className="NEXT">
-              NEXT: 
-              {(nextWidget.id === widget.id) || <div onClick={handlePlayNow} className="playnow actionable"><strong>Play now</strong> ({pointsToTake} Points)</div>}
-              <span onClick={handleFinish} className="backtowork actionable"><strong>Back to work</strong></span>
-            </div>
-            <div className="next-card cards">
-              {importedNextCard}
-            </div>
-            <div className="alreadyGot-card cards">{importedAlreadyGotCards}</div>
-            <div className="rest-card cards">{importedRestCards}</div>
-          </aside>
+        <div className="main-content">
+          {importedWidget}
         </div>
       </div>
     </div>

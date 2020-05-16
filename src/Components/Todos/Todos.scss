@@ -159,3 +159,20 @@
     display: none;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .Todos {
+    .TodoForm {
+      .AddTodo {
+        height: 30px;
+        input[type=text] {
+          position: absolute;
+          width: 100%;
+        }
+      }
+    }
+    .main-tooltip {
+      display: none;      
+    }
+  }
+}

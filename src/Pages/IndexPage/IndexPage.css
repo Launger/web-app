@@ -12,7 +12,7 @@
       -ms-grid-row-align: center;
       align-self: center;
   position: relative;
-  top: -50px;
+  top: -30px;
   z-index: 2;
 }
 
@@ -63,6 +63,43 @@
   position: relative;
   top: -100px;
   z-index: -1;
+}
+
+.IndexPage #how-it-works .logos {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(100px, auto))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+  justify-items: center;
+  grid-column-gap: 100px;
+  margin: 0 auto -150px auto;
+}
+
+.IndexPage #how-it-works .logos .YouTube {
+  width: 90%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.IndexPage #how-it-works .logos .TikTok {
+  width: 120%;
+}
+
+.IndexPage #how-it-works .logos .Reddit {
+  width: 90%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.IndexPage #how-it-works .logos .more {
+  color: white;
+  font-size: 2.3em;
+  font-weight: 900;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .IndexPage #how-it-works .content {
@@ -125,6 +162,8 @@
 }
 
 .IndexPage .logo-seperator {
+  position: relative;
+  top: -100px;
   background-color: #6892ff;
   padding: 25px 20%;
   margin-bottom: 10px;
@@ -177,6 +216,7 @@
 
 .IndexPage #try-now .superman {
   height: 80%;
+  max-width: 100%;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -230,5 +270,11 @@
 
 .IndexPage footer ul a {
   color: black;
+}
+
+@media only screen and (max-width: 1000px) {
+  .IndexPage .logos {
+    padding-top: 80px;
+  }
 }
 /*# sourceMappingURL=IndexPage.css.map */

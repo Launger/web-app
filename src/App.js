@@ -115,6 +115,8 @@ function App() {
           </Switch>
         </Router>
       </Suspense>
+      {/* Temporary FIXME */}
+      <a href="https://www.surveymonkey.com/r/8JNNY62" target="_blank" rel="noopener noreferrer" style={{padding: "1px 10px", position: "fixed", bottom: "0", right: "0", color: "white", borderRadius: "10px 0 0 0", border: "none", background: "linear-gradient(100deg, #ffae34 0%, #f95584 100%)"}}>Give Feedback</a>
     </div>
   );
 }

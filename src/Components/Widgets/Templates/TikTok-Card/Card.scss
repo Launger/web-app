@@ -10,6 +10,7 @@
       justify-self: center;
       align-self: center;
       color: white;
+      transform: translateY(-25%);
       .name {
         overflow: hidden;
         text-overflow: ellipsis;
@@ -18,17 +19,24 @@
         line-height: 1.2em;
       }
       .subname {
-        // color: black;
-        font-family: 'Roboto', Arial, Helvetica, sans-serif;
-        font-size: 1.3em;
-        font-weight: 800;
-        transform: translate(10px, -7px);
+        position: absolute;
+        top: calc(50% + 1.2em + 15px);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .tiktok-logo {
+          height: 30px;
+        }
       }
     }
   }
   .tiktok-card-bg:hover {
     background: black;
     animation: animate 0.5s linear infinite;
+    .subname {
+      .tiktok-logo {
+        animation: animateLogo 0.5s linear infinite;
+      }
+    }
   }
   .tiktok-card-fg {
     position: absolute;
@@ -56,5 +64,22 @@
   }
   33% {
     text-shadow: 4px 1.5px 0 #0ff, -1.5px -4px 0 #f00;
+  }
+}
+@keyframes animateLogo {
+  0%, 100%{
+    filter: drop-shadow( -1.5px -1.5px 0 #0ff);
+  }
+  25%{
+    filter: drop-shadow( 1.5px 1.5px 0 #f00);
+  }
+  50%{
+    filter: drop-shadow( 1.5px -1.5px 0 #0ff);
+  }
+  75%{
+    filter: drop-shadow( -1.5px 1.5px 0 #f00);
+  }
+  33% {
+    filter: drop-shadow( 4px 1.5px 0 #0ff);
   }
 }

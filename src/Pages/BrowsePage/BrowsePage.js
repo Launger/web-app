@@ -14,9 +14,10 @@ const BrowsePage = ({onBreak = false}) => {
   const [timerMode, setTimerMode] = useStore("timerMode");
   
   const classicIDs = [
-    "d27154EFDbCa05654074E41a8d542b53", //Classic
-    "Ee0Dff7436cD4009676a908cEfD6cd5C", //Trending
-    "1d9fE1cfbEE45b15edba3fBd5b528F7B", //Random
+    "d27154EFDbCa05654074E41a8d542b53", // Classic
+    "2870eC15aF3227b9eF2eC593Ddc6D885", // Random Memes
+    "1d9fE1cfbEE45b15edba3fBd5b528F7B", // YouTube Random
+    "5e41d18741293dF1228Dfcf47cB5D81c", // TikTok Random
   ];
   
   const [alreadyGotIDs, setAlreadyGotIDs] = useState([
@@ -66,7 +67,7 @@ const BrowsePage = ({onBreak = false}) => {
       <NavBar Points={Points}/>
       <div className="page-content">
         <section className="your-widgets">
-          <div className="container">
+          <div className="selectionBar">
             <h1>Your Widgets</h1>
             <select onChange={handleSelect} defaultValue={timerMode}>
               <option value="pomodoro">Pomodoro</option>
@@ -74,7 +75,7 @@ const BrowsePage = ({onBreak = false}) => {
               <option value="tracker">Time Tracker</option>
             </select>
           </div>
-            <div className="cards">{importedAlreadyGotCards}</div>
+          <div className="cards">{importedAlreadyGotCards}</div>
         </section>
         <section className="all-widgets">
           <div className="cards">{importedRestCards}</div>

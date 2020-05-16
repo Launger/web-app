@@ -5,13 +5,14 @@
   margin-bottom: 50px;
 }
 
-.BrowsePage section.your-widgets .container {
+.BrowsePage section.your-widgets .selectionBar {
   position: relative;
+  margin: 0 30px;
 }
 
-.BrowsePage section.your-widgets .container select {
+.BrowsePage section.your-widgets .selectionBar select {
   position: absolute;
-  right: calc(5% + 20px);
+  right: 0;
   top: calc(3.3em / 2);
   background: none;
   border: none;
@@ -19,10 +20,8 @@
   color: var(--primary-text-color, black);
 }
 
-.BrowsePage section.your-widgets .container h1 {
+.BrowsePage section.your-widgets .selectionBar h1 {
   position: relative;
-  left: 5%;
-  display: inline-block;
   color: var(--secondary-text-color);
   font-size: 3.3em;
   font-weight: 900;
@@ -40,5 +39,17 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .BrowsePage section.your-widgets .selectionBar select {
+    left: 50%;
+    top: -40px;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  .BrowsePage section.your-widgets .selectionBar h1 {
+    text-align: center;
+  }
 }
 /*# sourceMappingURL=BrowsePage.css.map */

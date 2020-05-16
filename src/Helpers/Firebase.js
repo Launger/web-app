@@ -2,6 +2,7 @@ import * as app from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 import "firebase/analytics";
+import "firebase/functions";
 
 app.initializeApp({  
   apiKey: "AIzaSyBIHQZmwFHF2DiiYc1WfUIRh0sYTKuN9Sk",
@@ -13,5 +14,7 @@ app.initializeApp({
   appId: "1:87335843117:web:bc8fae2f19162800ca4fa4",
   measurementId: "G-E7NKFWME5Z"
 });
+
+app.functions().useFunctionsEmulator("http://localhost:5001");
 
 app.analytics();

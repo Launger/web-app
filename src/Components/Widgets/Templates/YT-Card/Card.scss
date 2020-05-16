@@ -10,6 +10,7 @@
       justify-self: center;
       align-self: center;
       color: white;
+      transform: translateY(-25%);
       .name {
         overflow: hidden;
         text-overflow: ellipsis;
@@ -19,7 +20,7 @@
       }
       .subname {
         position: absolute;
-        top: calc(50% + 1.2em + 7px);
+        top: calc(50% + 1.2em + 13px);
         left: 50%;
         transform: translate(-50%, -50%);
       }
