@@ -10,6 +10,7 @@ import {formatTime} from "../../Helpers";
 const Todos = ({speedrun = false}) => {
   const [todos, setTodos] = useStore("todos");
   const [timer] = useStore("timer");
+  const [totalTime, setTotalTime] = useStore("totalTime");
 
   const firstNotCompletedTodo = todos.find((todo) => !todo.completed);
 
@@ -18,7 +19,6 @@ const Todos = ({speedrun = false}) => {
   const [dropdownStyle, setDropdownStyle] = useState({});
   const [title, setTitle] = useState('');
   const [expectedTime, setExpectedTime] = useState("");
-  const [totalTime, setTotalTime] = useStore("totalTime");
 
   const componentElement = useRef(null);
   const dropdownElement = useRef(null);
@@ -116,11 +116,9 @@ const Todos = ({speedrun = false}) => {
     const handleClickOutside = (e) => {
       if (componentElement.current && !componentElement.current.contains(e.target)) {
         handleSubmit(e);
-        // if(speedrun) setTotalTime(todos.reduce((sum, todo) => sum + todo.expectedTime, 0));
         setIsComponentInFocus(false);
       }
     }
-    // Bind the event listener
     document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
@@ -146,7 +144,7 @@ const Todos = ({speedrun = false}) => {
       })
     }
     // eslint-disable-next-line
-  }, [isComponentInFocus])
+  }, [isComponentInFocus]);
 
   useEffect(() => {
     setFocusedTodo((fTodo) => {
@@ -162,7 +160,7 @@ const Todos = ({speedrun = false}) => {
       }
     });
     // eslint-disable-next-line
-  }, [timer.time])
+  }, [timer.time]);
 
   useEffect(() => {
     const newTodos = todos.slice();
@@ -174,12 +172,7 @@ const Todos = ({speedrun = false}) => {
     setTodos(newTodos);
     sessionStorage.setItem("todos", JSON.stringify(newTodos));
     // eslint-disable-next-line
-  }, [focusedTodo])
-  
-  // useEffect(() => {
-  //   if(speedrun) setTotalTime(todos.reduce((sum, todo) => sum + todo.expectedTime, 0));
-  //   // eslint-disable-next-line
-  // }, [totalTime, todos])
+  }, [focusedTodo]);
   
   return (
     <div className="Todos" ref={componentElement}>
