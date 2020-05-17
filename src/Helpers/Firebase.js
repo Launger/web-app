@@ -15,6 +15,4 @@ app.initializeApp({
   measurementId: "G-E7NKFWME5Z"
 });
 
-app.functions().useFunctionsEmulator("http://localhost:5001");
-
 app.analytics();
