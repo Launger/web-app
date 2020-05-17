@@ -8,10 +8,21 @@ import googleIcon from "../../Static/google-icon.svg";
 import "./LoginSignUp.css";
 
 const LoginSignUp = () => {
-  const [, setLoggedIn] = useStore("loggedIn");  
+  const [, setLoggedIn] = useStore("loggedIn");
+  
   const [isLogin, setIsLogin] = useState(true);
   const [showPassword, setShowPassword] = useState("hide");
   const [error, setError] = useState(null);
+
+  const catchError = (error) => {
+    const {code, message} = error;
+    if (code === "auth/weak-password") {
+      setError("The password is too weak.");
+    } else {
+      setError(message);
+    }
+    console.log(error);
+  }
 
   //Login
   const handleLogin = e => {
@@ -23,11 +34,7 @@ const LoginSignUp = () => {
       return;
     }
     if (password.value.length < 6) {
-      setError("Password needs a minimum of 6 characters.");
-      return;
-    }
-    if (password.value.includes("123456")){
-      setError(`Password ${password.value} is not secure.`)
+      setError("Passwords are 6 characters minimum.");
       return;
     }
 
@@ -39,40 +46,7 @@ const LoginSignUp = () => {
         setLoggedIn(true);
         localStorage.setItem("loggedIn", true);
       })
-      .catch(error => {
-        let errorCode = error.code;
-        let errorMessage = error.message;
-        if (errorCode === "auth/weak-password") {
-          setError("The password is too weak.");
-        } else {
-          setError(errorMessage);
-        }
-        console.log(error);
-      });
-  };
-
-  const provider = new firebase.auth.GoogleAuthProvider();
-  const handleGoogleLogin = () => {
-    firebase
-      .auth()
-      .signInWithPopup(provider)
-      .then(result => {
-        // console.log(result);
-        // sessionStorage.setItem("accessToken", result.credential.accessToken);
-        // console.log(loggedIn);
-        setLoggedIn(true);
-        localStorage.setItem("loggedIn", true);
-      })
-      .catch(error => {
-        let errorCode = error.code;
-        let errorMessage = error.message;
-        if (errorCode === "auth/weak-password") {
-          setError("The password is too weak.");
-        } else {
-          setError(errorMessage);
-        }
-        console.log(error);
-      });
+      .catch(error => catchError(error));
   };
 
   //Sign up
@@ -98,8 +72,6 @@ const LoginSignUp = () => {
       .auth()
       .createUserWithEmailAndPassword(email.value, password.value)
       .then(data => {
-        // console.log(data);
-        // console.log(loggedIn);
         return firebase.firestore().doc(`users/${data.user.uid}/private/private`).set({
           totalPoints: 0,
           widgets: []
@@ -108,19 +80,32 @@ const LoginSignUp = () => {
       .then(() => {
         setLoggedIn(true);
         localStorage.setItem("loggedIn", true);
-        // console.log(data2);
       })
-      .catch( (error) => {
-        // Handle Errors here.
-        let errorCode = error.code;
-        let errorMessage = error.message;
-        if (errorCode === "auth/weak-password") {
-          setError("The password is too weak.");
+      .catch(error => catchError(error));
+  };
+
+  //Google Login/Signup
+  const provider = new firebase.auth.GoogleAuthProvider();
+  const handleGoogleLogin = () => {
+    firebase
+      .auth()
+      .signInWithPopup(provider)
+      .then(data => {
+        if(!isLogin) {
+          return firebase.firestore().doc(`users/${data.user.uid}/private/private`).set({
+            totalPoints: 0,
+            widgets: []
+          })
         } else {
-          setError(errorMessage);
+          setLoggedIn(true);
+          localStorage.setItem("loggedIn", true);
         }
-        console.log(error);
-      });
+      })
+      .then(() => {
+        setLoggedIn(true);
+        localStorage.setItem("loggedIn", true);
+      })
+      .catch(error => catchError(error));
   };
 
   const handleShowPassword = () => {
@@ -134,40 +119,41 @@ const LoginSignUp = () => {
     <div className="LoginSignUp">
       <form onSubmit={(isLogin)?handleLogin:handleSignUp}>
         <h1>{(isLogin)?"Login":"Sign up"}</h1>
-            <input id="email" type="email" placeholder="Email" name="email" />
-            <div className="password-inputs">
-              <input
-                type={showPassword === "show" ? "password" : "text"}
-                placeholder="Password"
-                name="password"
-              />
-              <span onClick={handleShowPassword} className="show-hide">
-                {showPassword}
-              </span>
-            </div>
-              {error && <span className="error">*{error}</span>}
-            <input id="submit" type="submit" value={(isLogin)?"Login":"Sign up"} />
-            {!isLogin && 
-              <span className="agreement">
-                By clicking on Sign up, you agree to Launger's 
-                {" "}<Link to="/terms">Terms of Service</Link>, 
-                {" "}<Link to="/privacy">Privacy Policy</Link>, and
-                {" "}<Link to="/cookies">Cookie Policy</Link>.
-              </span>
-            }
-            <div id="seperator"></div>
-            <button type="button" id="google-login" onClick={handleGoogleLogin}>
+        <input id="email" type="email" placeholder="Email" name="email" />
+        <div className="password-inputs">
+          <input
+            type={showPassword === "show" ? "password" : "text"}
+            placeholder="Password"
+            name="password"
+          />
+          <span onClick={handleShowPassword} className="show-hide">
+            {showPassword}
+          </span>
+        </div>
+        {error && <span className="error">*{error}</span>}
+        <input id="submit" type="submit" value={(isLogin)?"Login":"Sign up"} />
+        {!isLogin && (
+          <span className="agreement">
+            By clicking on Sign up, you agree to Launger's 
+            {" "}<Link to="/terms">Terms of Service</Link>, 
+            {" "}<Link to="/privacy">Privacy Policy</Link>, and
+            {" "}<Link to="/cookies">Cookie Policy</Link>.
+          </span>
+        )}
+        <div id="seperator"></div>
+        <button type="button" id="google-login" onClick={handleGoogleLogin}>
               <img src={googleIcon} alt="Google sign in" />
               <span>{(isLogin)?"Login":"Sign up"} with Google</span>
             </button>
-          {(isLogin)?
-            <span className="footer">
-              Don't have an account yet? <span className="underline actionable" onClick={() => setIsLogin(false)}>Sign up here</span>
-            </span>:
-            <span className="footer">
-              Already have an account? <span className="underline actionable" onClick={() => setIsLogin(true)}>Login here</span>
-            </span>
-          }
+        {(isLogin)?(
+          <span className="footer">
+            Don't have an account yet? <span className="underline actionable" onClick={() => setIsLogin(false)}>Sign up here</span>
+          </span>
+        ):(
+          <span className="footer">
+            Already have an account? <span className="underline actionable" onClick={() => setIsLogin(true)}>Login here</span>
+          </span>
+        )}
       </form>
     </div>
   );
