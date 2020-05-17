@@ -3,7 +3,7 @@ import {useStore} from "react-hookstore";
 import firebase from "firebase/app";
 import {Link} from "react-router-dom";
 
-import googleIcon from "./google-icon.svg";
+import googleIcon from "../../Static/google-icon.svg";
 
 import "./LoginSignUp.css";
 
