@@ -7,9 +7,11 @@ import './Timer.css';
 const Timer = ({speedrun = false}) => {
   const [timer] = useStore("timer");
   const [theme] = useStore("theme");
-  const { time } = timer;
-  const [color, setColor] = useState({color: "black"});
   const [totalTime] = useStore("totalTime");
+  
+  const [color, setColor] = useState({color: "black"});
+  
+  const { time } = timer;
   
   useEffect(() => {
     setColor({color: "var(--primary-text-color, black)"});
