@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useStore } from "react-hookstore";
 import Button from "react-bootstrap/Button";
 
-import Template from "../Templates/YT-Widget/Widget";
+import Template from "../Templates/YouTube/Widget";
 
 import dictionary from "./dictionary";
 import "./Widget.css";

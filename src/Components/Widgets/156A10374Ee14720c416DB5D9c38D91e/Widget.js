@@ -1,6 +1,6 @@
 import React from "react";
 
-import Template from "../Templates/TikTok-Widget/Widget";
+import Template from "../Templates/TikTok/Widget";
 
 import "./Widget.css";
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-import Template from "../Templates/YT-Widget/Widget";
+import Template from "../Templates/YouTube/Widget";
 
 import config from "../widgetConfig";
 // import "./Widget.css";

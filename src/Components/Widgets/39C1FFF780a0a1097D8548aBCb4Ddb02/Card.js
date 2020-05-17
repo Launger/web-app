@@ -1,6 +1,6 @@
 import React from "react";
 
-import Template from "../Templates/TikTok-Card/Card";
+import Template from "../Templates/TikTok/Card";
 
 // import "./Card.css";
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import Template from "../Templates/Reddit-Widget/Widget";
+import Template from "../Templates/Reddit/Widget";
 
 // import "./Widget.css";
 

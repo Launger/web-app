@@ -1,8 +1,8 @@
 import React from "react";
 
-import Template from "../Templates/Reddit-Widget/Card";
+import Template from "../Templates/Reddit/Card";
 import config from "../widgetConfig";
-import RedditLogo from "../Templates/Reddit-Widget/Reddit.svg";
+import RedditLogo from "../Templates/Reddit/Reddit.svg";
 // import "./Card.css";
 
 const Card = ({ alreadyGot }) => {

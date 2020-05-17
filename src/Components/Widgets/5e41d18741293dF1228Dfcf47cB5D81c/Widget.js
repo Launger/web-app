@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useStore } from "react-hookstore";
 
-import Template from "../Templates/TikTok-Widget/Widget";
+import Template from "../Templates/TikTok/Widget";
 
 import "./Widget.css";
 import users from "./tiktokusers";

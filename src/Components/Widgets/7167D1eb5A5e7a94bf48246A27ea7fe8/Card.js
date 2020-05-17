@@ -1,6 +1,6 @@
 import React from "react";
 
-import Template from "../Templates/YT-Card/Card";
+import Template from "../Templates/YouTube/Card";
 
 // import "./Card.css";
 
