@@ -13,34 +13,31 @@ const NavBar = ({ Timer, Points, history }) => {
   const [sPoints, setSPoints] = useStore("sPoints");
 
   const toggleTheme = () => {
-    if (theme === "light") {
-      setTheme("dark");
-      localStorage.setItem("theme", "dark");
-      // eslint-disable-next-line
-    } else if (theme === "dark") {
-      setTheme("light");
-      localStorage.setItem("theme", "light");
-    }
-    // console.log("toggled theme");
+    setTheme(theme => {
+      if(theme === "light"){
+        localStorage.setItem("theme", "dark");
+        return "dark";
+      } else {
+        localStorage.setItem("theme", "light");
+        return "light";
+      }
+    })
   };
 
   const handleLogout = () => {
-    const auth = firebase.auth();
     updateFireStorePoints(sPoints)
       .then(() => {
         sessionStorage.clear();
-        // console.log(res);
-        return auth.signOut();
+        return firebase.auth().signOut();
       })
-      .then(() => {
-        // console.log(res2);
+      .then(() => { //Logout from Firebase Auth is SUCESSFUL
         setLoggedIn(false);
         localStorage.setItem("loggedIn", false);
         setSPoints(0);
         setPoints({ totalPoints: 0 });
         history.push("/");
       })
-      .catch(err => console.log(err));
+      .catch(err => console.log(err)); //Logout from Firebase Auth is NOT successful
   };
 
   return (
@@ -60,7 +57,6 @@ const NavBar = ({ Timer, Points, history }) => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
@@ -187,40 +183,6 @@ const NavBar = ({ Timer, Points, history }) => {
           </ul>
         </div>
       </nav>
-      {/* NavBar color accent */}
-      {/* <svg
-        width="1440"
-        height="69"
-        viewBox="0 0 1440 69"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fillRule="evenodd"
-          clipRule="evenodd"
-          d="M1380 0H0V9H1380C1413.14 9 1440 35.8629 1440 69V60C1440 26.8629 1413.14 0 1380 0Z"
-          fill="url(#paint0_linear)"
-        />
-        <path
-          fill="var(--primary-bg, white)"
-          fillRule="evenodd"
-          clipRule="evenodd"
-          d="M1440 0H1380C1413.14 0 1440 26.8629 1440 60V0Z"
-        />
-        <defs>
-          <linearGradient
-            id="paint0_linear"
-            x1="0"
-            y1="0"
-            x2="1440"
-            y2="0"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#F7E673" />
-            <stop offset="1" stopColor="#F94E83" />
-          </linearGradient>
-        </defs>
-      </svg> */}
       <div className="color-accent">
         <div className="gradient-accent"></div>
         <svg id="corner-piece" width="66" height="69" viewBox="0 0 66 69" fill="none" xmlns="http://www.w3.org/2000/svg">
