@@ -14,7 +14,7 @@ const useSessionStore = (storeName) => {
 }
 
 /**
- * Custom useStore hook, work the same, but setStore() also caches to localStorage
+ * Custom useStore hook, works the same, but setStore() also caches to localStorage
  * @param {string} storeName 
  */
 const useLocalStore = (storeName) => {
