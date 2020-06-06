@@ -1,21 +1,25 @@
 import {createStore, useStore} from "react-hookstore";
 
 /**
- * Custom createStore hook, works the same, but also fetches cache from sessionStorage else initial value is set to defaultValue
+ * Custom createStore hook, works the same, but also fetches cache from sessionStorage else initial value is set to defaultValue.
+ * Parses JSON by default.
  * @param {string} storeName 
  * @param {any} defaultValue
  */
-export const createSessionStore = (storeName, defaultValue = null) => {
-  createStore(storeName, JSON.parse(sessionStorage.getItem(storeName)) || defaultValue);
+export const createSessionStore = (storeName, defaultValue = null, needsParsing = true) => {
+  const value = sessionStorage.getItem(storeName);
+  createStore(storeName, (needsParsing ? JSON.parse(value) : value) || defaultValue);
 }
 
 /**
- * Custom createStore hook, works the same, but also fetches cache from localStorage else initial value is set to defaultValue
+ * Custom createStore hook, works the same, but also fetches cache from localStorage else initial value is set to defaultValue.
+ * Parses JSON by default.
  * @param {string} storeName 
  * @param {any} defaultValue
  */
-export const createLocalStore = (storeName, defaultValue = null) => {
-  createStore(storeName, JSON.parse(localStorage.getItem(storeName)) || defaultValue);
+export const createLocalStore = (storeName, defaultValue = null, needsParsing = true) => {
+  const value = localStorage.getItem(storeName);
+  createStore(storeName, (needsParsing ? JSON.parse(value) : value) || defaultValue);
 }
 
 /**

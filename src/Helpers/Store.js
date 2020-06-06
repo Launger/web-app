@@ -12,14 +12,16 @@ const
   themeDefault = window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light",
   togglePointsDefault = "real",
   todosDefault = [],
-  timerModeDefault = "pomodoro"
+  timerModeDefault = "pomodoro",
+  onBreakDefault = false,
+  totalTimeDefault = 0;
 
 // Create Tab Stores (Data is lost on tab refresh/close)
 createStore("sPoints", sPointsDefault);
-createStore("onBreak", false);
+createStore("onBreak", onBreakDefault);
 createStore("timer", timerDefault);
 createStore("togglePoints", togglePointsDefault);
-createStore("totalTime", 0);
+createStore("totalTime", totalTimeDefault);
 
 // Create Session Stores (Data is lost on tab close)
 createSessionStore("user", userDefault);
@@ -31,4 +33,4 @@ createSessionStore("timerMode", timerModeDefault);
 
 // Create Local Stores (Data is NOT lost on tab close)
 createLocalStore("loggedIn", loggedInDefault);
-createStore("theme", localStorage.getItem("theme") || themeDefault);
+createLocalStore("theme", themeDefault, false);
