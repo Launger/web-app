@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {useStore} from "react-hookstore";
+import {useLocalStore} from "../../Utils/Hooks";
 import firebase from "firebase/app";
 import {Link} from "react-router-dom";
 
@@ -8,29 +8,30 @@ import googleIcon from "../../Static/google-icon.svg";
 import "./LoginSignUp.css";
 
 const LoginSignUp = () => {
-  const [, setLoggedIn] = useStore("loggedIn");
+  const [, setLoggedIn] = useLocalStore("loggedIn");
   
   const [isLogin, setIsLogin] = useState(true);
-  const [showPassword, setShowPassword] = useState("hide");
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
 
+  // Shows error message when there is error in Login or Signup flows
   const catchError = (error) => {
     const {code, message} = error;
     if (code === "auth/weak-password") {
-      setError("The password is too weak.");
+      setError("Please choose a stronger password.");
     } else {
       setError(message);
     }
     console.log(error);
-  }
+  };
 
-  //Login
+  // Login with email and password
   const handleLogin = e => {
     e.preventDefault();
     const { email, password } = e.target.elements;
 
     if (email.value.length < 4) {
-      setError("Please enter an email address.");
+      setError("Please enter a valid email address.");
       return;
     }
     if (password.value.length < 6) {
@@ -44,30 +45,29 @@ const LoginSignUp = () => {
       .then(data => {
         // console.log(data);
         setLoggedIn(true);
-        localStorage.setItem("loggedIn", true);
       })
       .catch(error => catchError(error));
   };
 
-  //Sign up
+  // Sign up
   const handleSignUp = e => {
     e.preventDefault();
     const { email, password } = e.target.elements;
 
     if (email.value.length < 4) {
-      setError("Please enter an email address.");
+      setError("Please enter a valid email address.");
       return;
     }
     if (password.value.length < 6) {
-      setError("Password needs a minimum of 6 characters.");
+      setError("Please choose a stronger password. (6 Characters minimum)");
       return;
     }
     if (password.value.includes("123456")){
-      setError(`Password ${password.value} is not secure.`)
+      setError(`"${password.value}" is not secure. Please choose a stronger password.`)
       return;
     }
 
-    // Create user with email and pass.
+    // Create user with email and password on Firebase
     firebase
       .auth()
       .createUserWithEmailAndPassword(email.value, password.value)
@@ -79,12 +79,11 @@ const LoginSignUp = () => {
       })
       .then(() => {
         setLoggedIn(true);
-        localStorage.setItem("loggedIn", true);
       })
       .catch(error => catchError(error));
   };
 
-  //Google Login/Signup
+  // Google Login/Signup
   const provider = new firebase.auth.GoogleAuthProvider();
   const handleGoogleLogin = () => {
     firebase
@@ -98,22 +97,13 @@ const LoginSignUp = () => {
           })
         } else {
           setLoggedIn(true);
-          localStorage.setItem("loggedIn", true);
         }
       })
       .then(() => {
         setLoggedIn(true);
-        localStorage.setItem("loggedIn", true);
       })
       .catch(error => catchError(error));
   };
-
-  const handleShowPassword = () => {
-    if(showPassword === "show")
-      setShowPassword("hide");
-    else 
-      setShowPassword("show");
-  }
 
   return (
     <div className="LoginSignUp">
@@ -122,12 +112,12 @@ const LoginSignUp = () => {
         <input id="email" type="email" placeholder="Email" name="email" />
         <div className="password-inputs">
           <input
-            type={showPassword === "show" ? "password" : "text"}
+            type={showPassword ? "text" : "password"}
             placeholder="Password"
             name="password"
           />
-          <span onClick={handleShowPassword} className="show-hide">
-            {showPassword}
+          <span onClick={() => setShowPassword(!showPassword)} className="show-hide">
+            {showPassword ? "hide":"show"}
           </span>
         </div>
         {error && <span className="error">*{error}</span>}

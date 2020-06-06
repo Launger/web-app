@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {useStore} from "react-hookstore";
+import { useLocalStore } from "../../Utils/Hooks";
 import firebase from "firebase/app";
 import { Link } from "react-router-dom";
 
@@ -9,11 +9,10 @@ import illustration from "./signup-illustration.svg";
 import googleIcon from "./google-icon.svg";
 import "./SignupPage.css";
 
-const SignupPage = ({ history }) => {
-  document.title = "Launger - Sign up";
+const SignupPage = ({ history }) => {  
+  const [, setLoggedIn] = useLocalStore("loggedIn");
   
-  const [, setLoggedIn] = useStore("loggedIn");
-  const [showPassword, setShowPassword] = useState("show");
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
 
   const handleSignUp = e => {
@@ -21,15 +20,15 @@ const SignupPage = ({ history }) => {
     const { email, password } = e.target.elements;
 
     if (email.value.length < 4) {
-      setError("Please enter an email address.");
+      setError("Please enter a valid email address.");
       return;
     }
     if (password.value.length < 6) {
-      setError("Password needs a minimum of 6 characters.");
+      setError("Please choose a stronger password. (6 Characters minimum)");
       return;
     }
     if (password.value.includes("123456")){
-      setError(`Password ${password.value} is not secure.`)
+      setError(`${password.value} is not secure. Please choose a stronger password.`)
       return;
     }
 
@@ -56,7 +55,7 @@ const SignupPage = ({ history }) => {
         let errorCode = error.code;
         let errorMessage = error.message;
         if (errorCode === "auth/weak-password") {
-          setError("The password is too weak.");
+          setError("Please choose a stronger password.");
         } else {
           setError(errorMessage);
         }
@@ -101,6 +100,7 @@ const SignupPage = ({ history }) => {
     else setShowPassword("show");
   };
 
+  document.title = "Launger - Sign up";
   return (
     <div className="SignupPage">
       <NavBar />
