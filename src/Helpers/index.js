@@ -2,13 +2,13 @@ import React, { lazy, Suspense } from "react";
 import firebase from "firebase/app";
 import ClockSpinner from "../Components/ClockSpinner/ClockSpinner";
 
-const filterIDs = (alreadyGotIDs, restIDs) => {
+export const filterIDs = (alreadyGotIDs, restIDs) => {
   return restIDs.filter(restID => {
     return !alreadyGotIDs.find(alreadyGotID => alreadyGotID === restID);
   });
 };
 
-const importCards = (widgetIDs, alreadyGot = false) => {
+export const importCards = (widgetIDs, alreadyGot = false) => {
   return widgetIDs.map(widgetID => {
     // console.log("[DEV-ONLY] importing card", widgetID);
     const Card = lazy(() =>
@@ -26,7 +26,7 @@ const importCards = (widgetIDs, alreadyGot = false) => {
   });
 };
 
-const importWidget = widgetID => {
+export const importWidget = widgetID => {
   // console.log("[DEV-ONLY] Importing:", widgetID);
   const Widget = lazy(() =>
     import(
@@ -40,7 +40,7 @@ const importWidget = widgetID => {
   );
 };
 
-const formatTime = (seconds) => {
+export const formatTime = (seconds) => {
   return (Math.floor(seconds / 60) >= 10
     ? Math.floor(seconds / 60)
     : "0" + Math.floor(seconds / 60)) +
@@ -50,7 +50,7 @@ const formatTime = (seconds) => {
     : "0" + Math.floor(seconds % 60));
 }
 
-const updateTimer = (timer, setTimer) => {
+export const updateTimer = (timer, setTimer) => {
   if (timer.isCountingdown) {
     if (timer.time - 1 < 0) setTimer({ ...timer, isCountingdown: false });
     else setTimer({ ...timer, time: timer.time - 1 });
@@ -59,19 +59,19 @@ const updateTimer = (timer, setTimer) => {
   }
 };
 
-const updatePoints = (points, setPoints, timer) => {
+export const updatePoints = (points, setPoints, timer) => {
   if (!timer.isCountingdown && timer.time > 0) {
     if (timer.time % 30 === 0) setPoints(points - 100);
     else if (timer.time % 10 === 0) setPoints(points - 10);
   }
 };
 
-const updateTimerPoints = (timer, setTimer, points, setPoints) => {
+export const updateTimerPoints = (timer, setTimer, points, setPoints) => {
   updateTimer(timer, setTimer);
   updatePoints(points, setPoints, timer);
 };
 
-const updateFireStorePoints = (sPoints) => {
+export const updateFireStorePoints = (sPoints) => {
   return new Promise((resolve, reject) => {
     if (sPoints === 0) resolve("No points to add.");
     const db = firebase.firestore();
@@ -90,7 +90,7 @@ const updateFireStorePoints = (sPoints) => {
   })
 }
 
-const updateFiretoreWidgets = (amount, widgetId, isGetting) => {
+export const updateFiretoreWidgets = (amount, widgetId, isGetting) => {
   const db = firebase.firestore(),
     uid = firebase.auth().currentUser && firebase.auth().currentUser.uid;
 
@@ -135,15 +135,3 @@ const updateFiretoreWidgets = (amount, widgetId, isGetting) => {
     return Promise.reject({message: "You are not logged in, please log in to use this widget."});
   }
 }
-
-export {
-  updateFiretoreWidgets,
-  updateFireStorePoints,
-  filterIDs,
-  importCards,
-  importWidget,
-  updatePoints,
-  updateTimer,
-  updateTimerPoints,
-  formatTime
-};
