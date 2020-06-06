@@ -1,4 +1,5 @@
 import { createStore } from "react-hookstore";
+import { createSessionStore, createLocalStore } from "../Utils/Hooks";
 
 // Default values
 const 
@@ -13,17 +14,21 @@ const
   todosDefault = [],
   timerModeDefault = "pomodoro"
 
-// Create Stores
-createStore("loggedIn", (localStorage.getItem("loggedIn") === "true"? true : false) || loggedInDefault);
-createStore("user", JSON.parse(sessionStorage.getItem("user")) || userDefault);
-createStore("points", JSON.parse(sessionStorage.getItem("points")) || pointsDefault);
+// Create Tab Stores (Data is lost on tab refresh/close)
 createStore("sPoints", sPointsDefault);
-createStore("widget", JSON.parse(sessionStorage.getItem("widget")) || widgetDefault);
 createStore("onBreak", false);
-createStore("nextWidget", JSON.parse(sessionStorage.getItem("widget")) || widgetDefault);
 createStore("timer", timerDefault);
-createStore("theme", localStorage.getItem("theme") || themeDefault);
 createStore("togglePoints", togglePointsDefault);
-createStore("todos", JSON.parse(sessionStorage.getItem("todos")) || todosDefault);
-createStore("timerMode", sessionStorage.getItem("timerMode") || timerModeDefault);
 createStore("totalTime", 0);
+
+// Create Session Stores (Data is lost on tab close)
+createSessionStore("user", userDefault);
+createSessionStore("points", pointsDefault);
+createSessionStore("widget", widgetDefault);
+createSessionStore("nextWidget", widgetDefault);
+createSessionStore("todos", todosDefault);
+createSessionStore("timerMode", timerModeDefault);
+
+// Create Local Stores (Data is NOT lost on tab close)
+createLocalStore("loggedIn", loggedInDefault);
+createStore("theme", localStorage.getItem("theme") || themeDefault);
