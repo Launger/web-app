@@ -1,7 +1,7 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import firebase from "firebase/app";
-import { useStore } from "react-hookstore";
+import { useSessionStore, useLocalStore } from "./Utils/Hooks";
 
 import ClockSpinner from "./Components/ClockSpinner/ClockSpinner";
 
@@ -21,34 +21,36 @@ const PrivacyPage = lazy(() => import( /* webpackChunkName: "[request]" */ "./Pa
 const TermsPage = lazy(() => import( /* webpackChunkName: "[request]" */ "./Pages/TermsPage/TermsPage"));
 const CookiesPage = lazy(() => import( /* webpackChunkName: "[request]" */ "./Pages/CookiesPage/CookiesPage"));
 
-function App() {
-  const [, setLoggedIn] = useStore("loggedIn");
-  const [user, setUser] = useStore("user");
-  const [, setPoints] = useStore("points");
-  const [theme] = useStore("theme");
-  const [, setUpdate] = useState();
+const App = () => {
+  const [, setLoggedIn] = useLocalStore("loggedIn");
+  const [user, setUser] = useSessionStore("user");
+  const [, setPoints] = useSessionStore("points");
+  const [theme] = useLocalStore("theme");
 
   const [themeStyle, setThemeStyle] = useState("");
 
+  // Fetch changes from remoteConfig 
   useEffect(() => {
-    //Fetch from remote config
     remoteConfig.fetchAndActivate()
       .then(data => {
         document.head.querySelector("meta[property='og:title']").content = "Launger - " + remoteConfig.getString("welcomeText");
         document.head.querySelector("meta[name='description']").content = remoteConfig.getString("welcomeSubText");
         document.head.querySelector("meta[property='og:description']").content = remoteConfig.getString("welcomeSubText");
-        setUpdate(data);
       })
-      .catch(err => setUpdate(err));
-    // Increment visits.
-    let visits = localStorage.getItem('visits'); 
-    localStorage.setItem('visits', visits !== null ? Number(visits) + 1 : 0);
+    .catch(err => console.log(err));
+  }, []);
 
+  // Increment user visits (localStorage item)
+  useEffect(() => {
+    let visits = localStorage.getItem('visits');
+    localStorage.setItem('visits', visits !== null ? Number(visits) + 1 : 0);
+  }, [])
+
+  // Check if user is logged in (with Firebase) and fetch their data if required
+  useEffect(() => {
     firebase.auth().onAuthStateChanged(fireUser => {
-      // console.log("[DEV-ONLY] Auth info:", fireUser, "loggedIn:", loggedIn);
       if (fireUser) {
         setLoggedIn(true);
-        localStorage.setItem("loggedIn", true);
         if (!user) {
           // console.log("[DEV-ONLY] User was NOT logged in before");
           firebase
@@ -61,9 +63,7 @@ function App() {
               const firePoints = {
                 totalPoints: (data)?data.totalPoints : 0
               };
-              sessionStorage.setItem("points", JSON.stringify(firePoints));
               setPoints(firePoints);
-              sessionStorage.setItem("user", JSON.stringify({ ...data, ...firePoints}));
               setUser({ ...data, ...firePoints});
             });
         } else {
@@ -76,8 +76,9 @@ function App() {
       }
     });
     // eslint-disable-next-line
-  }, []);
+  }, [])
 
+  // Check if theme changed and update CSS :root
   useEffect(() => {
     if (theme === "light") {
       setThemeStyle("");
