@@ -4,10 +4,9 @@ import { createSessionStore, createLocalStore } from "../Utils/Hooks";
 // Default values
 const 
   loggedInDefault = false,
-  userDefault = null,
-  pointsDefault = { totalPoints: 0 },
+  userDefault = { totalPoints: 0 },
   sPointsDefault = 0,
-  widgetDefault = {id: "d27154EFDbCa05654074E41a8d542b53", ppm: 60}, // Classic widgetID
+  widgetDefault = {id: "d27154EFDbCa05654074E41a8d542b53"}, // Classic widgetID
   timerDefault = { time: 0, isCountingdown: true },
   themeDefault = window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light",
   togglePointsDefault = "real",
@@ -25,7 +24,6 @@ createStore("totalTime", totalTimeDefault);
 
 // Create Session Stores (Data is lost on tab close)
 createSessionStore("user", userDefault);
-createSessionStore("points", pointsDefault);
 createSessionStore("widget", widgetDefault);
 createSessionStore("nextWidget", widgetDefault);
 createSessionStore("todos", todosDefault);

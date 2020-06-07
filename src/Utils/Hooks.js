@@ -5,6 +5,7 @@ import {createStore, useStore} from "react-hookstore";
  * Parses JSON by default.
  * @param {string} storeName 
  * @param {any} defaultValue
+ * @param {boolean} needsParsing
  */
 export const createSessionStore = (storeName, defaultValue = null, needsParsing = true) => {
   const value = sessionStorage.getItem(storeName);
@@ -16,6 +17,7 @@ export const createSessionStore = (storeName, defaultValue = null, needsParsing 
  * Parses JSON by default.
  * @param {string} storeName 
  * @param {any} defaultValue
+ * @param {boolean} needsParsing
  */
 export const createLocalStore = (storeName, defaultValue = null, needsParsing = true) => {
   const value = localStorage.getItem(storeName);
@@ -23,27 +25,33 @@ export const createLocalStore = (storeName, defaultValue = null, needsParsing = 
 }
 
 /**
- * Custom useStore hook, works the same, but setStore() also caches to sessionStorage
+ * Custom useStore hook, works the same, but setStore() also caches to sessionStorage.
+ * Uses JSON.stringify() by default
  * @param {string} storeName 
+ * @param {boolean} needStringify
  */
-export const useSessionStore = (storeName) => {
+export const useSessionStore = (storeName, needStringify = true) => {
   const [store,setActualStore] = useStore(storeName);
   const setStore = (value) => {
     setActualStore(value);
-    sessionStorage.setItem(storeName, JSON.stringify(value));
+    value = (needStringify ? JSON.stringify(value) : value);
+    sessionStorage.setItem(storeName, value);
   }
   return [store, setStore];
 }
 
 /**
- * Custom useStore hook, works the same, but setStore() also caches to localStorage
+ * Custom useStore hook, works the same, but setStore() also caches to localStorage.
+ * Uses JSON.stringify() by default
  * @param {string} storeName 
+ * @param {boolean} needStringify
  */
-export const useLocalStore = (storeName) => {
+export const useLocalStore = (storeName, needStringify = true) => {
   const [store,setActualStore] = useStore(storeName);
   const setStore = (value) => {
     setActualStore(value);
-    localStorage.setItem(storeName, JSON.stringify(value));
+    value = (needStringify ? JSON.stringify(value) : value);
+    localStorage.setItem(storeName, value);
   }
   return [store, setStore];
 }

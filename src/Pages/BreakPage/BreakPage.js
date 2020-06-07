@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState, Suspense, lazy, useRef } from "react";
 import { useStore } from "react-hookstore";
+import {useSessionStore} from "../../Utils/Hooks";
 import Toast from "react-bootstrap/Toast";
 
 import NavBar from "../../Components/NavBar/NavBar";
@@ -15,14 +16,13 @@ import "./BreakPage.css";
 const WarningModal = lazy(() => import( /* webpackChunkName: "[request]" */ "../../Components/Modals/WarningModal"));
 
 const BreakPage = ({ history }) => {
-  const [widget, setWidget] = useStore("widget");
-  const [nextWidget] = useStore("nextWidget");
+  const [widget, setWidget] = useSessionStore("widget");
+  const [nextWidget] = useSessionStore("nextWidget");
+  const [user, setUser] = useSessionStore("user");
+  const [timerMode] = useSessionStore("timerMode");
   const [, setOnBreak] = useStore("onBreak");
   const [timer, setTimer] = useStore("timer");
   const [sPoints, setSPoints] = useStore("sPoints");
-  const [points, setPoints] = useStore("points");
-  const [user] = useStore("user");
-  const [timerMode] = useStore('timerMode');
   
   const [showWarningModal, setShowWarningModal] = useState(false);
   const [showUpNext, setShowUpNext] = useState(false);
@@ -71,9 +71,8 @@ const BreakPage = ({ history }) => {
             updateFireStorePoints(sPoints)
               .then(res => {
                 // if (res !== undefined) console.log(res);
-                setPoints({totalPoints: points.totalPoints + sPoints});
+                setUser({ ...user, totalPoints: user.totalPoints + sPoints })
                 setSPoints(0);
-                sessionStorage.setItem("points", JSON.stringify(points));
               }).catch(err => console.log(err));
           }
         } else {
@@ -115,10 +114,8 @@ const BreakPage = ({ history }) => {
     if (sPoints < 0) {
       updateFireStorePoints(sPoints)
         .then(res => {
-          setPoints({totalPoints: points.totalPoints + sPoints});
+          setUser({ ...user, totalPoints: user.totalPoints + sPoints });
           setSPoints(0);
-          // if (res !== undefined) console.log(res);
-          sessionStorage.setItem("points", JSON.stringify(points));
         })
         .catch(err => console.log(err));
     }

@@ -23,9 +23,8 @@ const CookiesPage = lazy(() => import( /* webpackChunkName: "[request]" */ "./Pa
 
 const App = () => {
   const [, setLoggedIn] = useLocalStore("loggedIn");
+  const [theme] = useLocalStore("theme", false);
   const [user, setUser] = useSessionStore("user");
-  const [, setPoints] = useSessionStore("points");
-  const [theme] = useLocalStore("theme");
 
   const [themeStyle, setThemeStyle] = useState("");
 
@@ -63,7 +62,6 @@ const App = () => {
               const firePoints = {
                 totalPoints: (data)?data.totalPoints : 0
               };
-              setPoints(firePoints);
               setUser({ ...data, ...firePoints});
             });
         } else {

@@ -1,27 +1,21 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import { useStore } from "react-hookstore";
+import { useSessionStore, useLocalStore } from "../../Utils/Hooks";
 import firebase from "firebase/app";
 
 import { updateFireStorePoints } from "../../Helpers";
 import "./NavBar.css";
 
 const NavBar = ({ Timer, Points, history }) => {
-  const [theme, setTheme] = useStore("theme");
-  const [loggedIn, setLoggedIn] = useStore("loggedIn");
-  const [, setPoints] = useStore("points");
+  const [theme, setTheme] = useLocalStore("theme", false);
+  const [loggedIn, setLoggedIn] = useLocalStore("loggedIn");
+  const [user, setUser] = useSessionStore("user");
   const [sPoints, setSPoints] = useStore("sPoints");
 
   const toggleTheme = () => {
-    setTheme(theme => {
-      if(theme === "light"){
-        localStorage.setItem("theme", "dark");
-        return "dark";
-      } else {
-        localStorage.setItem("theme", "light");
-        return "light";
-      }
-    })
+    if(theme === "light") setTheme("dark");
+    else setTheme("light");
   };
 
   const handleLogout = () => {
@@ -32,9 +26,8 @@ const NavBar = ({ Timer, Points, history }) => {
       })
       .then(() => { //Logout from Firebase Auth is SUCESSFUL
         setLoggedIn(false);
-        localStorage.setItem("loggedIn", false);
         setSPoints(0);
-        setPoints({ totalPoints: 0 });
+        setUser({ ...user, totalPoints: 0 });
         history.push("/");
       })
       .catch(err => console.log(err)); //Logout from Firebase Auth is NOT successful

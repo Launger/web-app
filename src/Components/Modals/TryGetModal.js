@@ -1,6 +1,7 @@
 import React, { useState, lazy, Suspense } from "react";
 import {withRouter} from "react-router-dom";
 import {useStore} from "react-hookstore";
+import {useSessionStore, useLocalStore} from "../../Utils/Hooks";
 
 import ClockSpinner from "../../Components/ClockSpinner/ClockSpinner";
 
@@ -12,13 +13,11 @@ const GetModal = lazy(() => import( /* webpackChunkName: "[request]" */ "./GetMo
 const BothModal = lazy(() => import( /* webpackChunkName: "[request]" */ "./BothModal"));
 
 const TryGetModal = ({showTry, showGet, showBoth, onHide, tryCost, getCost, widgetId, name, ppm, history}) => {
-  // eslint-disable-next-line
-  const [, setWidget] = useStore("widget");
-  const [user, setUser] = useStore("user");
-  const [points, setPoints] = useStore("points");
-  const { totalPoints } = points;
+  const [loggedIn] = useLocalStore("loggedIn");
+  const [, setWidget] = useSessionStore("widget");
+  const [user, setUser] = useSessionStore("user");
   const [sPoints, setSPoints] = useStore("sPoints");
-  const [loggedIn] = useStore("loggedIn");
+
   const [showError, setShowError] = useState(false);
 
   const handleUpdated = () => {
@@ -30,32 +29,24 @@ const TryGetModal = ({showTry, showGet, showBoth, onHide, tryCost, getCost, widg
   const handleTry = () => {
     onHide();
     if(!loggedIn) {
-      setShowError("You are not logged in, please log to try this widget.");
-    } else if((points.totalPoints + sPoints) < tryCost){
+      setShowError("You are not logged in, please login to try this widget.");
+    } else if((user.totalPoints + sPoints) < tryCost){
       setShowError("You do not have enough points.");
     } else {
       updateFireStorePoints(sPoints)
         .then((res) => {
-          // if (res !== undefined) console.log(res);
           setUser({
             ...user,
-            totalPoints: totalPoints + sPoints
-          });
-          setPoints({
-            totalPoints: totalPoints + sPoints
+            totalPoints: user.totalPoints + sPoints
           });
           setSPoints(0);
           return updateFiretoreWidgets(tryCost, widgetId, false)
         })
         .then(res2 => {
-          // console.log(res2);
           setUser({
             ...user,
             widgets: [...user.widgets, widgetId],
-            totalPoints: totalPoints - tryCost
-          });
-          setPoints({
-            totalPoints: totalPoints - tryCost
+            totalPoints: user.totalPoints - tryCost
           });
           setSPoints(0);
           handleUpdated();
@@ -70,40 +61,25 @@ const TryGetModal = ({showTry, showGet, showBoth, onHide, tryCost, getCost, widg
   const handleGet = () => {
     onHide();
     if(!loggedIn) {
-      setShowError("You are not logged in, please log in to get this widget.");
-    } else if((points.totalPoints + sPoints) < getCost){
+      setShowError("You are not logged in, please login to get this widget.");
+    } else if((user.totalPoints + sPoints) < getCost){
       setShowError("You do not have enough points.")
     } else {
-    updateFireStorePoints(sPoints)
-      .then((res) => {
-        // if (res !== undefined) console.log(res);
-        setUser({
-          ...user,
-          totalPoints: totalPoints + sPoints
+      updateFireStorePoints(sPoints)
+        .then((res) => updateFiretoreWidgets(getCost, widgetId, true))
+        .then(res2 => {
+          setUser({
+            ...user,
+            widgets: [...user.widgets, widgetId],
+            totalPoints: user.totalPoints + sPoints - getCost
+          });
+          setSPoints(0);
+          handleUpdated();
+        })
+        .catch(err => {
+          console.log(err);
+          setShowError(err.message);
         });
-        setPoints({
-          totalPoints: totalPoints + sPoints
-        });
-        setSPoints(0);
-        return updateFiretoreWidgets(getCost, widgetId, true)
-      })
-      .then(res2 => {
-        // console.log(res2);
-        setUser({
-          ...user,
-          widgets: [...user.widgets, widgetId],
-          totalPoints: totalPoints - getCost
-        });
-        setPoints({
-          totalPoints: totalPoints - getCost
-        });
-        setSPoints(0);
-        handleUpdated();
-      })
-      .catch(err => {
-        console.log(err);
-        setShowError(err.message);
-      });
     }
   }
 

@@ -8,7 +8,7 @@ import "./Tips.css";
 const Tips = () => {
   const [loggedIn] = useStore("loggedIn");
   const [sPoints] = useStore("sPoints");
-  const [points] = useStore("points");
+  const [user] = useStore("user");
   
   const notLoggedIn = {
     message: <>{sPoints>0 ?
@@ -27,7 +27,7 @@ const Tips = () => {
       message: <>Consider <a href="https://www.surveymonkey.com/r/8JNNY62" target="_blank" rel="noopener noreferrer">giving us feedback</a>. Your feedback will go a long way towards making Launger even better.</>
     },
     {
-      message: <>Nicelly done, you've got {Math.round(sPoints+points.totalPoints)} points. You might want to TRY or GET a new widget. You deserve it.</>
+      message: <>Nicelly done, you've got {Math.round(sPoints+user.totalPoints)} points. You might want to TRY or GET a new widget. You deserve it.</>
     }
     // {
     //   message: <><strong>Verify your email</strong> to make your account more secure.</>

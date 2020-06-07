@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useStore } from "react-hookstore";
+import { useSessionStore } from "../../../Utils/Hooks";
 import { Alert } from "react-bootstrap";
 import { withRouter } from "react-router-dom";
 
@@ -15,10 +16,10 @@ import "./PomodoroPage.css";
 const TIME = 25*60;
 
 const TimePage = ({ history }) => {
+  const [user, setUser] = useSessionStore("user");
+  const [widget] = useSessionStore("widget");
   const [timer, setTimer] = useStore("timer");
   const [sPoints, setSPoints] = useStore("sPoints");
-  const [points, setPoints] = useStore("points");
-  const [widget] = useStore("widget");
 
   const [workTimeLeft, setWorkTimeLeft] = useState(
     Number(sessionStorage.getItem("workTimeLeft") || TIME)
@@ -94,10 +95,8 @@ const TimePage = ({ history }) => {
     sessionStorage.removeItem("workTimeLeft");
     updateFireStorePoints(sPoints + ppm / 60)
       .then((res) => {
-        setPoints({ totalPoints: points.totalPoints + sPoints + ppm / 60 });
+        setUser({ ...user, totalPoints: user.totalPoints + sPoints + ppm / 60 });
         setSPoints(0);
-        // if (res !== undefined) console.log(res);
-        sessionStorage.setItem("points", JSON.stringify(points));
       })
       .catch((err) => console.log(err));
     history.push("/break");
