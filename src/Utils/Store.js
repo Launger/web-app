@@ -1,5 +1,5 @@
 import { createStore } from "react-hookstore";
-import { createSessionStore, createLocalStore } from "../Utils/Hooks";
+import { createSessionStore, createLocalStore } from "./Hooks";
 
 // Default values
 const 

@@ -5,10 +5,10 @@ import { useSessionStore, useLocalStore } from "./Utils/Hooks";
 
 import ClockSpinner from "./Components/ClockSpinner/ClockSpinner";
 
-import "./Helpers/Store";
-import "./Helpers/Firebase";
-import remoteConfig from "./Helpers/RemoteConfig";
-// import "./Helpers/gapi";
+import "./Utils/Store";
+import "./Utils/Firebase";
+import remoteConfig from "./Utils/RemoteConfig";
+// import "./Utils/gapi";
 
 const IndexPage = lazy(() => import( /* webpackChunkName: "[request]" */ "./Pages/IndexPage/IndexPage"));
 const BrowsePage = lazy(() => import( /* webpackChunkName: "[request]" */ "./Pages/BrowsePage/BrowsePage"));

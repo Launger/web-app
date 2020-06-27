@@ -5,7 +5,7 @@ import Points from "../../Components/Points/Points";
 import NavBar from "../../Components/NavBar/NavBar";
 
 import { importCards, filterIDs } from "../../Utils";
-import config from "../../Helpers/RemoteConfig";
+import config from "../../Utils/RemoteConfig";
 import "./BrowsePage.css";
 
 const BrowsePage = ({onBreak = false}) => {

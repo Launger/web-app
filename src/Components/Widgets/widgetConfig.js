@@ -1,4 +1,4 @@
-import remoteConfig, {baseConfig} from "../../Helpers/RemoteConfig";
+import remoteConfig, {baseConfig} from "../../Utils/RemoteConfig";
 
 const 
   defaultPPM = 70,

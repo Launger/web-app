@@ -9,7 +9,7 @@ import Points from "../../Components/Points/Points";
 import ClockSpinner from "../../Components/ClockSpinner/ClockSpinner";
 
 import { importWidget, importCards, filterIDs, formatTime, updatePoints, updateFireStorePoints } from "../../Utils";
-import config from "../../Helpers/RemoteConfig";
+import config from "../../Utils/RemoteConfig";
 import wConfig from "../../Components/Widgets/widgetConfig";
 import "./BreakPage.css";
 

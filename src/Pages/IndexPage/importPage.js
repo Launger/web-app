@@ -17,7 +17,7 @@ import launch from "./Launch.png";
 import YouTube from "./YouTube.png";
 import TikTok from "./TikTok.svg";
 import Reddit from "./Reddit.svg";
-import config from "../../Helpers/RemoteConfig";
+import config from "../../Utils/RemoteConfig";
 import "./IndexPage.css";
 
 const IndexPage = () => {
