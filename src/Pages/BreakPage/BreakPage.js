@@ -8,7 +8,7 @@ import Timer from "../../Components/Timer/Timer";
 import Points from "../../Components/Points/Points";
 import ClockSpinner from "../../Components/ClockSpinner/ClockSpinner";
 
-import { importWidget, importCards, filterIDs, formatTime, updatePoints, updateFireStorePoints } from "../../Helpers";
+import { importWidget, importCards, filterIDs, formatTime, updatePoints, updateFireStorePoints } from "../../Utils";
 import config from "../../Helpers/RemoteConfig";
 import wConfig from "../../Components/Widgets/widgetConfig";
 import "./BreakPage.css";

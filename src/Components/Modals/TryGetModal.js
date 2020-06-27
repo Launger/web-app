@@ -5,7 +5,7 @@ import {useSessionStore, useLocalStore} from "../../Utils/Hooks";
 
 import ClockSpinner from "../../Components/ClockSpinner/ClockSpinner";
 
-import {updateFiretoreWidgets, updateFireStorePoints} from "../../Helpers";
+import {updateFiretoreWidgets, updateFireStorePoints} from "../../Utils";
 
 const ErrorModal = lazy(() => import( /* webpackChunkName: "[request]" */ "./ErrorModal"));
 const TryModal = lazy(() => import( /* webpackChunkName: "[request]" */ "./TryModal"));

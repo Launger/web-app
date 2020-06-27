@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import Tooltip from "../Tooltip/Tooltip";
 
 import "./Todos.css";
-import {formatTime} from "../../Helpers";
+import {formatTime} from "../../Utils";
 
 const Todos = ({speedrun = false}) => {
   const [todos, setTodos] = useStore("todos");

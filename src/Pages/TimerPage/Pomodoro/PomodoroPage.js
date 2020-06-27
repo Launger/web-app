@@ -10,7 +10,7 @@ import Points from "../../../Components/Points/Points";
 import Todos from "../../../Components/Todos/Todos";
 
 import widgetConfig from "../../../Components/Widgets/widgetConfig";
-import { formatTime, updateFireStorePoints } from "../../../Helpers";
+import { formatTime, updateFireStorePoints } from "../../../Utils";
 
 import "./PomodoroPage.css";
 const TIME = 25*60;

@@ -9,7 +9,7 @@ import Points from "../../../Components/Points/Points";
 import Todos from "../../../Components/Todos/Todos";
 
 import widgetConfig from "../../../Components/Widgets/widgetConfig";
-import { formatTime } from "../../../Helpers";
+import { formatTime } from "../../../Utils";
 
 import "./SpeedrunPage.css";
 

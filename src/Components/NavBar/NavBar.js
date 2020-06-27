@@ -4,7 +4,7 @@ import { useStore } from "react-hookstore";
 import { useSessionStore, useLocalStore } from "../../Utils/Hooks";
 import firebase from "firebase/app";
 
-import { updateFireStorePoints } from "../../Helpers";
+import { updateFireStorePoints } from "../../Utils";
 import "./NavBar.css";
 
 const NavBar = ({ Timer, Points, history }) => {

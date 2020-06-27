@@ -4,7 +4,7 @@ import { useStore } from "react-hookstore";
 import Points from "../../Components/Points/Points";
 import NavBar from "../../Components/NavBar/NavBar";
 
-import { importCards, filterIDs } from "../../Helpers";
+import { importCards, filterIDs } from "../../Utils";
 import config from "../../Helpers/RemoteConfig";
 import "./BrowsePage.css";
 

@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import { useStore } from "react-hookstore";
 import { useSessionStore } from "../../Utils/Hooks";
 
-import { updateFireStorePoints } from "../../Helpers";
+import { updateFireStorePoints } from "../../Utils";
 
 const TabModal = ({ show, onHide }) => {
   const [user, setUser] = useSessionStore("user"); 

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { useStore } from "react-hookstore";
 
-import { formatTime } from "../../Helpers";
+import { formatTime } from "../../Utils";
 import './Timer.css';
 
 const Timer = ({speedrun = false}) => {
