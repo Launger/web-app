@@ -30,6 +30,7 @@ const restIDs = [
   "4048Ef5e661E3B5248c1658E08540A0d", //Talk Shows
   "6eE0F88ef7bDc873991E47EeD84Af01a", //Liked & Shared
   "b5492f1C4aCFCBeE0856275d291736ec", //New tech
+  "5CB04D98beB91e67596DDA266E6e71CF", //slither.io
   // "1d330b7D106021FAEA32f81469faCB83", //Today's top
   // "0FA0568607feDe5de32D83e297F28f49", //Look Good, Feel Good
   // "30a55BA55827E87706dfD5941D6B034F", //Popular
