@@ -1,0 +1,24 @@
+.Widget {
+  width: 100%;
+}
+
+.Widget .wrapper {
+  position: relative;
+  min-width: 200px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.Widget .content {
+  position: absolute;
+  min-height: 600px;
+  height: 100%;
+  width: 100%;
+}
+
+.Widget:after {
+  content: '';
+  display: block;
+  padding-top: calc(100% / (16/9));
+}
+/*# sourceMappingURL=Widget.css.map */
