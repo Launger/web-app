@@ -14,6 +14,16 @@
   margin: 0 20px;
 }
 
+.NavBar nav a .logo {
+  -webkit-filter: none;
+          filter: none;
+}
+
+.NavBar nav a .dark {
+  -webkit-filter: invert(100%) saturate(7500%) hue-rotate(71deg) brightness(105%) contrast(102%);
+          filter: invert(100%) saturate(7500%) hue-rotate(71deg) brightness(105%) contrast(102%);
+}
+
 .NavBar nav #logo {
   margin-top: -10px;
   margin-bottom: -10px;

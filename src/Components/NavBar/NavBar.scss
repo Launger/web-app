@@ -8,6 +8,12 @@
     margin-bottom: -10px;
     a {
       margin: 0 20px;
+      .logo {
+        filter: none;
+      }
+      .dark {
+        filter: invert(100%) saturate(7500%) hue-rotate(71deg) brightness(105%) contrast(102%);
+      }
     }
     #logo {
       margin-top: -10px;
