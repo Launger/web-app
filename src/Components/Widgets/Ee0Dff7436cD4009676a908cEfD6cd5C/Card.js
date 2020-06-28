@@ -2,7 +2,7 @@ import React from "react";
 
 import Template from "../Templates/YouTube/Card";
 
-import youtubeLogo from "./yt_logo_rgb_dark.png";
+import youtubeLogo from "Static/youtube-logo.png";
 import "./Card.css";
 
 const Card = ({ alreadyGot }) => {

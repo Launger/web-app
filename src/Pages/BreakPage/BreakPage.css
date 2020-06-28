@@ -60,7 +60,7 @@
 }
 
 .BreakPage .sidebar .next-card::after {
-  content: '';
+  content: "";
   border-bottom: solid 1px var(--secondary-bg);
 }
 

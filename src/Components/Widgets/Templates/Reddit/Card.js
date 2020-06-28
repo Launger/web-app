@@ -2,13 +2,12 @@ import React from "react";
 
 import Template from "../Card/Card";
 
-import RedditLogo from "./Reddit.svg";
+import RedditLogo from "Static/reddit-logo.svg";
 import config from "../../widgetConfig";
 import "./Card.css";
 
 const RedditCardTemplate = ({ id, thumbnails, alreadyGot }) => {
   const name = config[id].name,
-    // youtubeURL = config[id].youtubeURL,
     TemplateThumbnails = {
       bg: thumbnails.bg || (
         <div className="reddit-card-bg">

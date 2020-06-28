@@ -7,7 +7,7 @@ import firebase from "firebase/app";
 import ThemeButton from "./ThemeButton";
 
 import { updateFireStorePoints } from "Utils";
-import laungerLogoBlack from "../../Static/launger-logo.svg";
+import laungerLogoBlack from "Static/launger-logo.svg";
 import "./NavBar.css";
 
 const NavBar = ({ Timer, Points, history }) => {

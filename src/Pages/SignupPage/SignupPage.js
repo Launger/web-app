@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import NavBar from "Components/NavBar/NavBar";
 
 import illustration from "./signup-illustration.svg";
-import googleIcon from "./google-icon.svg";
+import googleIcon from "Static/google-icon.svg";
 import "./SignupPage.css";
 
 const SignupPage = ({ history }) => {

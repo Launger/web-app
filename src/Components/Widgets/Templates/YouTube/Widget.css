@@ -28,8 +28,8 @@
 }
 
 .yt-template-widget .wrapper:after {
-  content: '';
+  content: "";
   display: block;
-  padding-top: calc(100% / (16/9));
+  padding-top: calc(100% / (16 / 9));
 }
 /*# sourceMappingURL=Widget.css.map */

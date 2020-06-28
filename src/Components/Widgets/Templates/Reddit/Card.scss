@@ -20,9 +20,12 @@
       }
       .subname {
         position: absolute;
-        top: calc(50% + 1.2em + 15px);
+        top: calc(50% + 1.2em + 20px);
         left: 50%;
         transform: translate(-50%, -50%);
+        img {
+          height: 35px;
+        }
       }
     }
   }

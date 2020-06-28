@@ -1,5 +1,5 @@
 .RedditCardTemplate .reddit-card-bg {
-  background: linear-gradient(119.46deg, #0066D8 0%, #001F42 100%);
+  background: linear-gradient(119.46deg, #0066d8 0%, #001f42 100%);
   position: absolute;
   height: 100%;
   width: 100%;
@@ -32,9 +32,13 @@
 
 .RedditCardTemplate .reddit-card-bg .text .subname {
   position: absolute;
-  top: calc(50% + 1.2em + 15px);
+  top: calc(50% + 1.2em + 20px);
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+.RedditCardTemplate .reddit-card-bg .text .subname img {
+  height: 35px;
 }
 /*# sourceMappingURL=Card.css.map */

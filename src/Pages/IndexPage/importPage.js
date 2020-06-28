@@ -14,9 +14,9 @@ import step2 from "./step-2-image.svg";
 import step3 from "./step-3-image.svg";
 import welcomeScreen from "./welcome-screen.svg";
 import launch from "./Launch.png";
-import YouTube from "./YouTube.png";
+import YouTube from "Static/youtube-logo.png";
 import TikTok from "./TikTok.svg";
-import Reddit from "./Reddit.svg";
+import Reddit from "Static/reddit-logo.svg";
 import config from "Utils/RemoteConfig";
 import "./IndexPage.css";
 

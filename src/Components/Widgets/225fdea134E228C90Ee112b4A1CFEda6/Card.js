@@ -2,7 +2,7 @@ import React from "react";
 
 import Template from "../Templates/Reddit/Card";
 import config from "../widgetConfig";
-import RedditLogo from "../Templates/Reddit/Reddit.svg";
+import RedditLogo from "Static/reddit-logo.svg";
 // import "./Card.css";
 
 const Card = ({ alreadyGot }) => {

@@ -11,7 +11,7 @@
   z-index: 10;
   padding: 15px 25px;
   border-radius: 200px;
-  background: #FFD186;
+  background: #ffd186;
   border: none;
   color: black;
   font-weight: 700;
@@ -32,7 +32,7 @@
   -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   min-height: 400px;
-  background: #FFD186;
+  background: #ffd186;
   color: black;
   -webkit-transform: translateY(-3px);
           transform: translateY(-3px);
