@@ -21,8 +21,7 @@
       cursor: pointer;
     }
     .playnow:hover {
-      
-      color: black; 
+      color: black;
       text-decoration: underline;
     }
   }
@@ -34,18 +33,18 @@
     top: 0;
     right: 0;
     z-index: 1;
-    
+
     padding-top: 10px;
     margin-top: 70px;
     margin-right: var(--page-margin);
-    
+
     height: calc(100vh - 70px);
     overflow: auto;
 
     .NEXT {
       display: flex;
       justify-content: space-between;
-      
+
       color: var(--secondary-text-color, grey);
       font-size: 0.9em;
       margin-bottom: -5px;
@@ -54,7 +53,7 @@
       margin: 20px;
 
       &::after {
-        content: '';
+        content: "";
         border-bottom: solid 1px var(--secondary-bg);
       }
     }
@@ -73,11 +72,10 @@
 
   .page-content {
     margin: 0 var(--page-margin);
-    
+
     .main-content {
       margin-right: 306px + 10px;
     }
-
   }
 }
 

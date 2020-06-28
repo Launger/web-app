@@ -1,14 +1,14 @@
 .LoginPage {
   .background {
     position: absolute;
-    background-color: #546FFF;
+    background-color: #546fff;
     height: 100vh;
   }
   .NavBar {
     .nav-link {
       color: white;
     }
-    #login-btn { 
+    #login-btn {
       display: none;
     }
     margin-bottom: 170px;
@@ -54,7 +54,7 @@
       font-size: 1.2em;
       padding-left: 0px;
       border: none;
-      background: linear-gradient(90deg, #F9A826 0%, #FF4E8D 100%);;
+      background: linear-gradient(90deg, #f9a826 0%, #ff4e8d 100%);
       color: white;
       transition: all 0.3s;
     }

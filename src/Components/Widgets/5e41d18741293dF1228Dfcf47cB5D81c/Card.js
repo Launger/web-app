@@ -5,20 +5,15 @@ import Template from "../Templates/TikTok/Card";
 // import "./Card.css";
 
 const Card = ({ alreadyGot }) => {
-  const 
-    id = "5e41d18741293dF1228Dfcf47cB5D81c",
+  const id = "5e41d18741293dF1228Dfcf47cB5D81c",
     thumbnails = {
       bg: null,
       fg: null,
-    }
+    };
 
   return (
     <div className={`Card-id`}>
-      <Template
-        id={id}
-        thumbnails={thumbnails}
-        alreadyGot={alreadyGot}
-      />
+      <Template id={id} thumbnails={thumbnails} alreadyGot={alreadyGot} />
     </div>
   );
 };

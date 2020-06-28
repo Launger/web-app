@@ -7,19 +7,19 @@ import "./Widget.css";
 
 const Widget = ({ src }) => {
   const [showMore, setShowMore] = useState(true);
-  
+
   useEffect(() => {
     const time = setTimeout(() => {
       setShowMore(false);
       clearTimeout(time);
     }, 5000);
     return () => clearTimeout(time);
-  }, [])
+  }, []);
 
   return (
     <div className="yt-template-widget">
-      <div className='wrapper'>
-        {showMore && <Tooltip text="More videos here!" pointing="left"/>}
+      <div className="wrapper">
+        {showMore && <Tooltip text="More videos here!" pointing="left" />}
         <iframe
           className="content"
           src={`${src}&autoplay=1&showinfo=0&controls=1`}

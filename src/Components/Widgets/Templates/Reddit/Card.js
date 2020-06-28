@@ -7,30 +7,27 @@ import config from "../../widgetConfig";
 import "./Card.css";
 
 const RedditCardTemplate = ({ id, thumbnails, alreadyGot }) => {
-  const
-    name = config[id].name,
+  const name = config[id].name,
     // youtubeURL = config[id].youtubeURL,
     TemplateThumbnails = {
       bg: thumbnails.bg || (
         <div className="reddit-card-bg">
           <div className="text">
-            <div className="name" style={(name.length > 15)?{fontSize: "2.1em"}:{}}>{name}</div>
-            <div className="subname"><img src={RedditLogo} alt="reddit logo"/></div>
+            <div className="name" style={name.length > 15 ? { fontSize: "2.1em" } : {}}>
+              {name}
+            </div>
+            <div className="subname">
+              <img src={RedditLogo} alt="reddit logo" />
+            </div>
           </div>
         </div>
       ),
-      fg: thumbnails.fg || (
-        <></>
-      )
-    }
+      fg: thumbnails.fg || <></>,
+    };
 
   return (
     <div className="RedditCardTemplate">
-      <Template
-        id={id}
-        thumbnails={TemplateThumbnails}
-        alreadyGot={alreadyGot}
-      />
+      <Template id={id} thumbnails={TemplateThumbnails} alreadyGot={alreadyGot} />
     </div>
   );
 };

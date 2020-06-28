@@ -1,6 +1,6 @@
 .tiktok-card-template {
   .tiktok-card-bg {
-    background: linear-gradient(119.38deg, #77EAE7 0%, #B93547 100%);
+    background: linear-gradient(119.38deg, #77eae7 0%, #b93547 100%);
     position: absolute;
     height: 100%;
     width: 100%;
@@ -50,16 +50,17 @@
 }
 
 @keyframes animate {
-  0%, 100%{
+  0%,
+  100% {
     text-shadow: -1.5px -1.5px 0 #0ff, 1.5px 1.5px 0 #f00;
   }
-  25%{
+  25% {
     text-shadow: 1.5px 1.5px 0 #0ff, -1.5px -1.5px 0 #f00;
   }
-  50%{
+  50% {
     text-shadow: 1.5px -1.5px 0 #0ff, -1.5px 1.5px 0 #f00;
   }
-  75%{
+  75% {
     text-shadow: -1.5px 1.5px 0 #0ff, 1.5px -1.5px 0 #f00;
   }
   33% {
@@ -67,19 +68,20 @@
   }
 }
 @keyframes animateLogo {
-  0%, 100%{
-    filter: drop-shadow( -1.5px -1.5px 0 #0ff);
+  0%,
+  100% {
+    filter: drop-shadow(-1.5px -1.5px 0 #0ff);
   }
-  25%{
-    filter: drop-shadow( 1.5px 1.5px 0 #f00);
+  25% {
+    filter: drop-shadow(1.5px 1.5px 0 #f00);
   }
-  50%{
-    filter: drop-shadow( 1.5px -1.5px 0 #0ff);
+  50% {
+    filter: drop-shadow(1.5px -1.5px 0 #0ff);
   }
-  75%{
-    filter: drop-shadow( -1.5px 1.5px 0 #f00);
+  75% {
+    filter: drop-shadow(-1.5px 1.5px 0 #f00);
   }
   33% {
-    filter: drop-shadow( 4px 1.5px 0 #0ff);
+    filter: drop-shadow(4px 1.5px 0 #0ff);
   }
 }

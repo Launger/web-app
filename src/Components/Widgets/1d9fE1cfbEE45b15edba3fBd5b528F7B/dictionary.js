@@ -100,6 +100,6 @@ const dictionary = [
   "center",
   "colony",
   "assault",
-  "correction"
+  "correction",
 ];
 export default dictionary;

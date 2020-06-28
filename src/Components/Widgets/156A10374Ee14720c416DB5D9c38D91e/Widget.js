@@ -9,7 +9,7 @@ const Widget = () => {
 
   return (
     <div className="Widget">
-      <Template id={id} text="Go to TikTok"/>
+      <Template id={id} text="Go to TikTok" />
     </div>
   );
 };

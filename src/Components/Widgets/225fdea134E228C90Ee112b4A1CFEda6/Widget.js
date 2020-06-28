@@ -20,13 +20,13 @@ const Widget = () => {
             title: meme.title,
             permalink: meme.postLink,
             url: meme.url,
-          })
-        })
+          });
+        });
 
         setMemes(formattedMemes);
       })
       .catch(err => console.log(err));
-  }
+  };
 
   useEffect(() => {
     fetchMeme();
@@ -35,7 +35,7 @@ const Widget = () => {
 
   return (
     <div className="Widget-F8929a4a2d38df15B25f68272cA0945D">
-      <Template listing={memes} loadMore={fetchMeme}/>
+      <Template listing={memes} loadMore={fetchMeme} />
     </div>
   );
 };

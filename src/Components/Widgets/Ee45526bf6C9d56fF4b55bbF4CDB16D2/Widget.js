@@ -8,7 +8,7 @@ import config from "../widgetConfig";
 const Widget = () => {
   return (
     <div className="Widget">
-      <Template src={config["Ee45526bf6C9d56fF4b55bbF4CDB16D2"].youtubeURL}/>
+      <Template src={config["Ee45526bf6C9d56fF4b55bbF4CDB16D2"].youtubeURL} />
     </div>
   );
 };

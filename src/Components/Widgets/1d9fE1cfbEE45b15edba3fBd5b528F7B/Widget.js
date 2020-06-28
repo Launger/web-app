@@ -8,10 +8,7 @@ import dictionary from "./dictionary";
 import "./Widget.css";
 
 const Widget = () => {
-  const [randomWord, setRandomWord] = useState(
-    sessionStorage.getItem("randomWord") ||
-      dictionary[Math.round(Math.random() * 102)]
-  );
+  const [randomWord, setRandomWord] = useState(sessionStorage.getItem("randomWord") || dictionary[Math.round(Math.random() * 102)]);
   const [sPoints, setSPoints] = useStore("sPoints");
 
   const handleGetNewVideo = () => {
@@ -23,7 +20,7 @@ const Widget = () => {
   return (
     <div className="Widget">
       <div className="frame">
-        <Template src={`https://www.youtube.com/embed?listType=search&list=${randomWord}&autoplay=1&controls=1`}/>
+        <Template src={`https://www.youtube.com/embed?listType=search&list=${randomWord}&autoplay=1&controls=1`} />
       </div>
       <Button onClick={handleGetNewVideo}>Get new video (-5 points)</Button>
     </div>

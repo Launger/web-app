@@ -4,7 +4,7 @@ import "firebase/remote-config";
 const remoteConfig = firebase.remoteConfig();
 remoteConfig.settings = {
   minimumFetchIntervalMillis: 3600000,
-}
+};
 
 const restIDs = [
   "d27154EFDbCa05654074E41a8d542b53", // Classic
@@ -52,14 +52,14 @@ const restIDs = [
 ];
 
 const baseConfig = {
-  "welcomeText": "Work smarter,\nnot harder!",
-  "welcomeSubText": "Be more productive than ever whilst still procrastinating",
-  "restIDs": JSON.stringify(restIDs),
-}
+  welcomeText: "Work smarter,\nnot harder!",
+  welcomeSubText: "Be more productive than ever whilst still procrastinating",
+  restIDs: JSON.stringify(restIDs),
+};
 
-remoteConfig.defaultConfig = ({
+remoteConfig.defaultConfig = {
   ...baseConfig,
-});
+};
 
 export default remoteConfig;
-export {baseConfig};
+export { baseConfig };
