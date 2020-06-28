@@ -1,16 +1,16 @@
-import React, {useState} from "react";
-import { useLocalStore } from "../../Utils/Hooks";
+import React, { useState } from "react";
+import { useLocalStore } from "Utils/Hooks";
 import { Link } from "react-router-dom";
 import firebase from "firebase/app";
 
-import NavBar from "../../Components/NavBar/NavBar";
+import NavBar from "Components/NavBar/NavBar";
 
 import illustration from "./login-illustration.svg";
 import googleIcon from "./google-icon.svg";
 import "./LoginPage.css";
 
 const LoginPage = ({ history }) => {
-  const [, setLoggedIn ] = useLocalStore("loggedIn");
+  const [, setLoggedIn] = useLocalStore("loggedIn");
 
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
@@ -40,10 +40,10 @@ const LoginPage = ({ history }) => {
       .signInWithPopup(provider)
       .then(result => {
         setLoggedIn(true);
-        history.push('/browse');
+        history.push("/browse");
       })
       .catch(err => {
-        setError(err.message)
+        setError(err.message);
         console.log(err);
       });
   };
@@ -55,25 +55,17 @@ const LoginPage = ({ history }) => {
       <div className="background col-md-9"></div>
       <div className="container page-content">
         <div className="row">
-          <img
-            src={illustration}
-            alt="login signup illustration"
-            className="illustration col-md-8"
-          />
+          <img src={illustration} alt="login signup illustration" className="illustration col-md-8" />
           <form onSubmit={handleLogin} className="col-md-4 mx-0">
             <h1>Login</h1>
             <input id="email" type="email" placeholder="Email" name="email" />
             <div className="password-inputs">
-              <input
-                type={showPassword ? "text" : "password"}
-                placeholder="Password"
-                name="password"
-              />
+              <input type={showPassword ? "text" : "password"} placeholder="Password" name="password" />
               <span onClick={() => setShowPassword(!showPassword)} className="show-hide">
-                {showPassword ? "hide":"show"}
+                {showPassword ? "hide" : "show"}
               </span>
             </div>
-              {error && <span className="error">*{error}</span>}
+            {error && <span className="error">*{error}</span>}
             <input id="submit" type="submit" value="Login" />
             <div id="seperator"></div>
             <button type="button" id="google-login" onClick={handleGoogleLogin}>

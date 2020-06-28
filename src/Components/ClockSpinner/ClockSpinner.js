@@ -6,7 +6,7 @@ import "./ClockSpinner.css";
 const ClockSpinner = () => {
   return (
     <div className="ClockSpinner">
-      <ClockLoader loading size={50} color="orange"/>
+      <ClockLoader loading size={50} color="orange" />
     </div>
   );
 };

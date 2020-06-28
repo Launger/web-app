@@ -2,21 +2,21 @@ import React from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import { useStore } from "react-hookstore";
-import { useSessionStore } from "../../Utils/Hooks";
+import { useSessionStore } from "Utils/Hooks";
 
-import { updateFireStorePoints } from "../../Utils";
+import { updateFireStorePoints } from "Utils";
 
 const TabModal = ({ show, onHide }) => {
-  const [user, setUser] = useSessionStore("user"); 
+  const [user, setUser] = useSessionStore("user");
   const [sPoints, setSPoints] = useStore("sPoints");
-  
+
   const handleSave = () => {
     updateFireStorePoints(sPoints / 2)
       .then(msg => {
         setUser({
           ...user,
-          totalPoints: user.totalPoints + sPoints/2,
-        })
+          totalPoints: user.totalPoints + sPoints / 2,
+        });
         setSPoints(0);
         onHide();
       })
