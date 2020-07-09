@@ -1,0 +1,9 @@
+.Widget {
+  width: 100%;
+}
+
+.Widget iframe {
+  min-height: calc(100vh - 140px - 70px);
+  width: 100%;
+}
+/*# sourceMappingURL=Widget.css.map */

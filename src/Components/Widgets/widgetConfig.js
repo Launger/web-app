@@ -292,10 +292,10 @@ remoteConfig.defaultConfig = {
       name: "r/ComedyCemetery",
     },
     "5CB04D98beB91e67596DDA266E6e71CF": {
-      tryCost: defaultTry,
-      ppm: defaultPPM,
-      getCost: defaultGet,
-      name: null,
+      tryCost: defaultTry * 1.5,
+      ppm: defaultPPM * 1.5,
+      getCost: defaultGet * 1.5,
+      name: "slither.io",
     },
     "2213D0a4f3990D16bA862Ab9bd10deFd": {
       tryCost: defaultTry,
