@@ -23,7 +23,7 @@
   top: 40%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -31,8 +31,8 @@
 .WidgetTemplate .container h1:hover {
   color: var(--primary-text-color, black);
   -webkit-transform: translate(-50%, -50%) scale(1.03);
-  transform: translate(-50%, -50%) scale(1.03);
+          transform: translate(-50%, -50%) scale(1.03);
   -webkit-animation: animate 0.5s linear infinite;
-  animation: animate 0.5s linear infinite;
+          animation: animate 0.5s linear infinite;
 }
 /*# sourceMappingURL=Widget.css.map */

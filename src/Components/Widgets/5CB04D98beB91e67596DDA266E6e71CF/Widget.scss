@@ -1,0 +1,8 @@
+.Widget {
+  width: 100%;
+
+  iframe {
+    min-height: calc(100vh - 140px - 70px);
+    width: 100%;
+  }
+}
