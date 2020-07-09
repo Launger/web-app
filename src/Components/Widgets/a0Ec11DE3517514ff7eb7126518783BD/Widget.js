@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import Template from "../Templates/Reddit-Widget/Widget";
+import Template from "../Templates/Reddit/Widget";
 
 // import "./Widget.css";
 
@@ -20,13 +20,13 @@ const Widget = () => {
             title: meme.title,
             permalink: meme.postLink,
             url: meme.url,
-          })
-        })
+          });
+        });
 
         setMemes(formattedMemes);
       })
       .catch(err => console.log(err));
-  }
+  };
 
   useEffect(() => {
     fetchMeme();
@@ -35,7 +35,7 @@ const Widget = () => {
 
   return (
     <div className="Widget-a0Ec11DE3517514ff7eb7126518783BD">
-      <Template listing={memes} loadMore={fetchMeme}/>
+      <Template listing={memes} loadMore={fetchMeme} />
     </div>
   );
 };

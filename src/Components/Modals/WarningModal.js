@@ -2,15 +2,18 @@ import React from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
-const WarningModal = ({show, setShow, handleFinish}) => {
+const WarningModal = ({ show, setShow, handleFinish }) => {
   return (
     <Modal dialogClassName="laungerModal" show={show} onHide={() => setShow(false)}>
       <Modal.Header closeButton>
-        <Modal.Title>Time's up!<br/>Don't procrastinate, you will lose points!</Modal.Title>
+        <Modal.Title>
+          Time's up!
+          <br />
+          Don't procrastinate, you will lose points!
+        </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        You will <strong>lose</strong> 10 points every 10 seconds,
-        and <strong>lose</strong> 100 points every 30 seconds.
+        You will <strong>lose</strong> 10 points every 10 seconds, and <strong>lose</strong> 100 points every 30 seconds.
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={handleFinish}>
@@ -21,6 +24,6 @@ const WarningModal = ({show, setShow, handleFinish}) => {
         </Button>
       </Modal.Footer>
     </Modal>
-  )
+  );
 };
 export default WarningModal;

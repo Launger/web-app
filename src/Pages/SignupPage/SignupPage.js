@@ -1,19 +1,18 @@
 import React, { useState } from "react";
-import {useStore} from "react-hookstore";
+import { useLocalStore } from "Utils/Hooks";
 import firebase from "firebase/app";
 import { Link } from "react-router-dom";
 
-import NavBar from "../../Components/NavBar/NavBar";
+import NavBar from "Components/NavBar/NavBar";
 
 import illustration from "./signup-illustration.svg";
-import googleIcon from "./google-icon.svg";
+import googleIcon from "Static/google-icon.svg";
 import "./SignupPage.css";
 
 const SignupPage = ({ history }) => {
-  document.title = "Launger - Sign up";
-  
-  const [, setLoggedIn] = useStore("loggedIn");
-  const [showPassword, setShowPassword] = useState("show");
+  const [, setLoggedIn] = useLocalStore("loggedIn");
+
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
 
   const handleSignUp = e => {
@@ -21,15 +20,15 @@ const SignupPage = ({ history }) => {
     const { email, password } = e.target.elements;
 
     if (email.value.length < 4) {
-      setError("Please enter an email address.");
+      setError("Please enter a valid email address.");
       return;
     }
     if (password.value.length < 6) {
-      setError("Password needs a minimum of 6 characters.");
+      setError("Please choose a stronger password. (6 Characters minimum)");
       return;
     }
-    if (password.value.includes("123456")){
-      setError(`Password ${password.value} is not secure.`)
+    if (password.value.includes("123456")) {
+      setError(`${password.value} is not secure. Please choose a stronger password.`);
       return;
     }
 
@@ -42,8 +41,8 @@ const SignupPage = ({ history }) => {
         // console.log(loggedIn);
         return firebase.firestore().doc(`users/${data.user.uid}/private/private`).set({
           totalPoints: 0,
-          widgets: []
-        })
+          widgets: [],
+        });
       })
       .then(() => {
         setLoggedIn(true);
@@ -51,12 +50,12 @@ const SignupPage = ({ history }) => {
         // console.log(data2);
         history.push("/browse");
       })
-      .catch( (error) => {
+      .catch(error => {
         // Handle Errors here.
         let errorCode = error.code;
         let errorMessage = error.message;
         if (errorCode === "auth/weak-password") {
-          setError("The password is too weak.");
+          setError("Please choose a stronger password.");
         } else {
           setError(errorMessage);
         }
@@ -74,8 +73,8 @@ const SignupPage = ({ history }) => {
         // console.log(loggedIn);
         return firebase.firestore().doc(`users/${data.user.uid}/private/private`).set({
           totalPoints: 0,
-          widgets: []
-        })
+          widgets: [],
+        });
       })
       .then(data2 => {
         setLoggedIn(true);
@@ -83,14 +82,14 @@ const SignupPage = ({ history }) => {
         console.log(data2);
         history.push("/browse");
       })
-      .catch( (error) => {
+      .catch(error => {
         // Handle Errors here.
         let errorCode = error.code;
         let errorMessage = error.message;
         if (errorCode === "auth/weak-password") {
           setError("The password is too weak.");
         } else {
-          setError(errorMessage)
+          setError(errorMessage);
         }
         console.log(error);
       });
@@ -101,37 +100,28 @@ const SignupPage = ({ history }) => {
     else setShowPassword("show");
   };
 
+  document.title = "Launger - Sign up";
   return (
     <div className="SignupPage">
       <NavBar />
       <div className="background col-md-9"></div>
       <div className="container page-content">
         <div className="row">
-          <img
-            src={illustration}
-            alt="login signup illustration"
-            className="illustration col-md-8"
-          />
+          <img src={illustration} alt="login signup illustration" className="illustration col-md-8" />
           <form onSubmit={handleSignUp} className="col-md-4 mx-0">
             <h1>Sign Up</h1>
             <input id="email" type="email" placeholder="Email" name="email" />
             <div className="password-inputs">
-              <input
-                type={showPassword === "show" ? "password" : "text"}
-                placeholder="Password"
-                name="password"
-              />
+              <input type={showPassword === "show" ? "password" : "text"} placeholder="Password" name="password" />
               <span onClick={handleShowPassword} className="show-hide">
                 {showPassword}
               </span>
             </div>
-              {error && <span className="error">*{error}</span>}
+            {error && <span className="error">*{error}</span>}
             <input id="submit" type="submit" value="Sign up" />
             <span className="agreement">
-              By clicking on Sign up, you agree to Launger's 
-              {" "}<Link to="/terms">Terms of Service</Link>, 
-              {" "}<Link to="/privacy">Privacy Policy</Link>, and
-              {" "}<Link to="/cookies">Cookie Policy</Link>.
+              By clicking on Sign up, you agree to Launger's <Link to="/terms">Terms of Service</Link>, <Link to="/privacy">Privacy Policy</Link>, and{" "}
+              <Link to="/cookies">Cookie Policy</Link>.
             </span>
             <div id="seperator"></div>
             <button type="button" id="google-login" onClick={handleGoogleLogin}>

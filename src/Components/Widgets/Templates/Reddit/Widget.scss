@@ -1,0 +1,90 @@
+.RedditWidgetTemplate {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 20px;
+  .side-content {
+    padding-top: 10px;
+    max-width: 300px;
+    .Tips {
+      position: sticky;
+      top: 10px;
+    }
+  }
+  .right {
+    // width: 100%;
+    margin: 10px 20px;
+    min-width: 300px;
+    color: var(--primary-text-color);
+    position: relative;
+    .posts {
+      .post {
+        .header {
+          display: flex;
+          justify-content: space-between;
+          .title {
+            display: inline;
+            font-size: 1.3em;
+            text-align: left;
+            overflow: hidden;
+            word-wrap: break-word;
+          }
+          .author {
+            display: inline;
+          }
+        }
+        .body {
+          .image {
+            display: block;
+            width: 100%;
+          }
+        }
+        .footer {
+          display: flex;
+          justify-content: flex-end; //change this later
+          .openInReddit {
+            color: var(--secondary-text-color);
+            &:hover {
+              color: var(--primary-text-color);
+              text-decoration: none;
+            }
+          }
+          padding: 5px 0;
+        }
+
+        border-bottom: solid 1px var(--secondary-bg);
+        margin-bottom: 10px;
+      }
+    }
+    .loadMore {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 20px;
+      border-radius: 200px;
+      background: linear-gradient(100deg, #ffae34 0%, #f95584 100%);
+      border: none;
+      color: white;
+      font-weight: 700;
+      transition: all 0.3s;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+      margin-bottom: 100px;
+      &:hover {
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px + 400px) {
+  .RedditWidgetTemplate {
+    grid-template-columns: none;
+    grid-template-rows: auto auto;
+    .side-content {
+      max-width: none;
+      // width: 100%;
+    }
+    .right {
+      margin: 0;
+    }
+  }
+}

@@ -43,7 +43,7 @@
   margin: 0;
 }
 
-.Todos .TodoForm .AddTodo input[type=text] {
+.Todos .TodoForm .AddTodo input[type="text"] {
   color: var(--primary-text-color, blue);
   width: calc(100% - (25px * 3 / 2 + 35px + 5px) - 38px);
   background: none;
@@ -52,7 +52,7 @@
   text-overflow: ellipsis;
 }
 
-.Todos .TodoForm .AddTodo label input[type=text] {
+.Todos .TodoForm .AddTodo label input[type="text"] {
   width: calc(25px * 3 / 2);
   margin-right: 5px;
   background: none;
@@ -66,18 +66,18 @@
           transform: translateY(5px);
 }
 
-.Todos .TodoForm .FocusedTodo input[type=checkbox] {
+.Todos .TodoForm .FocusedTodo input[type="checkbox"] {
   -webkit-transform: translate(0, -20%);
           transform: translate(0, -20%);
 }
 
-.Todos .TodoForm .FocusedTodo input[type=text] {
+.Todos .TodoForm .FocusedTodo input[type="text"] {
   color: var(--primary-text-color, blue);
   width: calc(100% - (1em * 4 / 2 + 40px) - 100px);
   background: none;
 }
 
-.Todos .TodoForm .FocusedTodo label input[type=text] {
+.Todos .TodoForm .FocusedTodo label input[type="text"] {
   width: calc(25px * 2 / 2);
   margin-right: 0;
   background: none;
@@ -119,26 +119,26 @@
   background: none;
 }
 
-.Todos .TodoDropdown input[type=button] {
+.Todos .TodoDropdown input[type="button"] {
   -webkit-transform: translate(0, -3px);
           transform: translate(0, -3px);
 }
 
-.Todos .TodoDropdown input[type=checkbox] {
+.Todos .TodoDropdown input[type="checkbox"] {
   -webkit-transform: translate(0, -20%);
           transform: translate(0, -20%);
   position: relative;
   z-index: 9;
 }
 
-.Todos .TodoDropdown input[type=text] {
+.Todos .TodoDropdown input[type="text"] {
   width: calc(100% - 200px);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.Todos .TodoDropdown label input[type=text] {
+.Todos .TodoDropdown label input[type="text"] {
   width: calc(25px * 2 / 2);
   margin-right: 0;
   background: none;
@@ -187,7 +187,7 @@
   .Todos .TodoForm .AddTodo {
     height: 30px;
   }
-  .Todos .TodoForm .AddTodo input[type=text] {
+  .Todos .TodoForm .AddTodo input[type="text"] {
     position: absolute;
     width: 100%;
   }

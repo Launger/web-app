@@ -1,0 +1,30 @@
+.WidgetTemplate {
+  width: 100%;
+  position: relative;
+  .container {
+    min-height: 50vh;
+    height: calc(100vh - 70px - 150px);
+    h4 {
+      color: var(--secondary-text-color, black);
+      font-size: 1em;
+    }
+    h1 {
+      color: var(--primary-text-color, black);
+      font-weight: 400;
+      font-family: "Roboto", Arial, Helvetica, sans-serif;
+      font-size: 2em;
+      text-align: center;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.3s;
+
+      &:hover {
+        color: var(--primary-text-color, black);
+        transform: translate(-50%, -50%) scale(1.03);
+        animation: animate 0.5s linear infinite;
+      }
+    }
+  }
+}

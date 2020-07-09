@@ -1,0 +1,38 @@
+.WidgetTemplate {
+  width: 100%;
+  position: relative;
+}
+
+.WidgetTemplate .container {
+  min-height: 50vh;
+  height: calc(100vh - 70px - 150px);
+}
+
+.WidgetTemplate .container h4 {
+  color: var(--secondary-text-color, black);
+  font-size: 1em;
+}
+
+.WidgetTemplate .container h1 {
+  color: var(--primary-text-color, black);
+  font-weight: 400;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  text-align: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.WidgetTemplate .container h1:hover {
+  color: var(--primary-text-color, black);
+  -webkit-transform: translate(-50%, -50%) scale(1.03);
+          transform: translate(-50%, -50%) scale(1.03);
+  -webkit-animation: animate 0.5s linear infinite;
+          animation: animate 0.5s linear infinite;
+}
+/*# sourceMappingURL=Widget.css.map */
