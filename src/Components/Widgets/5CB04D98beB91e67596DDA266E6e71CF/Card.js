@@ -13,7 +13,7 @@ const Card = ({ alreadyGot }) => {
 
   return (
     <div className={`Card-${id}`}>
-      <Template id={id} thumbnails={thumbnails} alreadyGot={true} />
+      <Template id={id} thumbnails={thumbnails} alreadyGot={alreadyGot} />
     </div>
   );
 };

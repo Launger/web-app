@@ -2,23 +2,8 @@
   width: 100%;
 }
 
-.Widget .wrapper {
-  position: relative;
-  min-width: 200px;
+.Widget iframe {
+  min-height: calc(100vh - 140px - 70px);
   width: 100%;
-  margin-bottom: 10px;
-}
-
-.Widget .content {
-  position: absolute;
-  min-height: 600px;
-  height: 100%;
-  width: 100%;
-}
-
-.Widget:after {
-  content: '';
-  display: block;
-  padding-top: calc(100% / (16/9));
 }
 /*# sourceMappingURL=Widget.css.map */
