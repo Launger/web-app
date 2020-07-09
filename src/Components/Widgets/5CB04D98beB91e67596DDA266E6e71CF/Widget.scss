@@ -1,7 +1,7 @@
 .Widget {
   width: 100%;
 
-  .wrapper{
+  .wrapper {
     position: relative;
     min-width: 200px;
     width: 100%;
@@ -9,16 +9,16 @@
     margin-bottom: 10px;
   }
 
-  .content{
+  .content {
     position: absolute;
     min-height: 600px;
     height: 100%;
-    width: 100%
+    width: 100%;
   }
 
-  &:after{
-    content: '';
+  &:after {
+    content: "";
     display: block;
-    padding-top: calc(100% / (16/9));
+    padding-top: calc(100% / (16 / 9));
   }
 }
