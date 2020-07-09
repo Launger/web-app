@@ -22,7 +22,7 @@
     "prettier": "prettier --write \"./**/*.{js,scss,json}\"",
     "build": "react-scripts build",
     "deploy:default:hosting": "cp .env.default .env && npm run build && firebase use default && firebase deploy --only hosting",
-    "deploy:production:hosting": "cp .env.production .env && npm run build && firebase use default && firebase deploy --only hosting"
+    "deploy:production:hosting": "cp .env.production .env && npm run build && firebase use production && firebase deploy --only hosting"
   },
   "eslintConfig": {
     "extends": "react-app"
