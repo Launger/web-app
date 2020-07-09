@@ -82,18 +82,15 @@ const App = () => {
     if (theme === "light") {
       setThemeStyle("");
     } else if (theme === "dark") {
-      setThemeStyle(
-        // eslint-disable-next-line
-        "\
-        :root {\
-          --primary-bg: #171717;\
-          --secondary-bg: #373737;\
-          --pns-mix-bg: #373737;\
-          --primary-text-color: white;\
-          --secondary-text-color: #dadadada;\
-        }\
-      "
-      );
+      setThemeStyle(`
+        :root {
+          --primary-bg: #171717;
+          --secondary-bg: #373737;
+          --pns-mix-bg: #373737;
+          --primary-text-color: white;
+          --secondary-text-color: #dadadada;
+        }
+      `);
     }
   }, [theme]);
 
