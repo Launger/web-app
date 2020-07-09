@@ -44,7 +44,6 @@
     .NEXT {
       display: flex;
       justify-content: space-between;
-
       color: var(--secondary-text-color, grey);
       font-size: 0.9em;
       margin-bottom: -5px;
@@ -67,6 +66,14 @@
     }
     .importedCard:hover {
       margin-bottom: 50px;
+    }
+  }
+
+  .page-content {
+    margin: 0 var(--page-margin);
+
+    .main-content {
+      margin-right: 306px + 10px;
     }
   }
 

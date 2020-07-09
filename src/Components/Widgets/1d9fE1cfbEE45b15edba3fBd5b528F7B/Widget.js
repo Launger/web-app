@@ -8,7 +8,7 @@ import dictionary from "./dictionary";
 import "./Widget.css";
 
 const Widget = () => {
-  const [randomWord, setRandomWord] = useState(sessionStorage.getItem("randomWord") || dictionary[Math.round(Math.random() * 102)]);
+  const [randomWord, setRandomWord] = useState(sessionStorage.getItem("randomWord") || dictionary[Math.round(Math.random() * 122)]);
   const [sPoints, setSPoints] = useStore("sPoints");
 
   const handleGetNewVideo = () => {

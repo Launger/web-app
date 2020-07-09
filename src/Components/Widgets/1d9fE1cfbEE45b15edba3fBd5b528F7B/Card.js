@@ -7,7 +7,7 @@ import dictionary from "./dictionary";
 import "./Card.css";
 
 const Card = ({ alreadyGot }) => {
-  const randomWord = sessionStorage.getItem("randomWord") || dictionary[Math.round(Math.random() * 102)];
+  const randomWord = sessionStorage.getItem("randomWord") || dictionary[Math.round(Math.random() * 122)];
   // console.log(randomWord);
   sessionStorage.setItem("randomWord", randomWord);
   const id = "1d9fE1cfbEE45b15edba3fBd5b528F7B",
