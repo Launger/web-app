@@ -1,0 +1,152 @@
+.tiktok-card-template .tiktok-card-bg {
+  background: linear-gradient(119.38deg, #77eae7 0%, #b93547 100%);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.tiktok-card-template .tiktok-card-bg .text {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: white;
+  -webkit-transform: translateY(-25%);
+          transform: translateY(-25%);
+}
+
+.tiktok-card-template .tiktok-card-bg .text .name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 2.5em;
+  font-weight: 800;
+  line-height: 1.2em;
+}
+
+.tiktok-card-template .tiktok-card-bg .text .subname {
+  position: absolute;
+  top: calc(50% + 1.2em + 15px);
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.tiktok-card-template .tiktok-card-bg .text .subname .tiktok-logo {
+  height: 30px;
+}
+
+.tiktok-card-template .tiktok-card-bg:hover {
+  background: black;
+  -webkit-animation: animate 0.5s linear infinite;
+          animation: animate 0.5s linear infinite;
+}
+
+.tiktok-card-template .tiktok-card-bg:hover .subname .tiktok-logo {
+  -webkit-animation: animateLogo 0.5s linear infinite;
+          animation: animateLogo 0.5s linear infinite;
+}
+
+.tiktok-card-template .tiktok-card-fg {
+  position: absolute;
+}
+
+.tiktok-card-template .tiktok-card-fg .overlay {
+  position: absolute;
+  background: none;
+  height: 100%;
+  width: 100%;
+}
+
+@-webkit-keyframes animate {
+  0%,
+  100% {
+    text-shadow: -1.5px -1.5px 0 #0ff, 1.5px 1.5px 0 #f00;
+  }
+  25% {
+    text-shadow: 1.5px 1.5px 0 #0ff, -1.5px -1.5px 0 #f00;
+  }
+  50% {
+    text-shadow: 1.5px -1.5px 0 #0ff, -1.5px 1.5px 0 #f00;
+  }
+  75% {
+    text-shadow: -1.5px 1.5px 0 #0ff, 1.5px -1.5px 0 #f00;
+  }
+  33% {
+    text-shadow: 4px 1.5px 0 #0ff, -1.5px -4px 0 #f00;
+  }
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    text-shadow: -1.5px -1.5px 0 #0ff, 1.5px 1.5px 0 #f00;
+  }
+  25% {
+    text-shadow: 1.5px 1.5px 0 #0ff, -1.5px -1.5px 0 #f00;
+  }
+  50% {
+    text-shadow: 1.5px -1.5px 0 #0ff, -1.5px 1.5px 0 #f00;
+  }
+  75% {
+    text-shadow: -1.5px 1.5px 0 #0ff, 1.5px -1.5px 0 #f00;
+  }
+  33% {
+    text-shadow: 4px 1.5px 0 #0ff, -1.5px -4px 0 #f00;
+  }
+}
+
+@-webkit-keyframes animateLogo {
+  0%,
+  100% {
+    -webkit-filter: drop-shadow(-1.5px -1.5px 0 #0ff);
+            filter: drop-shadow(-1.5px -1.5px 0 #0ff);
+  }
+  25% {
+    -webkit-filter: drop-shadow(1.5px 1.5px 0 #f00);
+            filter: drop-shadow(1.5px 1.5px 0 #f00);
+  }
+  50% {
+    -webkit-filter: drop-shadow(1.5px -1.5px 0 #0ff);
+            filter: drop-shadow(1.5px -1.5px 0 #0ff);
+  }
+  75% {
+    -webkit-filter: drop-shadow(-1.5px 1.5px 0 #f00);
+            filter: drop-shadow(-1.5px 1.5px 0 #f00);
+  }
+  33% {
+    -webkit-filter: drop-shadow(4px 1.5px 0 #0ff);
+            filter: drop-shadow(4px 1.5px 0 #0ff);
+  }
+}
+
+@keyframes animateLogo {
+  0%,
+  100% {
+    -webkit-filter: drop-shadow(-1.5px -1.5px 0 #0ff);
+            filter: drop-shadow(-1.5px -1.5px 0 #0ff);
+  }
+  25% {
+    -webkit-filter: drop-shadow(1.5px 1.5px 0 #f00);
+            filter: drop-shadow(1.5px 1.5px 0 #f00);
+  }
+  50% {
+    -webkit-filter: drop-shadow(1.5px -1.5px 0 #0ff);
+            filter: drop-shadow(1.5px -1.5px 0 #0ff);
+  }
+  75% {
+    -webkit-filter: drop-shadow(-1.5px 1.5px 0 #f00);
+            filter: drop-shadow(-1.5px 1.5px 0 #f00);
+  }
+  33% {
+    -webkit-filter: drop-shadow(4px 1.5px 0 #0ff);
+            filter: drop-shadow(4px 1.5px 0 #0ff);
+  }
+}
+/*# sourceMappingURL=Card.css.map */

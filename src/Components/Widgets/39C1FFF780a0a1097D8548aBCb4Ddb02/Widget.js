@@ -1,6 +1,6 @@
 import React from "react";
 
-import Template from "../Templates/TikTok-Widget/Widget";
+import Template from "../Templates/TikTok/Widget";
 
 import "./Widget.css";
 
@@ -9,7 +9,7 @@ const Widget = () => {
 
   return (
     <div className="Widget">
-      <Template id={id} text="Go to TikTok Discover"/>
+      <Template id={id} text="Go to TikTok Discover" />
     </div>
   );
 };

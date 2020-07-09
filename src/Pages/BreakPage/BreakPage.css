@@ -11,7 +11,7 @@
   background: linear-gradient(100deg, #ffae34 0%, #f95584 100%);
   padding: 10px;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   min-width: 300px;
 }
@@ -48,8 +48,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   color: var(--secondary-text-color, grey);
   font-size: 0.9em;
   margin-bottom: -5px;
@@ -60,7 +60,7 @@
 }
 
 .BreakPage .sidebar .next-card::after {
-  content: '';
+  content: "";
   border-bottom: solid 1px var(--secondary-bg);
 }
 
@@ -68,7 +68,7 @@
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 302px;
-      grid-template-columns: 302px;
+  grid-template-columns: 302px;
   grid-gap: 10px;
   margin: 10px 2px;
   letter-spacing: -1.5px;

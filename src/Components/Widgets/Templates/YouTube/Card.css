@@ -1,0 +1,51 @@
+.youtube-card-template .youtube-card-bg {
+  background: linear-gradient(119.46deg, #ff3434 0%, #890000 100%);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.youtube-card-template .youtube-card-bg .text {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: white;
+  -webkit-transform: translateY(-25%);
+          transform: translateY(-25%);
+}
+
+.youtube-card-template .youtube-card-bg .text .name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 2.5em;
+  font-weight: 800;
+  line-height: 1.2em;
+}
+
+.youtube-card-template .youtube-card-bg .text .subname {
+  position: absolute;
+  top: calc(50% + 1.2em + 13px);
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.youtube-card-template .youtube-card-fg {
+  position: absolute;
+}
+
+.youtube-card-template .youtube-card-fg .home {
+  position: absolute;
+  background: none;
+  height: 100%;
+  width: 100%;
+}
+/*# sourceMappingURL=Card.css.map */

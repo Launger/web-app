@@ -1,20 +1,21 @@
-import React, {useState} from "react";
-import { useStore } from "react-hookstore";
+import React, { useState } from "react";
+import { useLocalStore } from "Utils/Hooks";
 import { Link } from "react-router-dom";
 import firebase from "firebase/app";
 
-import NavBar from "../../Components/NavBar/NavBar";
+import NavBar from "Components/NavBar/NavBar";
 
 import illustration from "./login-illustration.svg";
 import googleIcon from "./google-icon.svg";
 import "./LoginPage.css";
 
 const LoginPage = ({ history }) => {
-  const [, setLoggedIn ] = useStore("loggedIn");
-  const [showPassword, setShowPassword] = useState("show");
+  const [, setLoggedIn] = useLocalStore("loggedIn");
 
-  document.title = "Launger - Login";
+  const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState(null);
 
+  // Login with email and password
   const handleLogin = e => {
     e.preventDefault();
     const { email, password } = e.target.elements;
@@ -22,63 +23,49 @@ const LoginPage = ({ history }) => {
       .auth()
       .signInWithEmailAndPassword(email.value, password.value)
       .then(data => {
-        // console.log(data);
         setLoggedIn(true);
-        localStorage.setItem("loggedIn", true);
         history.push("/browse");
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        setError(err.message);
+        console.log(err);
+      });
   };
 
+  // Login with Google
   const provider = new firebase.auth.GoogleAuthProvider();
   const handleGoogleLogin = () => {
     firebase
       .auth()
       .signInWithPopup(provider)
       .then(result => {
-        // console.log(result);
-        // sessionStorage.setItem("accessToken", result.credential.accessToken);
-        // console.log(loggedIn);
         setLoggedIn(true);
-        localStorage.setItem("loggedIn", true);
-        history.push('/browse');
+        history.push("/browse");
       })
       .catch(err => {
+        setError(err.message);
         console.log(err);
       });
   };
 
-  const handleShowPassword = () => {
-    if(showPassword === "show")
-      setShowPassword("hide");
-    else 
-      setShowPassword("show");
-  }
-
+  document.title = "Launger - Login";
   return (
     <div className="LoginPage">
       <NavBar />
       <div className="background col-md-9"></div>
       <div className="container page-content">
         <div className="row">
-          <img
-            src={illustration}
-            alt="login signup illustration"
-            className="illustration col-md-8"
-          />
+          <img src={illustration} alt="login signup illustration" className="illustration col-md-8" />
           <form onSubmit={handleLogin} className="col-md-4 mx-0">
             <h1>Login</h1>
             <input id="email" type="email" placeholder="Email" name="email" />
             <div className="password-inputs">
-              <input
-                type={showPassword === "show" ? "password" : "text"}
-                placeholder="Password"
-                name="password"
-              />
-              <span onClick={handleShowPassword} className="show-hide">
-                {showPassword}
+              <input type={showPassword ? "text" : "password"} placeholder="Password" name="password" />
+              <span onClick={() => setShowPassword(!showPassword)} className="show-hide">
+                {showPassword ? "hide" : "show"}
               </span>
             </div>
+            {error && <span className="error">*{error}</span>}
             <input id="submit" type="submit" value="Login" />
             <div id="seperator"></div>
             <button type="button" id="google-login" onClick={handleGoogleLogin}>

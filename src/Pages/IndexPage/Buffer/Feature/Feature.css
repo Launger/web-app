@@ -61,7 +61,7 @@
     margin: auto;
   }
   .Feature::after {
-    content: '';
+    content: "";
     border-bottom: solid 1px var(--secondary-text-color);
     -webkit-transform: translateY(-5px);
             transform: translateY(-5px);

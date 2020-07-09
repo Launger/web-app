@@ -1,6 +1,6 @@
 .LoginPage .background {
   position: absolute;
-  background-color: #546FFF;
+  background-color: #546fff;
   height: 100vh;
 }
 
@@ -63,8 +63,8 @@
   font-size: 1.2em;
   padding-left: 0px;
   border: none;
-  background: -webkit-gradient(linear, left top, right top, from(#F9A826), to(#FF4E8D));
-  background: linear-gradient(90deg, #F9A826 0%, #FF4E8D 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#f9a826), to(#ff4e8d));
+  background: linear-gradient(90deg, #f9a826 0%, #ff4e8d 100%);
   color: white;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;

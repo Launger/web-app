@@ -6,7 +6,6 @@ import Tips from "../../../Pages/BreakPage/Tips";
 import "./Widget.css";
 
 const Widget = () => {
-
   return (
     <div className="Classic-Widget">
       <div className="classic-widget-content">

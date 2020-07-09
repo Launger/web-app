@@ -8,7 +8,7 @@
     z-index: 10;
     padding: 15px 25px;
     border-radius: 200px;
-    background: #FFD186;
+    background: #ffd186;
     border: none;
     color: black;
     font-weight: 700;
@@ -22,7 +22,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     min-height: 400px;
-    background: #FFD186;
+    background: #ffd186;
     color: black;
     transform: translateY(-3px);
     overflow: hidden;
@@ -80,7 +80,7 @@
           font-weight: 700;
         }
       }
-    } 
+    }
     .right {
       margin: auto 0;
       .CardTemplate {

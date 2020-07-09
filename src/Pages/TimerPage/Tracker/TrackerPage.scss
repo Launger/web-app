@@ -16,13 +16,13 @@
     z-index: -10;
     max-width: 450px;
     min-width: 300px;
-    transform: translate(-50%, -50%) rotate(-0.25turn);;
+    transform: translate(-50%, -50%) rotate(-0.25turn);
 
     circle {
       stroke-linecap: round;
       stroke-dashoffset: 0px;
       stroke-dasharray: 1884px;
-      box-shadow: -4px 0px 10px 0px rgba(0,0,0,0.5);;
+      box-shadow: -4px 0px 10px 0px rgba(0, 0, 0, 0.5);
     }
   }
   .Timer {

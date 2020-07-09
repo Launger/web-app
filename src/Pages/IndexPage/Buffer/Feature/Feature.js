@@ -2,13 +2,7 @@ import React from "react";
 
 import "./Feature.css";
 
-const Feature = ({
-  right = false,
-  title,
-  description,
-  illustration,
-  newLabel = false,
-}) => {
+const Feature = ({ right = false, title, description, illustration, newLabel = false }) => {
   if (right) {
     return (
       <div className="Feature">

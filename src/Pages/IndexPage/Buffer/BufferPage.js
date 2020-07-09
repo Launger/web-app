@@ -1,16 +1,26 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import { useStore } from "react-hookstore";
-import { EmailShareButton, EmailIcon, FacebookShareButton, FacebookIcon, WhatsappShareButton, WhatsappIcon, RedditShareButton, RedditIcon, TwitterShareButton, TwitterIcon } from "react-share";
+import {
+  EmailShareButton,
+  EmailIcon,
+  FacebookShareButton,
+  FacebookIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+  RedditShareButton,
+  RedditIcon,
+  TwitterShareButton,
+  TwitterIcon,
+} from "react-share";
 
 import Feature from "./Feature/Feature";
-import GiveFeedback from "../../../Components/Widgets/9005d84E32Ffb03b188EaDe0B772B132/Card";
+import GiveFeedback from "Components/Widgets/9005d84E32Ffb03b188EaDe0B772B132/Card";
 import signUpBannerIllustration from "./signUpBannerIllustration.svg";
-import Navbar from "../../../Components/NavBar/NavBar";
+import Navbar from "Components/NavBar/NavBar";
 
 import logoBeta from "../logo(beta).svg";
 import "./BufferPage.css";
-
 
 const IndexPage = ({ history }) => {
   const [loggedIn] = useStore("loggedIn");
@@ -20,7 +30,7 @@ const IndexPage = ({ history }) => {
     <div className="BufferPage">
       <Navbar />
       <div className="page-content">
-        <input type="button" value="Go To Widgets" onClick={() => history.push("/browse")} className="Go-to-widgets"/>
+        <input type="button" value="Go To Widgets" onClick={() => history.push("/browse")} className="Go-to-widgets" />
         <section className="signup-share-banner">
           {loggedIn ? (
             <>
@@ -31,22 +41,35 @@ const IndexPage = ({ history }) => {
                   <FacebookShareButton url={shareUrl} quote="Don't feel like working, and scrolling Facebook? Try Launger and be more productive.">
                     <FacebookIcon size={40} round />
                   </FacebookShareButton>
-                  <WhatsappShareButton url={shareUrl} title="Hey, I found this cool app that makes you more productive using social media. Check it out at">
+                  <WhatsappShareButton
+                    url={shareUrl}
+                    title="Hey, I found this cool app that makes you more productive using social media. Check it out at"
+                  >
                     <WhatsappIcon size={40} round />
                   </WhatsappShareButton>
                   {/* <FacebookMessengerShareButton url={shareUrl}>
                     <FacebookMessengerIcon size={40} round />
                   </FacebookMessengerShareButton> */}
-                  <RedditShareButton url={shareUrl} title="Don't feel like working and scrolling Reddit? Keep scrolling on Launger and still be productive.">
-                    <RedditIcon size={40} round bgStyle={{fill: "red"}}/>
+                  <RedditShareButton
+                    url={shareUrl}
+                    title="Don't feel like working and scrolling Reddit? Keep scrolling on Launger and still be productive."
+                  >
+                    <RedditIcon size={40} round bgStyle={{ fill: "red" }} />
                   </RedditShareButton>
-                  <TwitterShareButton url={shareUrl} title="Hey, I found this cool app that makes you more productive using social media. Check it out at">
+                  <TwitterShareButton
+                    url={shareUrl}
+                    title="Hey, I found this cool app that makes you more productive using social media. Check it out at"
+                  >
                     <TwitterIcon size={40} round />
                   </TwitterShareButton>
-                  <EmailShareButton url={shareUrl} subject="Launger: cool app that makes you productive using social media" body="Hey, I found this cool app that makes you more productive using social media. Check it out at">
-                    <EmailIcon size={40} round bgStyle={{fill: "orange"}}/>
+                  <EmailShareButton
+                    url={shareUrl}
+                    subject="Launger: cool app that makes you productive using social media"
+                    body="Hey, I found this cool app that makes you more productive using social media. Check it out at"
+                  >
+                    <EmailIcon size={40} round bgStyle={{ fill: "orange" }} />
                   </EmailShareButton>
-                </div> 
+                </div>
                 <h1>You think it can be better?</h1>
                 <h2>Consider giving us feedback.</h2>
                 <h3>Get 300 points per minute as a reward!</h3>
@@ -69,18 +92,20 @@ const IndexPage = ({ history }) => {
                   <li>Get notified to work everyday.</li>
                 </ul>
                 <div className="signup">
-                  <Link to="/signup">
-                    Sign up
-                  </Link>
+                  <Link to="/signup">Sign up</Link>
                 </div>
-                <p className="have-an-account">Already have an account? <strong><Link to="/login">Log in</Link></strong></p>
+                <p className="have-an-account">
+                  Already have an account?{" "}
+                  <strong>
+                    <Link to="/login">Log in</Link>
+                  </strong>
+                </p>
               </div>
               <div className="right">
                 <img src={signUpBannerIllustration} alt="Woman on a Giant Clock" />
               </div>
             </>
-          )
-          }
+          )}
         </section>
         <section className="Features">
           <h1>Discover New Features</h1>
@@ -102,16 +127,12 @@ const IndexPage = ({ history }) => {
                     <>And more...</>
                   </li>
                 </ul>
-                <a href="/browse" style={{color: "var(--primary-text-color)"}}><h5>Try Reddit Widgets now.</h5></a>
+                <a href="/browse" style={{ color: "var(--primary-text-color)" }}>
+                  <h5>Try Reddit Widgets now.</h5>
+                </a>
               </>
             }
-            illustration={
-              <img
-                src="https://i.imgur.com/7vBBa3o.gif"
-                alt="illustration of timer modes"
-                width="100%"
-              />
-            }
+            illustration={<img src="https://i.imgur.com/7vBBa3o.gif" alt="illustration of timer modes" width="100%" />}
             right
             newLabel
           />
@@ -120,73 +141,47 @@ const IndexPage = ({ history }) => {
             description={
               <ul>
                 <li>
-                  <strong>Pomodoro: </strong>Focus on your work for 25 minutes
-                  and then take a 5 minute break.
+                  <strong>Pomodoro: </strong>Focus on your work for 25 minutes and then take a 5 minute break.
                 </li>
                 <li>
-                  <strong>Time Tracker: </strong>Track the amount you spend on
-                  each of your tasks.
+                  <strong>Time Tracker: </strong>Track the amount you spend on each of your tasks.
                 </li>
                 <li>
-                  <strong>Speedrun: </strong> Set time limits on each task, and
-                  try to finish them ASAP.
+                  <strong>Speedrun: </strong> Set time limits on each task, and try to finish them ASAP.
                 </li>
               </ul>
             }
-            illustration={
-              <img
-                src="https://i.imgur.com/KMYsDco.gif"
-                alt="illustration of timer modes"
-                width="100%"
-              />
-            }
+            illustration={<img src="https://i.imgur.com/KMYsDco.gif" alt="illustration of timer modes" width="100%" />}
             newLabel
           />
           <Feature
             title="To-do list"
             description={
               <p>
-                <strong>Focus</strong> even more by writing down what you are
-                working on. <br />
+                <strong>Focus</strong> even more by writing down what you are working on. <br />
                 <span style={{ fontWeight: "100", fontSize: "0.9em" }}>
-                  <strong>Tip: </strong>Breaking down your work helps keeps
-                  things organized and less stressful.
+                  <strong>Tip: </strong>Breaking down your work helps keeps things organized and less stressful.
                 </span>
                 <br />
                 <span style={{ fontWeight: "100", fontSize: "0.9em" }}>
-                  <strong>Bonus: </strong>The to-do list will also keep track of
-                  how much time you spend on each task.
+                  <strong>Bonus: </strong>The to-do list will also keep track of how much time you spend on each task.
                 </span>
               </p>
             }
-            illustration={
-              <img
-                src="https://i.imgur.com/15dNzra.gif"
-                alt="illustration of todos feature"
-                width="100%"
-              />
-            }
+            illustration={<img src="https://i.imgur.com/15dNzra.gif" alt="illustration of todos feature" width="100%" />}
             right
             newLabel
           />
-          <Feature 
+          <Feature
             title="Dark Mode"
             description={
               <p>
                 You can enjoy Launger in dark mode. Try it now!
-                <br/>
-                <span style={{ fontWeight: "100", fontSize: "0.9em" }}>
-                  Work day and night without straining your eyes.
-                </span>
+                <br />
+                <span style={{ fontWeight: "100", fontSize: "0.9em" }}>Work day and night without straining your eyes.</span>
               </p>
             }
-            illustration={
-              <img
-                src="https://i.imgur.com/2ZUulWG.gif"
-                alt="illustration of todos feature"
-                width="100%"
-              />
-            }
+            illustration={<img src="https://i.imgur.com/2ZUulWG.gif" alt="illustration of todos feature" width="100%" />}
           />
           <Feature
             title="More widgets"
@@ -194,19 +189,10 @@ const IndexPage = ({ history }) => {
               <p>
                 You can use your points to <strong>GET</strong> more widgets.
                 <br />
-                If you're not sure about getting it, maybe <strong>
-                  TRY
-                </strong>{" "}
-                it first
+                If you're not sure about getting it, maybe <strong>TRY</strong> it first
               </p>
             }
-            illustration={
-              <img
-                src="https://i.imgur.com/Kd9aroh.gif"
-                alt="illustration of try get feature"
-                width="100%"
-              />
-            }
+            illustration={<img src="https://i.imgur.com/Kd9aroh.gif" alt="illustration of try get feature" width="100%" />}
             right
           />
         </section>
