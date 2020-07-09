@@ -1,6 +1,6 @@
 {
   "name": "launger",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -21,7 +21,8 @@
     "start": "react-scripts start",
     "prettier": "prettier --write \"./**/*.{js,scss,json}\"",
     "build": "react-scripts build",
-    "deploy:default:hosting": "cp .env.default .env && npm run build && firebase use default && firebase deploy --only hosting"
+    "deploy:default:hosting": "cp .env.default .env && npm run build && firebase use default && firebase deploy --only hosting",
+    "deploy:production:hosting": "cp .env.production .env && npm run build && firebase use default && firebase deploy --only hosting"
   },
   "eslintConfig": {
     "extends": "react-app"
