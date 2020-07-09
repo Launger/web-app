@@ -22,7 +22,7 @@
         font-size: 1.1em;
         font-weight: 550;
         color: white;
-        background: linear-gradient(90deg, #F9A826 0%, #FF4E8D 100%);;
+        background: linear-gradient(90deg, #f9a826 0%, #ff4e8d 100%);
         border: solid orange 1px;
         padding: 10px 30px;
         border-radius: 200px;
@@ -43,12 +43,36 @@
     }
   }
   #how-it-works {
-    background: linear-gradient(230.67deg, #FCB44F 0%, #FF4E8D 125.19%), #6892FF;;
+    background: linear-gradient(230.67deg, #fcb44f 0%, #ff4e8d 125.19%), #6892ff;
     // padding-bottom: 450px;
     // margin-bottom: -450px;
     position: relative;
     top: -100px;
     z-index: -1;
+    .logos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+      justify-items: center;
+      grid-column-gap: 100px;
+      margin: 0 auto -150px auto;
+      .YouTube {
+        width: 90%;
+        align-self: center;
+      }
+      .TikTok {
+        width: 120%;
+      }
+      .Reddit {
+        width: 90%;
+        align-self: center;
+      }
+      .more {
+        color: white;
+        font-size: 2.3em;
+        font-weight: 900;
+        align-self: center;
+      }
+    }
     .content {
       padding-top: 200px;
       position: relative;
@@ -100,6 +124,8 @@
     }
   }
   .logo-seperator {
+    position: relative;
+    top: -100px;
     background-color: #6892ff;
     padding: 25px 20%;
     margin-bottom: 10px;
@@ -141,7 +167,7 @@
       }
     }
     .superman {
-      height: 80%; 
+      height: 80%;
       max-width: 100%;
       position: absolute;
       left: 0;
@@ -181,6 +207,14 @@
       a {
         color: black;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .IndexPage {
+    .logos {
+      padding-top: 80px;
     }
   }
 }

@@ -2,32 +2,22 @@ import React from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import { useStore } from "react-hookstore";
+import { useSessionStore } from "Utils/Hooks";
 
-import { updateFireStorePoints } from "../../Helpers";
+import { updateFireStorePoints } from "Utils";
 
 const TabModal = ({ show, onHide }) => {
-  const [points, setPoints] = useStore("points");
+  const [user, setUser] = useSessionStore("user");
   const [sPoints, setSPoints] = useStore("sPoints");
-  const [user, setUser] = useStore("user"); 
-  const { payPoints, totalPoints } = points;
 
   const handleSave = () => {
     updateFireStorePoints(sPoints / 2)
       .then(msg => {
-        // console.log("Points successfully updated", msg);
-        // console.log("userPoints (before):", points, sPoints);
         setUser({
           ...user,
-          totalPoints: totalPoints + sPoints/2,
-          payPoints: payPoints + (sPoints/20)
-        })
-        setPoints({
-          ...points,
-          totalPoints: totalPoints + sPoints/2,
-          payPoints: payPoints + (sPoints/20)
-        })
+          totalPoints: user.totalPoints + sPoints / 2,
+        });
         setSPoints(0);
-        // console.log("userPoints (after):", points, sPoints);
         onHide();
       })
       .catch(err => console.log(err));

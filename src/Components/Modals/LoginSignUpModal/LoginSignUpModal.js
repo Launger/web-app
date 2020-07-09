@@ -5,11 +5,11 @@ import LoginSignUp from "../../LoginSignUp/LoginSignUp";
 
 import "./LoginSignUpModal.css";
 
-const LoginSignUpModal = ({show, onHide}) => {
+const LoginSignUpModal = ({ show, onHide }) => {
   return (
     <Modal dialogClassName="login-modal" show={show} onHide={() => onHide()} size="sm">
       <Modal.Header>
-        <LoginSignUp/>
+        <LoginSignUp />
       </Modal.Header>
     </Modal>
   );

@@ -33,7 +33,7 @@
       margin: 0;
     }
     .AddTodo {
-      input[type=text] {
+      input[type="text"] {
         color: var(--primary-text-color, blue);
         width: calc(100% - (25px * 3 / 2 + 35px + 5px) - 38px);
         background: none;
@@ -42,7 +42,7 @@
         text-overflow: ellipsis;
       }
       label {
-        input[type=text] {
+        input[type="text"] {
           width: calc(25px * 3 / 2);
           margin-right: 5px;
           background: none;
@@ -56,16 +56,16 @@
       }
     }
     .FocusedTodo {
-      input[type=checkbox] {
+      input[type="checkbox"] {
         transform: translate(0, -20%);
       }
-      input[type=text] {
+      input[type="text"] {
         color: var(--primary-text-color, blue);
         width: calc(100% - (1em * 4 / 2 + 40px) - 100px);
         background: none;
       }
       label {
-        input[type=text] {
+        input[type="text"] {
           width: calc(25px * 2 / 2);
           margin-right: 0;
           background: none;
@@ -103,22 +103,22 @@
       color: var(--primary-text-color, blue);
       background: none;
     }
-    input[type=button] {
+    input[type="button"] {
       transform: translate(0, -3px);
     }
-    input[type=checkbox] {
+    input[type="checkbox"] {
       transform: translate(0, -20%);
       position: relative;
       z-index: 9;
     }
-    input[type=text] {
+    input[type="text"] {
       width: calc(100% - 200px);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
     label {
-      input[type=text] {
+      input[type="text"] {
         width: calc(25px * 2 / 2);
         margin-right: 0;
         background: none;
@@ -127,7 +127,7 @@
       svg {
         height: initial;
         margin-right: 15px;
-        &:hover + .focus-tooltip{
+        &:hover + .focus-tooltip {
           opacity: 1;
         }
       }
@@ -137,7 +137,7 @@
         .Tooltip {
           position: absolute;
           z-index: 10;
-          transform: translate(10px, -10px);;
+          transform: translate(10px, -10px);
           .bubble {
             font-size: 12px;
             background: blue;
@@ -165,14 +165,14 @@
     .TodoForm {
       .AddTodo {
         height: 30px;
-        input[type=text] {
+        input[type="text"] {
           position: absolute;
           width: 100%;
         }
       }
     }
     .main-tooltip {
-      display: none;      
+      display: none;
     }
   }
 }

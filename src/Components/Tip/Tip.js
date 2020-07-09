@@ -3,13 +3,12 @@ import React from "react";
 import templateIcon from "./tip-icon.svg";
 import "./Tip.css";
 
-const Tips = ({ message, icon}) => {
-
+const Tips = ({ message, icon }) => {
   const tipIcon = icon || templateIcon;
 
   return (
     <div className="Tip">
-      <img src={tipIcon} alt="tip icon"/>
+      <img src={tipIcon} alt="tip icon" />
       {message}
     </div>
   );

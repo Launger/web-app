@@ -49,7 +49,7 @@
     margin: auto;
   }
   .Feature::after {
-    content: '';
+    content: "";
     border-bottom: solid 1px var(--secondary-text-color);
     transform: translateY(-5px);
   }

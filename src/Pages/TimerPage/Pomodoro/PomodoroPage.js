@@ -1,35 +1,31 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useStore } from "react-hookstore";
+import { useSessionStore } from "Utils/Hooks";
 import { Alert } from "react-bootstrap";
 import { withRouter } from "react-router-dom";
 
-import NavBar from "../../../Components/NavBar/NavBar";
-import Timer from "../../../Components/Timer/Timer";
-import Points from "../../../Components/Points/Points";
-import Todos from "../../../Components/Todos/Todos";
+import NavBar from "Components/NavBar/NavBar";
+import Timer from "Components/Timer/Timer";
+import Points from "Components/Points/Points";
+import Todos from "Components/Todos/Todos";
 
-import widgetConfig from "../../../Components/Widgets/widgetConfig";
-import { formatTime, updateFireStorePoints } from "../../../Helpers";
+import widgetConfig from "Components/Widgets/widgetConfig";
+import { formatTime, updateFireStorePoints } from "Utils";
 
 import "./PomodoroPage.css";
-const TIME = 25*60;
+const TIME = 25 * 60;
 
 const TimePage = ({ history }) => {
+  const [user, setUser] = useSessionStore("user");
+  const [widget] = useSessionStore("widget");
   const [timer, setTimer] = useStore("timer");
   const [sPoints, setSPoints] = useStore("sPoints");
-  const [points, setPoints] = useStore("points");
-  const [widget] = useStore("widget");
 
-  const [workTimeLeft, setWorkTimeLeft] = useState(
-    Number(sessionStorage.getItem("workTimeLeft") || TIME)
-  );
-    //FIXME : Temporary
+  const [workTimeLeft, setWorkTimeLeft] = useState(Number(sessionStorage.getItem("workTimeLeft") || TIME));
+  //FIXME : Temporary
   const progressRing = useRef({});
 
-  const widgetId =
-    widget.id ||
-    JSON.parse(sessionStorage.getItem("widget")).id ||
-    "d27154EFDbCa05654074E41a8d542b53"; //Classic
+  const widgetId = widget.id || JSON.parse(sessionStorage.getItem("widget")).id || "d27154EFDbCa05654074E41a8d542b53"; //Classic
   const ppm = widgetConfig[widgetId].ppm || 60;
 
   const startTime = useRef(null);
@@ -38,27 +34,25 @@ const TimePage = ({ history }) => {
     startTime.current = new Date();
     setTimer({ time: workTimeLeft, isCountingdown: true });
     document.title = `Work - ${formatTime(workTimeLeft)}`;
-    if (("Notification" in window) && Notification.permission !== "denied") {
+    if ("Notification" in window && Notification.permission !== "denied") {
       Notification.requestPermission();
     }
     //FIXME : Temporary
     setTimeout(() => {
-      progressRing.current = {transition: "all 1s linear"}
-    }, 100)
+      progressRing.current = { transition: "all 1s linear" };
+    }, 100);
     // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
     const ticker = setTimeout(() => {
       let currentTime = new Date();
-      let newTime =
-        workTimeLeft - Math.floor((currentTime - startTime.current) / 1000);
+      let newTime = workTimeLeft - Math.floor((currentTime - startTime.current) / 1000);
 
       if (newTime <= 0) {
         clearTimeout(ticker);
         notifyMe("Time's Up! Take a break now.");
-        if (!("Notification" in window) && Notification.permission === "denied")
-          window.confirm("Time's Up! Take a break now.");
+        if (!("Notification" in window) && Notification.permission === "denied") window.confirm("Time's Up! Take a break now.");
         document.title = `Work - ${formatTime(newTime)}`;
         setSPoints(sPoints + ppm / 60);
         handleFinish();
@@ -74,7 +68,7 @@ const TimePage = ({ history }) => {
       }
     }, 500);
 
-    onbeforeunload = (e) => {
+    onbeforeunload = e => {
       sessionStorage.setItem("widget", JSON.stringify({ id: widgetId }));
       sessionStorage.setItem("workTimeLeft", timer.time);
       document.title = "Launger";
@@ -93,13 +87,11 @@ const TimePage = ({ history }) => {
   const handleFinish = () => {
     sessionStorage.removeItem("workTimeLeft");
     updateFireStorePoints(sPoints + ppm / 60)
-      .then((res) => {
-        setPoints({ totalPoints: points.totalPoints + sPoints + ppm / 60 });
+      .then(res => {
+        setUser({ ...user, totalPoints: user.totalPoints + sPoints + ppm / 60 });
         setSPoints(0);
-        // if (res !== undefined) console.log(res);
-        sessionStorage.setItem("points", JSON.stringify(points));
       })
-      .catch((err) => console.log(err));
+      .catch(err => console.log(err));
     history.push("/break");
   };
 
@@ -109,33 +101,40 @@ const TimePage = ({ history }) => {
       <div className="page-content">
         <Timer />
         <svg className="progress-ring" viewBox="0 0 628 628" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="314" cy="314" r="300" stroke="url(#paint0_linear)" strokeWidth="28" opacity="0.4"/>
-          <circle cx="314" cy="314" r="300" stroke="url(#paint0_linear)" strokeWidth="28" style={{strokeDashoffset: `${-1884 + (1884 * timer.time / TIME)}px`, strokeDasharray: "1884px", ...progressRing.current}}/>
-          <circle cx="314" cy="314" r="265" stroke="url(#paint1_linear)" strokeWidth="35" opacity="0.4"/>
-          <circle cx="314" cy="314" r="265" stroke="url(#paint1_linear)" strokeWidth="35" style={{strokeDashoffset: `${1665 + (-1665 * ((TIME - timer.time) / 60))}px`, strokeDasharray: "1665px", ...progressRing.current}}/>
-            <defs>
-              <linearGradient id="paint0_linear" x1="281" y1="0" x2="281" y2="562" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#F94E83"/>
-                <stop offset="1" stopColor="#FF0000"/>
-              </linearGradient>
-              <linearGradient id="paint1_linear" x1="281" y1="0" x2="281" y2="562" gradientUnits="userSpaceOnUse">
-                <stop stopColor="orange"/>
-                <stop offset="1" stopColor="#FF0000"/>
-              </linearGradient>
-            </defs>
+          <circle cx="314" cy="314" r="300" stroke="url(#paint0_linear)" strokeWidth="28" opacity="0.4" />
+          <circle
+            cx="314"
+            cy="314"
+            r="300"
+            stroke="url(#paint0_linear)"
+            strokeWidth="28"
+            style={{ strokeDashoffset: `${-1884 + (1884 * timer.time) / TIME}px`, strokeDasharray: "1884px", ...progressRing.current }}
+          />
+          <circle cx="314" cy="314" r="265" stroke="url(#paint1_linear)" strokeWidth="35" opacity="0.4" />
+          <circle
+            cx="314"
+            cy="314"
+            r="265"
+            stroke="url(#paint1_linear)"
+            strokeWidth="35"
+            style={{ strokeDashoffset: `${1665 + -1665 * ((TIME - timer.time) / 60)}px`, strokeDasharray: "1665px", ...progressRing.current }}
+          />
+          <defs>
+            <linearGradient id="paint0_linear" x1="281" y1="0" x2="281" y2="562" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#F94E83" />
+              <stop offset="1" stopColor="#FF0000" />
+            </linearGradient>
+            <linearGradient id="paint1_linear" x1="281" y1="0" x2="281" y2="562" gradientUnits="userSpaceOnUse">
+              <stop stopColor="orange" />
+              <stop offset="1" stopColor="#FF0000" />
+            </linearGradient>
+          </defs>
         </svg>
         <Todos />
         {timer.time <= 60 + 1 && (
-          <input
-            className="add-a-minute"
-            type="button"
-            value="Add a minute"
-            onClick={addMinute}
-            style={timer.time <= 60 ? { opacity: "1" } : {}}
-          />
+          <input className="add-a-minute" type="button" value="Add a minute" onClick={addMinute} style={timer.time <= 60 ? { opacity: "1" } : {}} />
         )}
-        {("Notification" in window) &&
-        Notification.permission !== "granted" ? (
+        {"Notification" in window && Notification.permission !== "granted" ? (
           <Alert variant={"warning"} className="notification">
             Allow notifications as to be notified when the timer has finished.
           </Alert>
@@ -150,7 +149,7 @@ const TimePage = ({ history }) => {
 
 export default withRouter(TimePage);
 
-const notifyMe = (message) => {
+const notifyMe = message => {
   // Let's check if the browser supports notifications
   if (!("Notification" in window)) {
     alert("This browser does not support desktop notification");

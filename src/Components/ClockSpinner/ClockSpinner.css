@@ -1,9 +1,8 @@
 .ClockSpinner {
-  color: orange;
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-25px, -25px);
-          transform: translate(-25px, -25px);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 /*# sourceMappingURL=ClockSpinner.css.map */
