@@ -40,4 +40,4 @@ npm start
 
 ## Other documentation
 
-All other documentation can be found within Launger's Workspace on Notion. If you don't have access, please ask someone that has access.
+All other documentation can be found within Launger's Workspace on Notion.
