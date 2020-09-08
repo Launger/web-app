@@ -1,4 +1,6 @@
 # Launger web-app
+Launger is a time management app based on the Pomodoro technique but designed specifically for true procrastinators by motivating and rewarding the user using social media and mini-games (YouTube, TikTok, Reddit, Slither.IO, etc.). The more they work, the more social media they can consume.
+Try it out at [Launger.com](launger.com)
 
 ## Setup
 
